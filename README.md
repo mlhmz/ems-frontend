@@ -37,7 +37,7 @@ docker volume rm docker_employee_postgres_data
 docker compose up
 ```
 
-### DoDocker-Stack unter IntelliJ hinzufügen
+### Docker-Stack unter IntelliJ hinzufügen
 Alternativ kann auch der Docker-Stack mit den IntelliJ Services ausgeführt werden.
 Dazu muss der Docker Host auf dem "Services"-Tab in der IDE hinzugefügt werden und
 in IntelliJ in der Compose auf den Start-Knopf gedrückt werden. Somit sollte
