@@ -1,6 +1,6 @@
-# Starter für das LF10 Projekt
+# Employee Managment Frontend
 
-Erstelle einen Fork dieses Projektes auf Github.
+Dies ist das Repository von Fabian, Malek und Moritz für das Projekt im Lernfach 10.
 
 ## Requirements
 
@@ -36,6 +36,12 @@ docker compose down
 docker volume rm docker_employee_postgres_data
 docker compose up
 ```
+
+### Datenbank unter IntelliJ hinzufügen
+Alternativ kann auch der Docker-Stack mit den IntelliJ Services ausgeführt werden.
+Dazu muss der Docker Host auf dem "Services"-Tab in der IDE hinzugefügt werden und
+in IntelliJ in der Compose auf den Start-Knopf gedrückt werden. Somit sollte
+automatisch der Stack von IntelliJ gehandled werden
 
 ## Swagger des Backends
 
