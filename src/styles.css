@@ -6,3 +6,12 @@
     box-shadow: 0px 0px 0px 5px #5cb85c3d; 
     -webkit-box-shadow: #5cb85c;
 } 
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.center-items {
+    display: grid;
+    align-items: center;
+}
