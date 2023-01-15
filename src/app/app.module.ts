@@ -6,12 +6,14 @@ import {HttpClientModule} from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { QualificationListComponent } from './qualification-list/qualification-list.component';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeListComponent,
-    QualificationListComponent
+    QualificationListComponent,
+    NavigationBarComponent
   ],
   imports: [
     BrowserModule,
