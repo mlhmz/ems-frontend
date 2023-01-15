@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <h4>Qualifikationen-Liste</h4>
+      </div>
+      <div class="col"></div>
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <input class="form-control form" placeholder="Suche...">
+          </div>
+          <div class="col center-items">
+              <span class="material-icons text-success cursor-pointer">search</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <table class="table">
+        <thead>
+          <th>Name</th>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let q of qualifications$ | async">
+            <tr>
+              <td>{{q.designation}}</td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
