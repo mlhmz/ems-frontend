@@ -6,14 +6,20 @@
     <div class="col"></div>
     <div class="col">
       <div class="row">
-        <div class="col">
+        <div class="col-7" id="searchBox">
           <form (submit)="searchForString()">
             <input class="form-control form" placeholder="Suche..." 
             [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}">
           </form>
         </div>
-        <div class="col center-items">
-          <span class="material-icons text-success cursor-pointer" (click)="searchForString()">search</span>
+        <div class="col-1 center-items">
+            <span class="material-icons text-success cursor-pointer" (click)="searchForString()">search</span>
+        </div>
+        <div class="col-1 center-items">
+          <span class="material-icons text-success cursor-pointer" (click)="fetchData()">
+            <ng-container *ngIf="isSearchModeEnabled(); else reload">backspace</ng-container>
+            <ng-template #reload>refresh</ng-template>
+          </span>
         </div>
       </div>
     </div>
@@ -35,5 +41,8 @@
         </ng-container>
       </tbody>
     </table>
+  </div>
+  <div *ngIf="(employees$ | async)?.length === 0">
+    <p>Es wurden keine Mitarbeiter gefunden.</p>
   </div>
 </div>
