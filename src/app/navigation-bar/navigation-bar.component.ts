@@ -1,10 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-navigation-bar',
   templateUrl: './navigation-bar.component.html',
   styleUrls: ['./navigation-bar.component.css']
 })
-export class NavigationBarComponent {
+export class NavigationBarComponent implements OnInit {
+  @Input() itemsShown: boolean = false;
 
+  constructor (
+    private authService: AuthService
+  ) {}
+
+  ngOnInit(): void {
+  }
+
+  logout() {
+    this.authService.clearToken();
+  }
 }

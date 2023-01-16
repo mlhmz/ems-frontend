@@ -20,3 +20,16 @@
     display: grid;
     align-items: center;
 }
+
+.center-heading {
+    text-align: center;
+}
+
+.login-format {
+    width: 35%; margin: auto;
+}
+
+.margin-y-10 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

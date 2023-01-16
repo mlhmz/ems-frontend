@@ -1,2 +1,9 @@
-<app-navigation-bar></app-navigation-bar>
-<router-outlet></router-outlet>
+<app-navigation-bar [itemsShown]="isTokenAvailable()"></app-navigation-bar>
+<ng-container *ngIf="isTokenAvailable(); else loggedOut">
+    <router-outlet></router-outlet>
+</ng-container>
+<ng-template #loggedOut>
+    <div>
+        <app-login></app-login>
+    </div>
+</ng-template>

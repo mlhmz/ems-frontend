@@ -1,0 +1,16 @@
+<div class="container">
+    <form class="login-format" (submit)="authenticate()" #login="ngForm">
+        <h4 class="center-heading">Login</h4>
+        <div class="col">
+            <div class="row margin-y-10">
+                <input placeholder="Nutzername" class="form-control" name="username" [(ngModel)]="username" />
+            </div>
+            <div class="row margin-y-10">
+                <input placeholder="Passwort" type="password" class="form-control" name="username" [(ngModel)]="password" />
+            </div>
+            <div class="row margin-y-10">
+                <input type="submit" value="Login" class="btn btn-success" />
+            </div>
+        </div>
+    </form>
+</div>

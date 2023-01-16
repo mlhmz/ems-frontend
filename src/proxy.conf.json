@@ -7,5 +7,14 @@
       "^/backend": ""
     },
     "changeOrigin": true
+  },
+  "/auth": {
+    "target": "http://authproxy.szut.dev",
+    "secure": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/auth": ""
+    },
+    "changeOrigin": true
   }
 }
