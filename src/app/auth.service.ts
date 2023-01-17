@@ -33,11 +33,11 @@ export class AuthService {
   async fetchToken(username: string, password: string) {
     this.http.post("/auth", this.getLoginParams(username, password), this.getUrlEncodedOptions())
     .subscribe((res: any) => {
-      this.saveTokenAndReturn(res);
+      this.saveToken(res);
     })
   }
 
-  private saveTokenAndReturn(res: any) {
+  private saveToken(res: any) {
     this.cookieService.set(this.tokenKey, res.access_token, this.getExpirationDate());
   }
 
