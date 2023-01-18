@@ -1,1 +1,21 @@
-<p>qualification-details works!</p>
+<div class="container">
+    <div class="row margin-y-10">
+        <div class="col-1">
+            <span class="material-icons cursor-pointer" [routerLink]="['/qualification']">arrow_back</span>
+        </div>
+        <div class="col-9">
+            <h4>Details Qualification</h4>
+        </div>
+        <div class="col-1 expand">
+            <span class="material-icons cursor-pointer">edit</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            <p>Name:</p>
+        </div>
+        <div class="col-2">
+            <p>{{this.qualification?.designation}}</p>
+        </div>
+    </div>
+</div>

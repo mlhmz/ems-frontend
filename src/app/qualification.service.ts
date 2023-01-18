@@ -24,4 +24,12 @@ export class QualificationService {
         .set('Authorization', `Bearer ${this.bearer}`)
     });
   }
+
+  public getQualificationByDesignation(designation: string): Observable<Qualification> {
+    return this.http.get<Qualification>(`/backend/qualifications/${designation}`, {
+      headers: new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Authorization', `Bearer ${this.bearer}`)
+    });
+  }
 }
