@@ -10,8 +10,9 @@ import { QualificationListComponent } from './qualification-list/qualification-l
 const routes: Routes = [
   { path: '', redirectTo: '/employee', pathMatch: 'full' },
   { path: 'employee', component: EmployeeListComponent},
-  { path: 'employee/:id', component: EmployeeDetailsComponent },
+  { path: 'employee/editor', component: EmployeeEditorComponent },
   { path: 'employee/editor/:id', component: EmployeeEditorComponent },
+  { path: 'employee/:id', component: EmployeeDetailsComponent },
   { path: 'qualification/:id', component: QualificationDetailsComponent },
   { path: 'qualification/editor/:id', component: QualificationEditorComponent },
   { path: 'qualification', component: QualificationListComponent},

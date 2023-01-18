@@ -1,1 +1,46 @@
-<p>employee-editor works!</p>
+<div class="container">
+  <div class="row">
+<div class="col-sm-11">
+  <h4 *ngIf="edit==false">Mitarbeiter hinzufügen</h4>
+  <h4 *ngIf="edit!=false">Mitarbeiter bearbeiten</h4>
+</div>
+    <div class="ml-auto col-sm-1">
+      <span class="material-icons text-success cursor-pointer" (click)="save()">save</span>
+    </div>
+  </div>
+
+<div class="mb-3">
+  <label for="firstName" class="form-label">Vorname</label>
+  <input type="email" class="form-control" id="firstName"  placeholder="Max" [(ngModel)]="employee.firstName">
+</div>
+<div class="mb-3">
+  <label for="lastName" class="form-label">Nachname</label>
+  <input type="email" class="form-control" id="lastName" placeholder="Mustermann" [(ngModel)]="employee.lastName">
+</div>
+  <div class="mb-3">
+    <label for="street" class="form-label">Straße + Hausnr.</label>
+    <input type="email" class="form-control" id="street" placeholder="Musterstr. 11" [(ngModel)]="employee.street">
+  </div>
+  <div class="mb-3">
+    <label for="postcode" class="form-label">Postleitzahl</label>
+    <input type="email" class="form-control" id="postcode" placeholder="12345" [(ngModel)]="employee.postcode">
+  </div>
+  <div class="mb-3">
+    <label for="city" class="form-label">Stadt</label>
+    <input type="email" class="form-control" id="city" placeholder="Musterstadt" [(ngModel)]="employee.city">
+  </div>
+  <div class="mb-3">
+    <label for="phone" class="form-label">Telefonnr.</label>
+    <input type="email" class="form-control" id="phone" placeholder="+49 123 456789" [(ngModel)]="employee.phone">
+  </div>
+
+  <div class="form-floating">
+    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+      <option selected></option>
+      <ng-container *ngFor="let q of qualfications | async">
+        <option value="1">{{q}}</option>
+      </ng-container>
+    </select>
+    <label for="floatingSelect">Qualifikation auswählen</label>
+  </div>
+</div>
