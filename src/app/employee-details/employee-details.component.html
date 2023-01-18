@@ -1,1 +1,29 @@
-<p>employee-details works!</p>
+<div class="container">
+    <div class="row margin-y-10">
+        <div class="col-1">
+            <span class="material-icons cursor-pointer" [routerLink]="['/employee']">arrow_back</span>
+        </div>
+        <div class="col">
+            <h4>Employee - {{ this.employee?.id }}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            <p>Vorname:</p>
+            <p>Nachname:</p>
+            <p>Straße:</p>
+            <p>Postleitzahl:</p>
+            <p>Stadt:</p>
+            <p>Telefonnummer:</p>
+        </div>
+        <div class="col-2">
+            <p>{{ this.employee?.firstName }}</p>
+            <p>{{ this.employee?.lastName }}</p>
+            <p>{{ this.employee?.street }}</p>
+            <p>{{ this.employee?.postcode }}</p>
+            <p>{{ this.employee?.city }}</p>
+            <p>{{ this.employee?.phone }}</p>
+        </div>
+    </div>
+
+</div>
