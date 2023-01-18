@@ -8,7 +8,8 @@
                 <h4>Details Mitarbeiter {{ this.employee?.id }}</h4>
             </div>
             <div class="col-1 expand center-items">
-                <span class="material-icons cursor-pointer" [routerLink]="['/employee/editor/', employee?.id]">edit</span>
+                <span class="material-icons cursor-pointer"
+                    [routerLink]="['/employee/editor/', employee?.id]">edit</span>
             </div>
         </div>
         <div class="row">
@@ -28,6 +29,20 @@
                 <p>{{ this.employee?.city }}</p>
                 <p>{{ this.employee?.phone }}</p>
             </div>
+        </div>
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <th>Name</th>
+                </thead>
+                <tbody>
+                    <ng-container *ngFor="let q of qualifications">
+                        <tr class="tr-hover" [routerLink]="['/qualification/', q.designation]">
+                            <td>{{q.designation}}</td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
         </div>
     </ng-container>
     <ng-template #employeeNotAvailable>

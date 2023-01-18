@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import { firstValueFrom, Observable } from 'rxjs';
 import { Employee } from './Employee';
 import { AuthService } from './auth.service';
+import { Qualification } from './Qualification';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,15 @@ export class EmployeeService {
     return firstValueFrom(this.http.get<Employee>(`/backend/employees/${id}`, {
       headers: this.getHeaders()
     }));
+  }
+
+  public async getQualificationsByEmployeeId(id: number): Promise<Qualification[]> {
+    return await firstValueFrom(this.http.get<Qualification[]>(`/backend/employees/${id}/qualifications`, {
+      headers: this.getHeaders()
+    }))
+    .then((res: any) => {
+      return res.skillSet;
+    })
   }
 
   private getHeaders(): HttpHeaders | { [header: string]: string | string[]; } | undefined {
