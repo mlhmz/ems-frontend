@@ -30,19 +30,22 @@
                 <p>{{ this.employee?.phone }}</p>
             </div>
         </div>
-        <div class="row">
-            <table class="table">
-                <thead>
-                    <th>Name</th>
-                </thead>
-                <tbody>
-                    <ng-container *ngFor="let q of qualifications">
-                        <tr class="tr-hover" [routerLink]="['/qualification/', q.designation]">
-                            <td>{{q.designation}}</td>
-                        </tr>
-                    </ng-container>
-                </tbody>
-            </table>
+        <div class="row margin-y-10">
+            <h5>Qualifikationen</h5>
+            <div class="col-4">
+                <table class="table">
+                    <thead>
+                        <th>Name</th>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngFor="let q of qualifications">
+                            <tr class="tr-hover" [routerLink]="['/qualification/', q.designation]">
+                                <td>{{q.designation}}</td>
+                            </tr>
+                        </ng-container>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </ng-container>
     <ng-template #employeeNotAvailable>
