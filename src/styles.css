@@ -33,3 +33,8 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.tr-hover:hover {
+    background: rgba(0, 128, 0, 0.133);
+    cursor: pointer;
+}
