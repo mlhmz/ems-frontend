@@ -19,17 +19,19 @@ export class QualificationService {
 
   public getAllQualifications(): Observable<Qualification[]> {
     return this.http.get<Qualification[]>('/backend/qualifications', {
-      headers: new HttpHeaders()
-        .set('Content-Type', 'application/json')
-        .set('Authorization', `Bearer ${this.bearer}`)
+      headers: this.getHeaders()
     });
   }
 
-  public getQualificationByDesignation(designation: string): Observable<Qualification> {
-    return this.http.get<Qualification>(`/backend/qualifications/${designation}`, {
-      headers: new HttpHeaders()
-      .set('Content-Type', 'application/json')
-      .set('Authorization', `Bearer ${this.bearer}`)
+  public getQualificationByDesignation(designation: string): any {
+    this.http.get<Qualification>(`/backend/qualifications/`, {
+      headers: this.getHeaders()
     });
+  }
+
+  private getHeaders(): HttpHeaders | { [header: string]: string | string[]; } | undefined {
+    return new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Authorization', `Bearer ${this.bearer}`);
   }
 }

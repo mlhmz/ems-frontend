@@ -19,17 +19,19 @@ export class EmployeeService {
 
   public getEmployees(): Observable<Employee[]> {
     return this.http.get<Employee[]>('/backend/employees', {
-      headers: new HttpHeaders()
-      .set('Content-Type', 'application/json')
-      .set('Authorization', `Bearer ${this.bearer}`)
+      headers: this.getHeaders()
     });
   }
 
   public getEmployeeById(id: number): Observable<Employee> {
     return this.http.get<Employee>(`/backend/employees/${id}`, {
-      headers: new HttpHeaders()
-      .set('Content-Type', 'application/json')
-      .set('Authorization', `Bearer ${this.bearer}`)
+      headers: this.getHeaders()
     });
+  }
+
+  private getHeaders(): HttpHeaders | { [header: string]: string | string[]; } | undefined {
+    return new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Authorization', `Bearer ${this.bearer}`);
   }
 }
