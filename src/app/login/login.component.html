@@ -13,4 +13,7 @@
             </div>
         </div>
     </form>
+    <ng-container *ngIf="loginFailed">
+        <h6 class="text-danger text-center">Die Anmeldung ist fehlgeschlagen. Bitte überprüfen sie Ihren Nutzernamen und Ihr Passwort.</h6>
+    </ng-container>
 </div>

@@ -9,6 +9,7 @@ import { AuthService } from '../auth.service';
 export class LoginComponent {
   username : string = "";
   password : string = "";
+  loginFailed : boolean = false;
 
   constructor(
     private authService: AuthService
@@ -16,6 +17,7 @@ export class LoginComponent {
   }
   
   authenticate() {
-    this.authService.fetchToken(this.username, this.password);
+    this.authService.fetchToken(this.username, this.password)
+    .then(succeded => this.loginFailed = !succeded)
   }
 }

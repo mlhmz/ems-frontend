@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
+import { firstValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -30,10 +31,14 @@ export class AuthService {
     this.cookieService.delete(this.tokenKey);
   }
 
-  async fetchToken(username: string, password: string) {
-    this.http.post("/auth", this.getLoginParams(username, password), this.getUrlEncodedOptions())
-    .subscribe((res: any) => {
+  public async fetchToken(username: string, password: string): Promise<boolean> {
+    return await firstValueFrom(this.http.post("/auth", this.getLoginParams(username, password), this.getUrlEncodedOptions()))
+    .then((res: any) => {
       this.saveToken(res);
+      return true;
+    })
+    .catch(() => {
+      return false;
     })
   }
 
