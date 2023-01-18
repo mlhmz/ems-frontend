@@ -33,7 +33,7 @@
       </thead>
       <tbody>
         <ng-container *ngFor="let e of employees$ | async">
-          <tr>
+          <tr class="tr-hover" [routerLink]="['/employee/', e.id]">
             <td>{{e.id}}</td>
             <td>{{e.firstName}}</td>
             <td>{{e.lastName}}</td>
