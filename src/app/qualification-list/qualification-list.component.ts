@@ -1,8 +1,7 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { map, Observable, of } from 'rxjs';
-import { AuthService } from '../auth.service';
 import { Qualification } from '../Qualification';
+import { QualificationService } from '../qualification.service';
 
 @Component({
   selector: 'app-qualification-list',
@@ -16,19 +15,13 @@ export class QualificationListComponent {
   private searchMode: boolean = false;
 
   constructor(
-    private http: HttpClient,
-    private authService: AuthService) {
+    private qualificationService: QualificationService) {
     this.qualifications$ = of([]);
-    this.bearer = authService.getToken();
     this.fetchData();
   }
 
   fetchData() {
-    this.qualifications$ = this.http.get<Qualification[]>('/backend/qualifications', {
-      headers: new HttpHeaders()
-        .set('Content-Type', 'application/json')
-        .set('Authorization', `Bearer ${this.bearer}`)
-    });
+    this.qualifications$ = this.qualificationService.getAllQualifications();
     this.setSearchMode(false);
   }
 
