@@ -6,10 +6,13 @@
     <div class="col"></div>
     <div class="col">
       <div class="row">
+        <div class="col-1 center-items">
+          <span class="material-icons text-success cursor-pointer" [routerLink]="['/employee/editor']">add</span>
+        </div>
         <div class="col-7" id="searchBox">
           <form (submit)="searchForString()">
             <input class="form-control form" placeholder="Suche..." 
-            [(ngModel)]="searchValue" name="searchValue" [ngModelOptions]="{standalone: true}" >
+            [(ngModel)]="searchValue" name="searchValue"/>
           </form>
         </div>
         <div class="col-1 center-items">
