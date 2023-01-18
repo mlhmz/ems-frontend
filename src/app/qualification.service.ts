@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { firstValueFrom, Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 import { Qualification } from './Qualification';
 
@@ -13,7 +13,7 @@ export class QualificationService {
   constructor(
     private http: HttpClient,
     private authService: AuthService
-  ) { 
+  ) {
     this.bearer = authService.getToken();
   }
 
@@ -23,10 +23,19 @@ export class QualificationService {
     });
   }
 
-  public getQualificationByDesignation(designation: string): any {
-    this.http.get<Qualification>(`/backend/qualifications/`, {
+  public async getQualificationByDesignation(designation: string): Promise<Qualification | undefined> {
+    const qualification = await firstValueFrom(this.http.get<Qualification[]>(`/backend/qualifications`, {
       headers: this.getHeaders()
-    });
+    })).then(qualifications => {
+      return this.getQualificationFromListByDesignation(qualifications, designation);
+    })
+    return qualification;
+  }
+
+  private getQualificationFromListByDesignation(qualifications: Qualification[], designation: string): Qualification {
+    return qualifications.filter(
+      qualification => qualification.designation === designation
+    )[0];
   }
 
   private getHeaders(): HttpHeaders | { [header: string]: string | string[]; } | undefined {

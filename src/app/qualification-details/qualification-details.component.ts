@@ -9,7 +9,9 @@ import { QualificationService } from '../qualification.service';
   styleUrls: ['./qualification-details.component.css']
 })
 export class QualificationDetailsComponent {
+  qualificationParam: string = '';
   qualification: Qualification | undefined;
+  found: boolean = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -18,19 +20,21 @@ export class QualificationDetailsComponent {
   }
 
   ngOnInit(): void {
-    this.fetchQualification(this.getDesignationFromParams());
+    this.getDesignationFromParams()
+    this.fetchQualification(this.qualificationParam);
   }
 
 
   private getDesignationFromParams() {
     const routeParams = this.route.snapshot.paramMap;
-    const qualificationDesignation = String(routeParams.get('id'));
-    console.log(qualificationDesignation);
-    return qualificationDesignation;
+    this.qualificationParam = String(routeParams.get('id'));
   }
 
   private fetchQualification(qualificationDesignation: string) {
     this.qualificationService.getQualificationByDesignation(qualificationDesignation)
-      .subscribe((qualification: Qualification) => this.qualification = qualification);
+    .then(qualification => {
+      this.found = qualification != undefined;
+      this.qualification = qualification
+    })
   }
 }
