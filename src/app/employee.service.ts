@@ -24,4 +24,12 @@ export class EmployeeService {
       .set('Authorization', `Bearer ${this.bearer}`)
     });
   }
+
+  public getEmployeeById(id: number): Observable<Employee> {
+    return this.http.get<Employee>(`/backend/employee/${id}`, {
+      headers: new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Authorization', `Bearer ${this.bearer}`)
+    });
+  }
 }
