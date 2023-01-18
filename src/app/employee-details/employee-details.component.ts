@@ -11,6 +11,7 @@ import { EmployeeService } from '../employee.service';
 export class EmployeeDetailsComponent implements OnInit {
   employee: Employee | undefined;
   id: number | undefined;
+  found: boolean = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -25,10 +26,6 @@ export class EmployeeDetailsComponent implements OnInit {
     }
   }
 
-  isEmployeeAvailable() {
-    return this.employee != undefined;
-  }
-
   private getIdFromParams() {
     const routeParams = this.route.snapshot.paramMap;
     this.id = Number(routeParams.get('id'));
@@ -36,6 +33,7 @@ export class EmployeeDetailsComponent implements OnInit {
 
   private fetchEmployee(id: number) {
     this.employeeService.getEmployeeById(id)
-      .subscribe((employee: Employee) => this.employee = employee);
+    .then(employee => this.employee = employee)
+    .catch(() => this.found = false)
   }
 }

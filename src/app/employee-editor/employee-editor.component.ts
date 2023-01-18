@@ -42,7 +42,7 @@ export class EmployeeEditorComponent {
 
   private fetchEmployee(employeeId: number) {
     this.employeeService.getEmployeeById(employeeId)
-      .subscribe((employee: Employee) => this.employee = employee);
+    .then(employee => this.employee = employee);
   }
 
 
