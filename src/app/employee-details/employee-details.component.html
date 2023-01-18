@@ -7,7 +7,7 @@
             <h4>Details Mitarbeiter {{ this.employee?.id }}</h4>
         </div>
         <div class="col-1 expand">
-            <span class="material-icons cursor-pointer">edit</span>
+            <span class="material-icons cursor-pointer" [routerLink]="['/employee/editor/', employee?.id]">edit</span>
         </div>
     </div>
     <div class="row">
