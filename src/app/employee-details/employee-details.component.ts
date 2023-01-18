@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { map } from 'rxjs';
 import { Employee } from '../Employee';
 import { EmployeeService } from '../employee.service';
 
@@ -11,6 +10,7 @@ import { EmployeeService } from '../employee.service';
 })
 export class EmployeeDetailsComponent implements OnInit {
   employee: Employee | undefined;
+  id: number | undefined;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,18 +19,23 @@ export class EmployeeDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.fetchEmployee(this.getIdFromParams());
+    this.getIdFromParams();
+    if (this.id != undefined) {
+      this.fetchEmployee(this.id);
+    }
   }
 
+  isEmployeeAvailable() {
+    return this.employee != undefined;
+  }
 
   private getIdFromParams() {
     const routeParams = this.route.snapshot.paramMap;
-    const employeeId = Number(routeParams.get('id'));
-    return employeeId;
+    this.id = Number(routeParams.get('id'));
   }
 
-  private fetchEmployee(employeeId: number) {
-    this.employeeService.getEmployeeById(employeeId)
+  private fetchEmployee(id: number) {
+    this.employeeService.getEmployeeById(id)
       .subscribe((employee: Employee) => this.employee = employee);
   }
 }
