@@ -10,6 +10,10 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { CookieService } from 'ngx-cookie-service';
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
+import { QualificationDetailsComponent } from './qualification-details/qualification-details.component';
+import { EmployeeEditorComponent } from './employee-editor/employee-editor.component';
+import { QualificationEditorComponent } from './qualification-editor/qualification-editor.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { CookieService } from 'ngx-cookie-service';
     EmployeeListComponent,
     QualificationListComponent,
     NavigationBarComponent,
-    LoginComponent
+    LoginComponent,
+    EmployeeDetailsComponent,
+    QualificationDetailsComponent,
+    EmployeeEditorComponent,
+    QualificationEditorComponent
   ],
   imports: [
     BrowserModule,
