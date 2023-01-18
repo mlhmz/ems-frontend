@@ -3,6 +3,7 @@ import {filter, map, Observable, of} from "rxjs";
 import {Employee} from "../Employee";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import { AuthService } from '../auth.service';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-employee-list',
@@ -17,19 +18,14 @@ export class EmployeeListComponent {
 
   constructor(
     private http: HttpClient,
-    private authService: AuthService
+    private employeeService: EmployeeService
     ) {
     this.employees$ = of([]);
-    this.bearer = authService.getToken();
     this.fetchData();
   }
 
   fetchData() {
-    this.employees$ = this.http.get<Employee[]>('/backend/employees', {
-      headers: new HttpHeaders()
-        .set('Content-Type', 'application/json')
-        .set('Authorization', `Bearer ${this.bearer}`)
-    });
+    this.employees$ = this.employeeService.getEmployees();
     this.resetSearch();
   }
 
