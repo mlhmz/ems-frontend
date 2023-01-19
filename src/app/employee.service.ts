@@ -1,9 +1,8 @@
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
 import { firstValueFrom, Observable } from 'rxjs';
-import { Employee } from './Employee';
 import { AuthService } from './auth.service';
-import { Qualification } from './Qualification';
+import { Employee } from './Employee';
 
 @Injectable({
   providedIn: 'root'
