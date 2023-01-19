@@ -1,10 +1,14 @@
 <div class="container">
-  <div class="row">
-<div class="col-sm-11">
-  <h4 *ngIf="edit==false">Mitarbeiter hinzufügen</h4>
-  <h4 *ngIf="edit!=false">Mitarbeiter bearbeiten</h4>
-</div>
-    <div class="ml-auto col-sm-1">
+
+  <div class="row margin-y-10">
+    <div class="col-1 center-items">
+      <span class="material-icons cursor-pointer" [routerLink]="['/employee']">arrow_back</span>
+    </div>
+    <div class="col-9">
+      <h4 *ngIf="edit==false">Mitarbeiter hinzufügen</h4>
+      <h4 *ngIf="edit==true">Mitarbeiter bearbeiten</h4>
+    </div>
+    <div class="col-1 expand center-items">
       <span class="material-icons text-success cursor-pointer" (click)="save()">save</span>
     </div>
   </div>
@@ -37,10 +41,24 @@
   <div class="form-floating">
     <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
       <option selected></option>
-      <ng-container *ngFor="let q of qualfications | async">
-        <option value="1">{{q}}</option>
+      <ng-container *ngFor="let q of qualifications$ | async">
+        <option value="q" (selectionchange)="addQualificationToEmployee(q.skill)">{{q.skill}}</option>
       </ng-container>
+      <option vaule="new" (selectionchange)="addNewQualification()">Neue Qualifikation erstellen...</option>
     </select>
     <label for="floatingSelect">Qualifikation auswählen</label>
   </div>
+
+  <ng-container *ngFor="let qe of employee.skillSet">
+    <div class="badge rounded-pill text-bg-success">{{qe}}</div>
+    <div class="badge rounded-pill text-bg-success">Test</div>
+  </ng-container>
+
+  <div *ngIf="saveSuccess==true&&showSaveSuccess==true" class="alert alert-success justify-content-end" role="alert">
+    {{saveMessage}}
+  </div>
+  <div *ngIf="saveSuccess==false&&showSaveSuccess==true" class="alert alert-danger" role="alert">
+    {{saveMessage}}
+  </div>
+
 </div>
