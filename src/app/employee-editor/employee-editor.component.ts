@@ -4,7 +4,9 @@ import {Employee} from "../Employee";
 import {ActivatedRoute, ParamMap} from '@angular/router';
 import {Qualification} from "../Qualification";
 import {QualificationService} from "../qualification.service";
-import {Observable} from "rxjs";
+import {Observable, of} from "rxjs";
+
+//ToDo: Validation der Eingaben?
 
 @Component({
   selector: 'app-employee-editor',
@@ -13,18 +15,63 @@ import {Observable} from "rxjs";
 })
 export class EmployeeEditorComponent {
   employee: Employee = new Employee();
-  qualfications: Observable<Qualification[]>;
+  qualifications$: Observable<Qualification[]>;
   edit: boolean = false;
+
+  saveMessage: string = '';
+  saveSuccess: boolean = false;
+  showSaveSuccess: boolean = false;
   constructor(
     private employeeService: EmployeeService,
     private qualificationService: QualificationService,
     private route: ActivatedRoute
   ) {
-    this.qualfications = qualificationService.getAllQualifications();
+    this.employee.skillSet = [];
+    this.qualifications$ = of([]);
+    this.fetchData();
+  }
+
+  fetchData() {
+    this.qualifications$ = this.qualificationService.getAllQualifications();
   }
 
   save() {
+    if(this.edit){
+      this.employeeService.editEmployee(this.employee)
+        .then(() => {
+            this.saveMessage = 'Speichern erfolgreich!';
+            this.saveSuccess = true;
+        }
+        )
+        .catch((err) => {
+            this.saveMessage = 'Speichern fehlgeschlagen, Grund: ' + err;
+            this.saveSuccess = false;
+          })
+    } else {
+      this.employeeService.addEmployee(this.employee)
+        .then(() => {
+          this.saveMessage = 'Speichern erfolgreich!';
+          this.saveSuccess = true;
+        })
+        .catch((err) => {
+          this.saveMessage = 'Speichern fehlgeschlagen, Grund: ' + err;
+          this.saveSuccess = false;
+        })
+    }
+    this.showSaveSuccess = true;
+    //ToDo: return to editor details after save?
+  }
 
+  addNewQualification(){
+
+  }
+
+  addQualificationToEmployee(skill: string | undefined){
+    if (skill == undefined){
+      return;
+    } else {
+      this.employee.skillSet?.push(skill)
+    }
   }
 
   ngOnInit(): void {
@@ -44,6 +91,4 @@ export class EmployeeEditorComponent {
     this.employeeService.getEmployeeById(employeeId)
     .then(employee => this.employee = employee);
   }
-
-
 }
