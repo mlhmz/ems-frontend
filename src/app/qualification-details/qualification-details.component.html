@@ -1,16 +1,8 @@
 <div class="container">
     <ng-container *ngIf="found; else qualificationNotFound">
-        <div class="row margin-y-10">
-            <div class="col-1">
-                <span class="material-icons cursor-pointer" (click)="goBack()">arrow_back</span>
-            </div>
-            <div class="col-9">
-                <h4>Details Qualification</h4>
-            </div>
-            <div class="col-1 expand">
-                <span class="material-icons cursor-pointer">edit</span>
-            </div>
-        </div>
+        <app-status-bar [title]="'Details Qualifikation ' + this.qualification?.skill" [editable]="'true'"
+        [editRoute]="'/qualification/editor/' + this.qualification?.skill">
+        </app-status-bar>
         <div class="row">
             <div class="col-2">
                 <p>Name:</p>
