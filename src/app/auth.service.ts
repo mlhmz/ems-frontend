@@ -89,8 +89,10 @@ export class AuthService {
 
   /**
    * Gets required HttpHeaders for Auth related requests
+   * 
+   * @returns Headers for request
    */
-  private getUrlEncodedOptions() {
+  private getUrlEncodedOptions(): {headers: HttpHeaders} {
     return {
       headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
     };
@@ -101,8 +103,9 @@ export class AuthService {
    * 
    * @param username The username of the certain user
    * @param password The password of the certain user
+   * @returns HttpParams for auth service
    */
-  private getLoginParams(username: string, password: string) {
+  private getLoginParams(username: string, password: string): HttpParams {
     return new HttpParams()
       .set('grant_type', 'password')
       .set('client_id', 'employee-management-service')
