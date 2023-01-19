@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { firstValueFrom, Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 import { Qualification } from './Qualification';
+import { QualificationEmployees } from './QualificationEmployees';
 
 @Injectable({
   providedIn: 'root'
@@ -41,6 +42,17 @@ export class QualificationService {
       return this.getQualificationFromListByDesignation(qualifications, skill);
     })
     return qualification;
+  }
+
+  /**
+   * Gets qualification employees by skill
+   * 
+   * @param skill to get the qualifications employees object
+   */
+  public getQualificationEmployeesBySkill(skill: string): Observable<QualificationEmployees> {
+    return this.http.get<QualificationEmployees>(`/backend/qualifications/${skill}/employees`, {
+      headers: this.getHeaders()
+    });
   }
 
   /**

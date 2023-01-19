@@ -19,9 +19,29 @@
                 <p>{{ this.qualification?.skill }}</p>
             </div>
         </div>
+        <div class="row">
+            <div class="col-5">
+                <table class="table">
+                    <thead>
+                        <th>ID</th>
+                        <th>Vorname</th>
+                        <th>Nachname</th>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngFor="let e of qualificationEmployees?.employees">
+                            <tr class="tr-hover" [routerLink]="['/employee/', e.id]">
+                                <td>{{e.id}}</td>
+                                <td>{{e.firstName}}</td>
+                                <td>{{e.lastName}}</td>
+                            </tr>
+                        </ng-container>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </ng-container>
     <ng-template #qualificationNotFound>
         <h2>404</h2>
-        <h4>Die Qualifikation '{{ qualificationParam }}' konnte nicht gefunden werden.</h4>
+        <h4>Die Qualifikation '{{ skill }}' konnte nicht gefunden werden.</h4>
     </ng-template>
 </div>
