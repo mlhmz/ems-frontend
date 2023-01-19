@@ -38,9 +38,9 @@
                         <th>Name</th>
                     </thead>
                     <tbody>
-                        <ng-container *ngFor="let q of employee?.skillSet">
-                            <tr class="tr-hover" [routerLink]="['/qualification/', q.skill]">
-                                <td>{{q.skill}}</td>
+                        <ng-container *ngFor="let skill of employee?.skillSet">
+                            <tr class="tr-hover" [routerLink]="['/qualification/', skill]">
+                                <td>{{skill}}</td>
                             </tr>
                         </ng-container>
                     </tbody>
