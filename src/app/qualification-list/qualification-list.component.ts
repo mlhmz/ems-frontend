@@ -21,7 +21,7 @@ export class QualificationListComponent {
   }
 
   /**
-   * Gets all qualifications and sets the search mode to false
+   * Gets all qualifications and resets the search
    */
   fetchData() {
     this.qualifications$ = this.qualificationService.getAllQualifications();
