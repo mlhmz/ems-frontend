@@ -24,8 +24,8 @@ export class EmployeeService {
     });
   }
 
-  public getEmployeeById(id: number): Promise<Employee> {
-    return firstValueFrom(this.http.get<Employee>(`/backend/employees/${id}`, {
+  public async getEmployeeById(id: number): Promise<Employee> {
+    return await firstValueFrom(this.http.get<Employee>(`/backend/employees/${id}`, {
       headers: this.getHeaders()
     }));
   }
