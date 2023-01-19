@@ -43,7 +43,7 @@ export class AuthService {
   }
 
   private saveToken(res: any) {
-    this.cookieService.set(this.tokenKey, res.access_token, this.getExpirationDate());
+    this.cookieService.set(this.tokenKey, res.access_token, this.getExpirationDate(), "/");
   }
 
   private getExpirationDate(): number | Date | undefined {
