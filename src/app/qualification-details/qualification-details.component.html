@@ -1,8 +1,6 @@
 <div class="container">
     <ng-container *ngIf="found; else qualificationNotFound">
-        <app-status-bar [title]="'Details Qualifikation ' + this.qualification?.skill" [editable]="'true'"
-        [editRoute]="'/qualification/editor/' + this.qualification?.skill">
-        </app-status-bar>
+        <app-status-bar [title]="'Details Qualifikation ' + this.qualification?.skill"></app-status-bar>
         <div class="row">
             <div class="col-2">
                 <p>Name:</p>
