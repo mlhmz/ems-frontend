@@ -21,22 +21,37 @@ export class QualificationDetailsComponent {
   ) {
   }
 
+  /**
+   * Initial fetch of qualification
+   */
   ngOnInit(): void {
-    this.getDesignationFromParams()
+    this.getSkillFromParams()
     this.fetchQualification(this.qualificationParam);
   }
 
+  /**
+   * Goes back with the history service
+   */
   goBack() {
     this.historyService.goBack();
   }
 
-  private getDesignationFromParams() {
+  /**
+   * Gets the skill from the url params
+   */
+  private getSkillFromParams() {
     const routeParams = this.route.snapshot.paramMap;
     this.qualificationParam = String(routeParams.get('id'));
   }
 
-  private fetchQualification(qualificationDesignation: string) {
-    this.qualificationService.getQualificationByDesignation(qualificationDesignation)
+  /**
+   * Fetches a certain qualification by its skill,
+   * also, it will set the found switch, depending if the qualification was found.
+   * 
+   * @param skill the skill to get
+   */
+  private fetchQualification(skill: string) {
+    this.qualificationService.getQualificationBySkill(skill)
     .then(qualification => {
       this.found = qualification != undefined;
       this.qualification = qualification

@@ -20,11 +20,21 @@ export class QualificationListComponent {
     this.fetchData();
   }
 
+  /**
+   * Gets all qualifications and sets the search mode to false
+   */
   fetchData() {
     this.qualifications$ = this.qualificationService.getAllQualifications();
     this.setSearchMode(false);
   }
 
+  /**
+   * Filters qualifications that include the {@link searchValue}.
+   * In order to filter the observable, it will be piped and mapped.
+   * Also, the {@link searchMode} will be set to true.
+   * 
+   * If the content is empty, {@link fetchData} will be executed.
+   */
   searchForString() {
     if (this.searchValue.length === 0) {
       this.fetchData();
@@ -39,25 +49,51 @@ export class QualificationListComponent {
     this.setSearchMode(true);
   }
 
-  isSearchModeEnabled() {
+  /**
+   * Checks if search mode is enabled
+   * 
+   * @returns if search mode is enabled
+   */
+  isSearchModeEnabled(): boolean {
     return this.searchMode;
   }
 
+  /**
+   * Sets the search mode state
+   * 
+   * @param state which the search mode should be set to
+   */
   setSearchMode(state: boolean) {
     this.searchMode = state;
   }
 
+  /**
+   * Resets the search by setting the {@link searchValue} to false and
+   */
   resetSearch() {
     this.setSearchMode(false);
     this.searchValue = "";
   }
 
+  /**
+   * Checks if the qualification content is containing the text string
+   * 
+   * @param text string to check if its content is included in the qualification skill
+   * @qualification to check if the text is included in the skill
+   * @returns boolean if text is included in qualification skill
+   */
   private isQualificationContentContainingString(text: string, qualification : Qualification) : boolean {
     var skill: string | undefined = qualification.skill?.toLowerCase();
     return this.isValueContainingTextIgnoreCase(skill, text)
   }
 
-
+  /**
+   * Checks if value is containing text, while text is set to lower case
+   * 
+   * @param value to check if text is included
+   * @param text to check if its content is included in the value string
+   * @returns boolean if value is containing text
+   */
   private isValueContainingTextIgnoreCase(value: string | undefined, text: string): boolean {
     if (value != undefined) {
       return value.includes(text.toLowerCase());

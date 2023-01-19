@@ -29,28 +29,28 @@ export class QualificationService {
   }
 
   /**
-   * Gets asynchronously a qualification by its designation.
+   * Gets asynchronously a qualification by its skill.
    * 
-   * @param designation as string
+   * @param skill as string
    * @returns Qualification as Promise
    */
-  public async getQualificationByDesignation(designation: string): Promise<Qualification | undefined> {
+  public async getQualificationBySkill(skill: string): Promise<Qualification | undefined> {
     const qualification = await firstValueFrom(this.http.get<Qualification[]>(`/backend/qualifications`, {
       headers: this.getHeaders()
     })).then(qualifications => {
-      return this.getQualificationFromListByDesignation(qualifications, designation);
+      return this.getQualificationFromListByDesignation(qualifications, skill);
     })
     return qualification;
   }
 
   /**
-   * Filters a qualification from a list by its designation.
+   * Filters a qualification from a list by its skill.
    * 
-   * @returns Qualifcation which equals the designation, or null if qualification doesn't exists
+   * @returns Qualifcation which equals the skill, or null if qualification doesn't exists
    */
-  private getQualificationFromListByDesignation(qualifications: Qualification[], designation: string): Qualification {
+  private getQualificationFromListByDesignation(qualifications: Qualification[], skill: string): Qualification {
     return qualifications.filter(
-      qualification => qualification.skill === designation
+      qualification => qualification.skill === skill
     )[0];
   }
 
