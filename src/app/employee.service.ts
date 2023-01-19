@@ -20,7 +20,7 @@ export class EmployeeService {
   /**
    * Gets all Employees from Service
    * 
-   * @returns Employees as Observable
+   * @returns Employees array as Observable
    */
   public getEmployees(): Observable<Employee[]> {
     return this.http.get<Employee[]>('/backend/employees', {
