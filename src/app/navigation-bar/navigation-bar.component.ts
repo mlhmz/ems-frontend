@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -6,15 +6,12 @@ import { AuthService } from '../auth.service';
   templateUrl: './navigation-bar.component.html',
   styleUrls: ['./navigation-bar.component.css']
 })
-export class NavigationBarComponent implements OnInit {
+export class NavigationBarComponent {
   @Input() itemsShown: boolean = false;
 
   constructor (
     private authService: AuthService
   ) {}
-
-  ngOnInit(): void {
-  }
 
   /**
    * Logs the user out by clearing its token
