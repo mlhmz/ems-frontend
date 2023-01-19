@@ -11,12 +11,17 @@ export class HistoryService {
   ) { }
 
   private readonly previousUrlKey = 'previous-url';
+  private readonly routeStoringKey = 'avoid-route';
   private readonly defaultRoute = '/'
 
   /**
    * Stores the previous route into a local storage json array history
    */
   public storePreviousRoute(): void {
+    if (this.isRoutesStored()) {
+      this.setRoutesStored(false);
+      return;
+    }
     var routes: string[];
     var routeString: string | null = window.localStorage.getItem(this.previousUrlKey);
     if (routeString != null)  {
@@ -53,6 +58,7 @@ export class HistoryService {
     var routes: string[];
     var routeString: string | null = window.localStorage.getItem(this.previousUrlKey);
     let lastRoute;
+    this.setRoutesStored(true);
     if (routeString != null) {
       routes = JSON.parse(routeString);
       lastRoute = this.getLastRoute(routes);
@@ -62,6 +68,25 @@ export class HistoryService {
     } else {
       this.router.navigateByUrl("/");
     }
+  }
+
+  /**
+   * Checks if routes should be stored
+   * 
+   * @returns boolean if routes should be stored
+   */
+  private isRoutesStored(): boolean {
+    const routesStored = window.localStorage.getItem(this.routeStoringKey);
+    return routesStored != undefined && routesStored === "true";
+  }
+
+  /**
+   * Sets if routes should be stored
+   * 
+   * @param routesStored boolean to enable and disable
+   */
+  private setRoutesStored(routesStored: boolean) {
+    window.localStorage.setItem(this.routeStoringKey, String(routesStored));
   }
 
   /**
