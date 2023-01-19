@@ -13,6 +13,9 @@ export class HistoryService {
   private readonly previousUrlKey = 'previous-url';
   private readonly defaultRoute = '/'
 
+  /**
+   * Stores the previous route into a local storage json array history
+   */
   public storePreviousRoute(): void {
     var routes: string[];
     var routeString: string | null = window.localStorage.getItem(this.previousUrlKey);
@@ -25,14 +28,27 @@ export class HistoryService {
     this.saveRoutes(routes);
   }
 
+  /**
+   * Saves routes array as json array to local storage
+   * 
+   * @param routes array
+   */
   private saveRoutes(routes: string[]) {
     window.localStorage.setItem(this.previousUrlKey, JSON.stringify(routes));
   }
 
+  /**
+   * Gets current route url from router
+   * 
+   * @returns route url as string
+   */
   private getRouterUrl(): string {
     return this.router.url;
   }
 
+  /**
+   * Goes to last route, and then removes last route
+   */
   public goBack(): void {
     var routes: string[];
     var routeString: string | null = window.localStorage.getItem(this.previousUrlKey);
@@ -48,6 +64,13 @@ export class HistoryService {
     }
   }
 
+  /**
+   * Gets last route from array
+   * 
+   * @param routes as string array
+   * @returns last route
+   * 
+   */
   private getLastRoute(routes: string[]): string {
     return routes.slice(-1)[0];
   }
