@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { HistoryService } from '../history.service';
 import { Qualification } from '../Qualification';
 import { QualificationService } from '../qualification.service';
 
@@ -16,6 +17,7 @@ export class QualificationDetailsComponent {
   constructor(
     private route: ActivatedRoute,
     private qualificationService: QualificationService,
+    private historyService: HistoryService,
   ) {
   }
 
@@ -24,6 +26,9 @@ export class QualificationDetailsComponent {
     this.fetchQualification(this.qualificationParam);
   }
 
+  goBack() {
+    this.historyService.goBack();
+  }
 
   private getDesignationFromParams() {
     const routeParams = this.route.snapshot.paramMap;

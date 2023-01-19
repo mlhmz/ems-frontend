@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Employee } from '../Employee';
 import { EmployeeService } from '../employee.service';
+import { HistoryService } from '../history.service';
 import { Qualification } from '../Qualification';
 
 @Component({
@@ -17,6 +18,7 @@ export class EmployeeDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private employeeService: EmployeeService,
+    private historyService: HistoryService,
   ) {
   }
 
@@ -26,6 +28,10 @@ export class EmployeeDetailsComponent implements OnInit {
       this.fetchEmployee(this.id);
     }
   }
+
+  goBack(): void {
+    this.historyService.goBack();
+  } 
 
   private getIdFromParams() {
     const routeParams = this.route.snapshot.paramMap;

@@ -2,7 +2,7 @@
     <ng-container *ngIf="found; else qualificationNotFound">
         <div class="row margin-y-10">
             <div class="col-1">
-                <span class="material-icons cursor-pointer" [routerLink]="['/qualification']">arrow_back</span>
+                <span class="material-icons cursor-pointer" (click)="goBack()">arrow_back</span>
             </div>
             <div class="col-9">
                 <h4>Details Qualification</h4>
