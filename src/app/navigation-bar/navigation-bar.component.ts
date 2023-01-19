@@ -16,6 +16,9 @@ export class NavigationBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Logs the user out by clearing its token
+   */
   logout() {
     this.authService.clearToken();
   }
