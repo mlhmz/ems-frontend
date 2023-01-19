@@ -34,7 +34,7 @@ export class QualificationService {
 
   private getQualificationFromListByDesignation(qualifications: Qualification[], designation: string): Qualification {
     return qualifications.filter(
-      qualification => qualification.designation === designation
+      qualification => qualification.skill === designation
     )[0];
   }
 

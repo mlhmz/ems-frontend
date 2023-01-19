@@ -31,8 +31,8 @@
         </thead>
         <tbody>
           <ng-container *ngFor="let q of qualifications$ | async">
-            <tr class="tr-hover" [routerLink]="['/qualification/', q.designation]">
-              <td>{{q.designation}}</td>
+            <tr class="tr-hover" [routerLink]="['/qualification/', q.skill]">
+              <td>{{q.skill}}</td>
             </tr>
           </ng-container>
         </tbody>

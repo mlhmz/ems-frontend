@@ -53,8 +53,8 @@ export class QualificationListComponent {
   }
 
   private isQualificationContentContainingString(text: string, qualification : Qualification) : boolean {
-    var designation: string | undefined = qualification.designation?.toLowerCase();
-    return this.isValueContainingTextIgnoreCase(designation, text)
+    var skill: string | undefined = qualification.skill?.toLowerCase();
+    return this.isValueContainingTextIgnoreCase(skill, text)
   }
 
 

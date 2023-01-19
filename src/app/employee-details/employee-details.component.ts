@@ -11,7 +11,6 @@ import { Qualification } from '../Qualification';
 })
 export class EmployeeDetailsComponent implements OnInit {
   employee: Employee | undefined;
-  qualifications: Qualification[];
   id: number | undefined;
   found: boolean = true;
 
@@ -19,7 +18,6 @@ export class EmployeeDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private employeeService: EmployeeService,
   ) {
-    this.qualifications = []
   }
 
   ngOnInit(): void {
