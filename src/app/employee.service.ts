@@ -30,15 +30,6 @@ export class EmployeeService {
     }));
   }
 
-  public async getQualificationsByEmployeeId(id: number): Promise<Qualification[]> {
-    return await firstValueFrom(this.http.get<Qualification[]>(`/backend/employees/${id}/qualifications`, {
-      headers: this.getHeaders()
-    }))
-    .then((res: any) => {
-      return res.skillSet;
-    })
-  }
-
   private getHeaders(): HttpHeaders | { [header: string]: string | string[]; } | undefined {
     return new HttpHeaders()
       .set('Content-Type', 'application/json')

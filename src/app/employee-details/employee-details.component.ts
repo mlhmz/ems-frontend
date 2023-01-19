@@ -26,13 +26,6 @@ export class EmployeeDetailsComponent implements OnInit {
     this.getIdFromParams();
     if (this.id != undefined) {
       this.fetchEmployee(this.id);
-      this.fetchQualificationOnEmployeeFound(this.id);
-    }
-  }
-
-  private fetchQualificationOnEmployeeFound(id: number) {
-    if (this.found) {
-      this.fetchQualifications(id);
     }
   }
 
@@ -45,10 +38,5 @@ export class EmployeeDetailsComponent implements OnInit {
     this.employeeService.getEmployeeById(id)
     .then(employee => this.employee = employee)
     .catch(() => this.found = false);
-  }
-
-  private fetchQualifications(id: number) {
-    this.employeeService.getQualificationsByEmployeeId(id)
-    .then(qualifications => this.qualifications = qualifications)
   }
 }
