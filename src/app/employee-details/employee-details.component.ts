@@ -22,6 +22,9 @@ export class EmployeeDetailsComponent implements OnInit {
   ) {
   }
 
+  /**
+   * Initial employee fetching
+   */
   ngOnInit(): void {
     this.getIdFromParams();
     if (this.id != undefined) {
@@ -29,15 +32,27 @@ export class EmployeeDetailsComponent implements OnInit {
     }
   }
 
+  /**
+   * Goes back to previous route
+   */
   goBack(): void {
     this.historyService.goBack();
   } 
 
+  /**
+   * gets the id from the params
+   */
   private getIdFromParams() {
     const routeParams = this.route.snapshot.paramMap;
     this.id = Number(routeParams.get('id'));
   }
 
+  /**
+   * fetches an employee by its id and sets {@link found}
+   * to false if the employee couldn't be found
+   * 
+   * @param id of the employee
+   */
   private fetchEmployee(id: number) {
     this.employeeService.getEmployeeById(id)
     .then(employee => this.employee = employee)

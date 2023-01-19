@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {filter, map, Observable, of} from "rxjs";
-import {Employee} from "../Employee";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import { AuthService } from '../auth.service';
+import { Component } from '@angular/core';
+import { map, Observable, of } from "rxjs";
+import { Employee } from "../Employee";
 import { EmployeeService } from '../employee.service';
 
 @Component({
@@ -17,18 +15,29 @@ export class EmployeeListComponent {
   private searchMode: boolean = false;
 
   constructor(
-    private http: HttpClient,
-    private employeeService: EmployeeService
+    private employeeService: EmployeeService,
     ) {
     this.employees$ = of([]);
     this.fetchData();
   }
 
+  /**
+   * Gets all employees and resets the search.
+   */
   fetchData() {
     this.employees$ = this.employeeService.getEmployees();
     this.resetSearch();
   }
 
+  /**
+   * Filters employees by the {@link searchValue}.
+   * The filtering successes by checking if the first name or the last name includes the search value.
+   * Also, it will be checked if the value equals the id.
+   * In order to filter the observable, it will be piped and mapped.
+   * Also, the {@link searchMode} will be set to true.
+   * 
+   * If the content is empty, {@link fetchData} will be executed.
+   */
   searchForString() {
     if (this.searchValue.length === 0) {
       this.fetchData();
@@ -43,19 +52,41 @@ export class EmployeeListComponent {
     this.setSearchMode(true);
   }
 
+  /**
+   * Checks if search mode is enabled
+   * 
+   * @returns if search mode is enabled
+   */
   isSearchModeEnabled() {
     return this.searchMode;
   }
 
+  /**
+   * Sets the search mode state
+   * 
+   * @param state which the search mode should be set to
+   */
   setSearchMode(state: boolean) {
     this.searchMode = state;
   }
 
+  /**
+   * Resets the search by setting the {@link searchValue} to false and
+   */
   resetSearch() {
     this.setSearchMode(false);
     this.searchValue = "";
   }
 
+  /**
+   * Checks if the employee content is containing the text string.
+   * The check successes by checking if text is including the first name and last name and
+   * if it equals the id
+   * 
+   * @param text string to check if its content is included in the qualification skill
+   * @qualification to check if the text is included in the skill
+   * @returns boolean if text is included in qualification skill
+   */
   isEmployeeContentContainingString(text: string, employee: Employee) : boolean {
     var id: string | undefined = employee.id?.toString();
     var firstName: string | undefined = employee.firstName?.toLowerCase();
@@ -65,7 +96,13 @@ export class EmployeeListComponent {
     this.isIdEqualToString(id, text);
   }
 
-
+  /**
+   * Checks if value is containing text, while text is set to lower case
+   * 
+   * @param value to check if text is included
+   * @param text to check if its content is included in the value string
+   * @returns boolean if the value is containing the text
+   */
   private isValueContainingTextIgnoreCase(value: string | undefined, text: string): boolean {
     if (value != undefined) {
       return value.includes(text.toLowerCase());
@@ -73,6 +110,11 @@ export class EmployeeListComponent {
     return false;
   }
 
+  /**
+   * Checks if the id is equal to the text string
+   * 
+   * @returns boolean if the value is containing the text
+   */
   private isIdEqualToString(id: string | undefined, text: string): boolean {
     return id != undefined && id === text;
   }
