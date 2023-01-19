@@ -30,7 +30,22 @@ export class HistoryService {
     } else {
       routes = [this.defaultRoute, this.getRouterUrl()];
     }
+    routes = this.cutRoutesWhenRoutesListIsTooBig(routes, 25);
     this.saveRoutes(routes);
+  }
+
+  /**
+   * Cuts routes if list has over x entries
+   * 
+   * @param routes of the application
+   * @param maxEntries param to rule how many entries should be maximally allowed
+   * @returns cutted string array
+   */
+  private cutRoutesWhenRoutesListIsTooBig(routes: string[], maxEntries: number): string[] {
+    if (routes.length > maxEntries) {
+      return routes.slice(-maxEntries)
+    }
+    return routes;
   }
 
   /**
