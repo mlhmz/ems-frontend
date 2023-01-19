@@ -32,7 +32,7 @@
         </div>
     </ng-container>
     <ng-template #qualificationNotFound>
-        <h2>404</h2>
-        <h4>Die Qualifikation '{{ skill }}' konnte nicht gefunden werden.</h4>
+        <app-not-found
+            [message]="'Die Qualifikation ' + skill + ' konnte nicht gefunden werden.'"></app-not-found>
     </ng-template>
 </div>
