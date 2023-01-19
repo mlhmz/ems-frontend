@@ -1,0 +1,20 @@
+<div class="row margin-y-10">
+    <div class="col-1 center-items">
+        <span class="material-icons cursor-pointer" (click)="goBack()">arrow_back</span>
+    </div>
+    <div class="col-9">
+        <h4>{{ title }}</h4>
+    </div>
+    <ng-container *ngIf="editable === 'true'">
+        <div class="col-1 expand center-items">
+            <span class="material-icons cursor-pointer"
+                [routerLink]="[editRoute]">edit</span>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="saveable === 'true'">
+        <div class="col-1 expand center-items">
+            <span class="material-icons cursor-pointer"
+                (click)="save()">save</span>
+        </div>
+    </ng-container>
+</div>

@@ -1,17 +1,8 @@
 <div class="container">
     <ng-container *ngIf="found; else employeeNotAvailable">
-        <div class="row margin-y-10">
-            <div class="col-1 center-items">
-                <span class="material-icons cursor-pointer" (click)="goBack()">arrow_back</span>
-            </div>
-            <div class="col-9">
-                <h4>Details Mitarbeiter {{ this.employee?.id }}</h4>
-            </div>
-            <div class="col-1 expand center-items">
-                <span class="material-icons cursor-pointer"
-                    [routerLink]="['/employee/editor/', employee?.id]">edit</span>
-            </div>
-        </div>
+        <app-status-bar [title]="'Details Mitarbeiter ' + id" [editable]="'true'" 
+        [editRoute]="'/employee/editor/' + id">
+        </app-status-bar>
         <div class="row">
             <div class="col-2">
                 <p>Vorname:</p>
@@ -49,6 +40,7 @@
         </div>
     </ng-container>
     <ng-template #employeeNotAvailable>
-        <app-not-found [message]="'Der Mitarbeiter mit der ID ' + id + ' konnte nicht gefunden werden.'"></app-not-found>
+        <app-not-found
+            [message]="'Der Mitarbeiter mit der ID ' + id + ' konnte nicht gefunden werden.'"></app-not-found>
     </ng-template>
 </div>

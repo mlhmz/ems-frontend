@@ -1,18 +1,7 @@
 <div class="container">
-
-  <div class="row margin-y-10">
-    <div class="col-1 center-items">
-      <span class="material-icons cursor-pointer" [routerLink]="['/employee']">arrow_back</span>
-    </div>
-    <div class="col-9">
-      <h4 *ngIf="edit==false">Mitarbeiter hinzufügen</h4>
-      <h4 *ngIf="edit==true">Mitarbeiter bearbeiten</h4>
-    </div>
-    <div class="col-1 expand center-items">
-      <span class="material-icons text-success cursor-pointer" (click)="save()">save</span>
-    </div>
-  </div>
-
+  <app-status-bar [title]="getTitle()" [editable]="'false'" [saveable]="'true'"
+  (saveEmit)="save()">
+  </app-status-bar>
 <div class="mb-3">
   <label for="firstName" class="form-label">Vorname</label>
   <input type="email" class="form-control" id="firstName"  placeholder="Max" [(ngModel)]="employee.firstName">

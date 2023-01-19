@@ -35,6 +35,16 @@ export class EmployeeEditorComponent {
     this.qualifications$ = this.qualificationService.getAllQualifications();
   }
 
+  getTitle() {
+    let title = "Mitarbeiter ";
+    if (this.edit == true) {
+      title += this.employee.id + " editieren";
+    } else {
+      title += "erstellen";
+    }
+    return title;
+  }
+
   save() {
     if(this.edit){
       this.employeeService.editEmployee(this.employee)
