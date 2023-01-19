@@ -14,6 +14,7 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
 import { QualificationDetailsComponent } from './qualification-details/qualification-details.component';
 import { EmployeeEditorComponent } from './employee-editor/employee-editor.component';
 import { QualificationEditorComponent } from './qualification-editor/qualification-editor.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { QualificationEditorComponent } from './qualification-editor/qualificati
     EmployeeDetailsComponent,
     QualificationDetailsComponent,
     EmployeeEditorComponent,
-    QualificationEditorComponent
+    QualificationEditorComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
