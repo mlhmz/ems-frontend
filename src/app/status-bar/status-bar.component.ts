@@ -23,10 +23,16 @@ export class StatusBarComponent {
     private historyService: HistoryService
   ) { }
 
+  /**
+   * Emits the save operation to the parent component
+   */
   save() {
     this.saveEmit.emit()
   }
 
+  /**
+   * Goes back with the history service
+   */
   goBack() {
     this.historyService.goBack();
   }

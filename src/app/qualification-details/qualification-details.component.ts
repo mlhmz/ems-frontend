@@ -64,6 +64,11 @@ export class QualificationDetailsComponent {
     })
   }
 
+  /**
+   * Fetches QualificationEmployees with a certain skill
+   * 
+   * @param skill to get the qualification employees
+   */
   private fetchQualificationEmployees(skill: string) {
     this.qualificationService.getQualificationEmployeesBySkill(skill)
     .subscribe(
