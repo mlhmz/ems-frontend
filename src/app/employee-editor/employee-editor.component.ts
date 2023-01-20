@@ -1,10 +1,10 @@
-import {Component} from '@angular/core';
-import {EmployeeService} from "../employee.service";
-import {Employee} from "../Employee";
-import {ActivatedRoute, ParamMap} from '@angular/router';
-import {Qualification} from "../Qualification";
-import {QualificationService} from "../qualification.service";
-import {Observable, of} from "rxjs";
+import { Component } from '@angular/core';
+import { EmployeeService } from "../employee.service";
+import { Employee } from "../Employee";
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Qualification } from "../Qualification";
+import { QualificationService } from "../qualification.service";
+import { Observable, of } from "rxjs";
 
 //ToDo: Validation der Eingaben?
 
@@ -46,38 +46,46 @@ export class EmployeeEditorComponent {
   }
 
   save() {
-    if(this.edit){
-      this.employeeService.editEmployee(this.employee)
-        .then(() => {
-            this.saveMessage = 'Speichern erfolgreich!';
-            this.saveSuccess = true;
-        }
-        )
-        .catch((err) => {
-            this.saveMessage = 'Speichern fehlgeschlagen, Grund: ' + err;
-            this.saveSuccess = false;
-          })
+    if (this.edit) {
+      this.editEmployee();
     } else {
-      this.employeeService.addEmployee(this.employee)
-        .then(() => {
-          this.saveMessage = 'Speichern erfolgreich!';
-          this.saveSuccess = true;
-        })
-        .catch((err) => {
-          this.saveMessage = 'Speichern fehlgeschlagen, Grund: ' + err;
-          this.saveSuccess = false;
-        })
+      this.saveEmployee();
     }
     this.showSaveSuccess = true;
     //ToDo: return to editor details after save?
   }
 
-  addNewQualification(){
+  private saveEmployee() {
+    this.employeeService.addEmployee(this.employee)
+      .then(() => {
+        this.saveMessage = 'Speichern erfolgreich!';
+        this.saveSuccess = true;
+      })
+      .catch((err) => {
+        this.saveMessage = 'Speichern fehlgeschlagen, Grund: ' + err;
+        this.saveSuccess = false;
+      });
+  }
+  
+  private editEmployee() {
+    this.employeeService.editEmployee(this.employee)
+      .then(() => {
+        this.saveMessage = 'Speichern erfolgreich!';
+        this.saveSuccess = true;
+      }
+      )
+      .catch((err) => {
+        this.saveMessage = 'Speichern fehlgeschlagen, Grund: ' + err.message;
+        this.saveSuccess = false;
+      });
+  }
+
+  addNewQualification() {
 
   }
 
-  addQualificationToEmployee(skill: string | undefined){
-    if (skill == undefined){
+  addQualificationToEmployee(skill: string | undefined) {
+    if (skill == undefined) {
       return;
     } else {
       this.employee.skillSet?.push(skill)
@@ -86,7 +94,7 @@ export class EmployeeEditorComponent {
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
-    if(routeParams.has('id')) {
+    if (routeParams.has('id')) {
       this.edit = true;
       this.fetchEmployee(this.getIdFromParams(routeParams));
     }
@@ -99,6 +107,6 @@ export class EmployeeEditorComponent {
 
   private fetchEmployee(employeeId: number) {
     this.employeeService.getEmployeeById(employeeId)
-    .then(employee => this.employee = employee);
+      .then(employee => this.employee = employee);
   }
 }

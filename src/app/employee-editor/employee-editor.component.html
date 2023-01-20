@@ -1,53 +1,41 @@
 <div class="container">
-  <app-status-bar [title]="getTitle()" [editable]="'false'" [saveable]="'true'"
-  (saveEmit)="save()">
+  <app-status-bar [title]="getTitle()" [editable]="'false'" [saveable]="'true'" (saveEmit)="save()">
   </app-status-bar>
-<div class="mb-3">
-  <label for="firstName" class="form-label">Vorname</label>
-  <input type="email" class="form-control" id="firstName"  placeholder="Max" [(ngModel)]="employee.firstName">
-</div>
-<div class="mb-3">
-  <label for="lastName" class="form-label">Nachname</label>
-  <input type="email" class="form-control" id="lastName" placeholder="Mustermann" [(ngModel)]="employee.lastName">
-</div>
-  <div class="mb-3">
-    <label for="street" class="form-label">Straße + Hausnr.</label>
-    <input type="email" class="form-control" id="street" placeholder="Musterstr. 11" [(ngModel)]="employee.street">
+  <div class="row mt-4">
+    <div *ngIf="saveSuccess==true&&showSaveSuccess==true" class="alert alert-success justify-content-end" role="alert">
+      {{saveMessage}}
+    </div>
+    <div *ngIf="saveSuccess==false&&showSaveSuccess==true" class="alert alert-danger" role="alert">
+      {{saveMessage}}
+    </div>
   </div>
-  <div class="mb-3">
-    <label for="postcode" class="form-label">Postleitzahl</label>
-    <input type="email" class="form-control" id="postcode" placeholder="12345" [(ngModel)]="employee.postcode">
+  <div class="row">
+    <div class="row my-2">
+      <label for="firstName" class="form-label">Vorname</label>
+      <input type="email" class="form-control" id="firstName" placeholder="Max" [(ngModel)]="employee.firstName">
+    </div>
+    <div class="row my-2">
+      <label for="lastName" class="form-label">Nachname</label>
+      <input type="email" class="form-control" id="lastName" placeholder="Mustermann" [(ngModel)]="employee.lastName">
+    </div>
+    <div class="row my-2">
+      <label for="street" class="form-label">Straße + Hausnr.</label>
+      <input type="email" class="form-control" id="street" placeholder="Musterstr. 11" [(ngModel)]="employee.street">
+    </div>
+    <div class="row my-2">
+      <label for="postcode" class="form-label">Postleitzahl</label>
+      <input type="email" class="form-control" id="postcode" placeholder="12345" [(ngModel)]="employee.postcode">
+    </div>
+    <div class="row my-2">
+      <label for="city" class="form-label">Stadt</label>
+      <input type="email" class="form-control" id="city" placeholder="Musterstadt" [(ngModel)]="employee.city">
+    </div>
+    <div class="row my-2">
+      <label for="phone" class="form-label">Telefonnr.</label>
+      <input type="email" class="form-control" id="phone" placeholder="+49 123 456789" [(ngModel)]="employee.phone">
+    </div>
+    <div class="row my-2">
+      <label for="qualifications" clsas="form-label">Qualifikationen</label>
+    </div>
   </div>
-  <div class="mb-3">
-    <label for="city" class="form-label">Stadt</label>
-    <input type="email" class="form-control" id="city" placeholder="Musterstadt" [(ngModel)]="employee.city">
-  </div>
-  <div class="mb-3">
-    <label for="phone" class="form-label">Telefonnr.</label>
-    <input type="email" class="form-control" id="phone" placeholder="+49 123 456789" [(ngModel)]="employee.phone">
-  </div>
-
-  <div class="form-floating">
-    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-      <option selected></option>
-      <ng-container *ngFor="let q of qualifications$ | async">
-        <option value="q" (selectionchange)="addQualificationToEmployee(q.skill)">{{q.skill}}</option>
-      </ng-container>
-      <option vaule="new" (selectionchange)="addNewQualification()">Neue Qualifikation erstellen...</option>
-    </select>
-    <label for="floatingSelect">Qualifikation auswählen</label>
-  </div>
-
-  <ng-container *ngFor="let qe of employee.skillSet">
-    <div class="badge rounded-pill text-bg-success">{{qe}}</div>
-    <div class="badge rounded-pill text-bg-success">Test</div>
-  </ng-container>
-
-  <div *ngIf="saveSuccess==true&&showSaveSuccess==true" class="alert alert-success justify-content-end" role="alert">
-    {{saveMessage}}
-  </div>
-  <div *ngIf="saveSuccess==false&&showSaveSuccess==true" class="alert alert-danger" role="alert">
-    {{saveMessage}}
-  </div>
-
 </div>
