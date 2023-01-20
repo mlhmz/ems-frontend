@@ -17,10 +17,10 @@ export class EmployeeEditorComponent {
   employee: Employee = new Employee();
   qualifications$: Observable<Qualification[]>;
   edit: boolean = false;
-
   saveMessage: string = '';
   saveSuccess: boolean = false;
   showSaveSuccess: boolean = false;
+
   constructor(
     private employeeService: EmployeeService,
     private qualificationService: QualificationService,
@@ -29,6 +29,14 @@ export class EmployeeEditorComponent {
     this.employee.skillSet = [];
     this.qualifications$ = of([]);
     this.fetchData();
+  }
+
+  ngOnInit(): void {
+    const routeParams = this.route.snapshot.paramMap;
+    if (routeParams.has('id')) {
+      this.edit = true;
+      this.fetchEmployee(this.getIdFromParams(routeParams));
+    }
   }
 
   fetchData() {
@@ -55,6 +63,27 @@ export class EmployeeEditorComponent {
     //ToDo: return to editor details after save?
   }
 
+  addNewQualification() {
+
+  }
+
+  addQualificationToEmployee(skill: string | undefined) {
+    if (skill == undefined) {
+      return;
+    } else {
+      this.employee.skillSet?.push(skill)
+    }
+  }
+
+  private getIdFromParams(routeParams: ParamMap) {
+    return Number(routeParams.get('id'));
+  }
+
+  private fetchEmployee(employeeId: number) {
+    this.employeeService.getEmployeeById(employeeId)
+      .then(employee => this.employee = employee);
+  }
+
   private saveEmployee() {
     this.employeeService.addEmployee(this.employee)
       .then(() => {
@@ -78,35 +107,5 @@ export class EmployeeEditorComponent {
         this.saveMessage = 'Speichern fehlgeschlagen, Grund: ' + err.message;
         this.saveSuccess = false;
       });
-  }
-
-  addNewQualification() {
-
-  }
-
-  addQualificationToEmployee(skill: string | undefined) {
-    if (skill == undefined) {
-      return;
-    } else {
-      this.employee.skillSet?.push(skill)
-    }
-  }
-
-  ngOnInit(): void {
-    const routeParams = this.route.snapshot.paramMap;
-    if (routeParams.has('id')) {
-      this.edit = true;
-      this.fetchEmployee(this.getIdFromParams(routeParams));
-    }
-  }
-
-
-  private getIdFromParams(routeParams: ParamMap) {
-    return Number(routeParams.get('id'));
-  }
-
-  private fetchEmployee(employeeId: number) {
-    this.employeeService.getEmployeeById(employeeId)
-      .then(employee => this.employee = employee);
   }
 }
