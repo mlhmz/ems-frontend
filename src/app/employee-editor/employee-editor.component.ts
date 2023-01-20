@@ -33,6 +33,9 @@ export class EmployeeEditorComponent {
     this.fetchData();
   }
 
+  /**
+   * Initializes the component by fetching the data
+   */
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
     if (routeParams.has('id')) {
@@ -42,10 +45,16 @@ export class EmployeeEditorComponent {
     }
   }
 
+  /**
+   * Fetches all qualifications
+   */
   fetchData() {
     this.qualifications$ = this.qualificationService.getAllQualifications();
   }
 
+  /**
+   * Gets the title for the status bar
+   */
   getTitle() {
     let title = "Mitarbeiter ";
     if (this.edit == undefined) {
@@ -59,6 +68,9 @@ export class EmployeeEditorComponent {
     return title;
   }
 
+  /**
+   * Saves employee, if {@link edit} is true, the employee will be just edited
+   */
   save() {
     if (this.edit) {
       this.editEmployee();
@@ -69,40 +81,77 @@ export class EmployeeEditorComponent {
     //ToDo: return to editor details after save?
   }
 
-  addQualificationToEmployee(skill: string) {
+  /**
+   * Adds skill to the {@link employee}
+   * 
+   * @param skill to add
+   */
+  addSkillToEmployee(skill: string) {
     if (this.isEmployeeSkillSetNotIncludingSkill(skill)) {
       this.employee.skillSet?.push(skill)
     }
     this.tagInputValue = "";
   }
 
+  /**
+   * Adds a new qualification
+   */
   addNewQualification() {
-
+    throw new Error('not implemented');
   }
 
+  /**
+   * Removes a skill by filtering every skill that is not equal
+   * to the skill that should be removed
+   * 
+   * @param skill string to check with
+   */
   removeSkill(skill: string) {
     this.employee.skillSet = this.employee.skillSet?.filter(entry => entry != skill);
   }
 
+  /**
+   * Conditionally removes the last skill of the employee skillSet 
+   * if the {@link tagInputValue} is empty
+   */
   removeLastSkillIfTagInputValueIsEmpty() {
     if (this.tagInputValue.length == 0) {
       this.employee.skillSet?.pop();
     }
   }
 
+  /**
+   * Checks if an employee skill set is not including a certain skill
+   * 
+   * @param skill string to check with
+   * @returns boolean if skill is not included in skill set
+   */
   private isEmployeeSkillSetNotIncludingSkill(skill: string): boolean {
     return this.employee.skillSet?.filter(entry => entry == skill).length == 0;
   }
 
+  /**
+   * Gets id from params and stores it into {@link employeeId}
+   * 
+   * @param routeParams {@link ParamMap} to get the employee id from
+   */
   private getIdFromParams(routeParams: ParamMap) {
     this.employeeId = Number(routeParams.get('id'));
   }
 
+  /**
+   * Fetches employee by id
+   * 
+   * @param employeeId of the employee to fetch
+   */
   private fetchEmployee(employeeId: number) {
     this.employeeService.getEmployeeById(employeeId)
       .then(employee => this.employee = employee);
   }
 
+  /**
+   * Saves an employee and sets {@link saveMessage} as well as {@link saveSuccess}
+   */
   private saveEmployee() {
     this.employeeService.addEmployee(this.employee)
       .then(() => {
@@ -115,6 +164,9 @@ export class EmployeeEditorComponent {
       });
   }
   
+  /**
+   * Edits an employee and sets {@link saveMessage} as well as {@link saveSuccess}
+   */
   private editEmployee() {
     this.employeeService.editEmployee(this.employee)
       .then(() => {
