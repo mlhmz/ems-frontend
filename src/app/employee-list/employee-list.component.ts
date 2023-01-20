@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { map, Observable, of } from "rxjs";
 import { Employee } from "../Employee";
 import { EmployeeService } from '../employee.service';
@@ -12,10 +13,12 @@ export class EmployeeListComponent {
   bearer = '';
   employees$: Observable<Employee[]>;
   searchValue: string = '';
+  employeeSelection: Employee[] = [];
   private searchMode: boolean = false;
 
   constructor(
     private employeeService: EmployeeService,
+    private router: Router,
     ) {
     this.employees$ = of([]);
     this.fetchData();
@@ -27,6 +30,37 @@ export class EmployeeListComponent {
   fetchData() {
     this.employees$ = this.employeeService.getEmployees();
     this.resetSearch();
+  }
+
+  goToEmployee(id: number | undefined) {
+    if (id != undefined) {
+      this.router.navigateByUrl("/employee/" + id)
+    }
+  }
+
+  selectEmployee(employee: Employee) {
+    if (this.isEmployeeContainedInSelection(employee)) {
+      this.employeeSelection = this.employeeSelection.filter(entry => entry != employee);
+    } else {
+      this.employeeSelection.push(employee);
+    }
+  }
+
+  isEmployeeContainedInSelection(employee: Employee): boolean {
+    return this.employeeSelection.filter(entry => entry == employee).length != 0
+  }
+
+  isAnythingSelected(): boolean {
+    return this.employeeSelection.length != 0;
+  }
+
+  clearSelection() {
+    this.employeeSelection = [];
+  }
+
+  deleteEmployeeSelection() {
+    this.clearSelection();
+    this.fetchData();
   }
 
   /**

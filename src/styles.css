@@ -40,6 +40,10 @@
     margin-bottom: 10px;
 }
 
+.tr-active {
+    background: rgba(0, 128, 0, 0.133);
+}
+
 .tr-hover:hover {
     background: rgba(0, 128, 0, 0.133);
     cursor: pointer;

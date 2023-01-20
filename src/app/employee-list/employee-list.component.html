@@ -36,7 +36,7 @@
       </thead>
       <tbody>
         <ng-container *ngFor="let e of employees$ | async">
-          <tr class="tr-hover" [routerLink]="['/employee/', e.id]">
+          <tr class="tr-hover" [class.tr-active]="isEmployeeContainedInSelection(e)" (click)="selectEmployee(e)" (dblclick)="goToEmployee(e.id)">
             <td>{{e.id}}</td>
             <td>{{e.firstName}}</td>
             <td>{{e.lastName}}</td>
@@ -44,6 +44,11 @@
         </ng-container>
       </tbody>
     </table>
+  </div>
+  <div *ngIf="isAnythingSelected()" class="cursor-pointer expand">
+    <h1 style="text-align: right">
+      <span class="material-icons text-danger" (click)="deleteEmployeeSelection()">delete</span>
+    </h1>
   </div>
   <div *ngIf="(employees$ | async)?.length === 0">
     <p>Es wurden keine Mitarbeiter*innen gefunden.</p>
