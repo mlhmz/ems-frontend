@@ -14,6 +14,7 @@ import { Observable, of } from "rxjs";
   styleUrls: ['./employee-editor.component.css']
 })
 export class EmployeeEditorComponent {
+  employeeId: number = 0;
   employee: Employee = new Employee();
   qualifications$: Observable<Qualification[]>;
   edit: boolean = false;
@@ -36,7 +37,8 @@ export class EmployeeEditorComponent {
     const routeParams = this.route.snapshot.paramMap;
     if (routeParams.has('id')) {
       this.edit = true;
-      this.fetchEmployee(this.getIdFromParams(routeParams));
+      this.getIdFromParams(routeParams)
+      this.fetchEmployee(this.employeeId);
     }
   }
 
@@ -46,8 +48,11 @@ export class EmployeeEditorComponent {
 
   getTitle() {
     let title = "Mitarbeiter ";
+    if (this.edit == undefined) {
+      return "";
+    }
     if (this.edit == true) {
-      title += this.employee.id + " editieren";
+      title += this.employeeId + " editieren";
     } else {
       title += "erstellen";
     }
@@ -90,7 +95,7 @@ export class EmployeeEditorComponent {
   }
 
   private getIdFromParams(routeParams: ParamMap) {
-    return Number(routeParams.get('id'));
+    this.employeeId = Number(routeParams.get('id'));
   }
 
   private fetchEmployee(employeeId: number) {

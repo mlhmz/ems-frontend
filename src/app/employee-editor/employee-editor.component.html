@@ -37,9 +37,12 @@
     <div class="row my-2">
       <label for="qualifications" clsas="form-label">Qualifikationen</label>
       <div class="form-control">
-        <div class="inline">
+        <div class="inline-block m-1">
           <ng-container *ngFor="let skill of employee.skillSet">
-            <a class="bg-success text-light p-1 m-1 rounded text-decoration-none">
+            <a 
+            class="bg-success text-light p-1 m-2 rounded text-decoration-none"
+            style="white-space: pre-line"
+            >
               {{ skill }}
               <span 
               class="cursor-pointer"
@@ -48,7 +51,7 @@
             </a>
           </ng-container>
           <input 
-          class="border-0 remove-input-focus-outline" 
+          class="border-0 m-1 remove-input-focus-outline" 
           placeholder="Qualifikation"
           [(ngModel)]="tagInputValue"
           (keyup.enter)="addQualificationToEmployee(tagInputValue)"
