@@ -61,6 +61,29 @@ export class EmployeeService {
   }
 
   /**
+   * Deletes Employees of an array that have an undefined id.
+   * 
+   * @param employees in an array
+   */
+  public bulkDeleteEmployees(employees: Employee[]) {
+    employees
+    .forEach(employee => {
+      if (employee.id != undefined) {
+        this.deleteEmployee(employee.id)
+      }
+    })
+  }
+
+  /**
+   * Deletes an employee by its id
+   * 
+   * @param Employee to delete
+   */
+  public async deleteEmployee(id: number) {
+    await firstValueFrom(this.http.delete(`/backend/employees/${id}`, {headers: this.getHeaders()}))
+  }
+
+  /**
    * Gets required Headers for Employee related requests
    * 
    * @returns headers for requests

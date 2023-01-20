@@ -59,6 +59,7 @@ export class EmployeeListComponent {
   }
 
   deleteEmployeeSelection() {
+    this.employeeService.bulkDeleteEmployees(this.employeeSelection);
     this.clearSelection();
     this.fetchData();
   }
