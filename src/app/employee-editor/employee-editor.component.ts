@@ -110,7 +110,7 @@ export class EmployeeEditorComponent {
         this.saveSuccess = true;
       })
       .catch((err) => {
-        this.saveMessage = 'Speichern fehlgeschlagen, Grund: ' + err;
+        this.saveMessage = 'Speichern fehlgeschlagen, Grund: ' + err.message;
         this.saveSuccess = false;
       });
   }
