@@ -47,7 +47,7 @@ export class EmployeeService {
    * @returns employee callback as promise
    */
   public async addEmployee(employee: Employee): Promise<Employee> {
-    return firstValueFrom(this.http.post('/backend/employyes', employee, {headers: this.getHeaders()}))
+    return firstValueFrom(this.http.post('/backend/employees', employee, {headers: this.getHeaders()}))
   }
 
   /**
