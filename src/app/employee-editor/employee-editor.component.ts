@@ -20,6 +20,7 @@ export class EmployeeEditorComponent {
   saveMessage: string = '';
   saveSuccess: boolean = false;
   showSaveSuccess: boolean = false;
+  tagInputValue: string = '';
 
   constructor(
     private employeeService: EmployeeService,
@@ -63,16 +64,29 @@ export class EmployeeEditorComponent {
     //ToDo: return to editor details after save?
   }
 
+  addQualificationToEmployee(skill: string) {
+    if (this.isEmployeeSkillSetNotIncludingSkill(skill)) {
+      this.employee.skillSet?.push(skill)
+    }
+    this.tagInputValue = "";
+  }
+
   addNewQualification() {
 
   }
 
-  addQualificationToEmployee(skill: string | undefined) {
-    if (skill == undefined) {
-      return;
-    } else {
-      this.employee.skillSet?.push(skill)
+  removeSkill(skill: string) {
+    this.employee.skillSet = this.employee.skillSet?.filter(entry => entry != skill);
+  }
+
+  removeLastSkillIfTagInputValueIsEmpty() {
+    if (this.tagInputValue.length == 0) {
+      this.employee.skillSet?.pop();
     }
+  }
+
+  private isEmployeeSkillSetNotIncludingSkill(skill: string): boolean {
+    return this.employee.skillSet?.filter(entry => entry == skill).length == 0;
   }
 
   private getIdFromParams(routeParams: ParamMap) {

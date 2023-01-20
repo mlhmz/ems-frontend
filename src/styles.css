@@ -38,3 +38,7 @@
     background: rgba(0, 128, 0, 0.133);
     cursor: pointer;
 }
+
+.remove-input-focus-outline textarea:focus, input:focus {
+    outline: none;
+}
