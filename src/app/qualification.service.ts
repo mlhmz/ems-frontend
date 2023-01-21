@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { firstValueFrom, Observable } from 'rxjs';
+import { first, firstValueFrom, Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 import { Qualification } from './Qualification';
 import { QualificationEmployees } from './QualificationEmployees';
@@ -44,6 +44,23 @@ export class QualificationService {
     return qualification;
   }
 
+  public async saveNotExistingQualifications(qualifications: Qualification[]) {
+    let allQualifications = await firstValueFrom(this.http.get<Qualification[]>('/backend/qualifications', {
+      headers: this.getHeaders()
+    }))
+    for (let qualification of qualifications) {
+      this.saveQualificationIfNotExisting(qualification, allQualifications);
+    }
+  } 
+
+  public async saveQualification(qualification: Qualification): Promise<Qualification> {
+    return await firstValueFrom(
+      this.http.post<Qualification>(`/backend/qualifications`, qualification, { 
+        headers: this.getHeaders() 
+      })
+    );
+  }
+
   /**
    * Gets qualification employees by skill
    * 
@@ -53,6 +70,31 @@ export class QualificationService {
     return this.http.get<QualificationEmployees>(`/backend/qualifications/${skill}/employees`, {
       headers: this.getHeaders()
     });
+  }
+
+  public convertStringListToQualificationList(skillList: string[]): Qualification[] {
+    let qualifications: Qualification[] = [];
+    for (let skill of skillList) {
+      qualifications.push(
+        this.convertStringToQualification(skill)
+      );
+    }
+    return qualifications;
+  }
+
+  public convertStringToQualification(skill: string): Qualification {
+    return new Qualification(skill);
+  }
+
+  private saveQualificationIfNotExisting(qualification: Qualification, allQualifications: Qualification[]) {
+    if (this.isQualificationNotExisting(qualification, allQualifications)) {
+      this.saveQualification(qualification);
+    }
+  }
+
+  private isQualificationNotExisting(qualification: Qualification, allQualifications: Qualification[]) {
+    console.log(allQualifications)
+    return allQualifications.filter(entry => entry.skill === qualification.skill).length == 0;
   }
 
   /**
