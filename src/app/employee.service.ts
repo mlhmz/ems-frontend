@@ -50,6 +50,10 @@ export class EmployeeService {
    * @returns employee callback as promise
    */
   public async addEmployee(employee: Employee): Promise<Employee> {
+    if (employee.skillSet != undefined) {
+      const qualifications = this.qualificationService.convertStringArrayToQualificationArray(employee.skillSet);
+      await this.qualificationService.saveNotExistingQualifications(qualifications);
+    }
     return firstValueFrom(this.http.post('/backend/employees', employee, { headers: this.getHeaders() }))
   }
 
