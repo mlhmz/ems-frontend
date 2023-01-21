@@ -49,7 +49,7 @@ export class QualificationService {
       headers: this.getHeaders()
     }))
     for (let qualification of qualifications) {
-      this.saveQualificationIfNotExisting(qualification, allQualifications);
+      await this.saveQualificationIfNotExisting(qualification, allQualifications);
     }
   } 
 
@@ -86,9 +86,9 @@ export class QualificationService {
     return new Qualification(skill);
   }
 
-  private saveQualificationIfNotExisting(qualification: Qualification, allQualifications: Qualification[]) {
+  private async saveQualificationIfNotExisting(qualification: Qualification, allQualifications: Qualification[]) {
     if (this.isQualificationNotExisting(qualification, allQualifications)) {
-      this.saveQualification(qualification);
+      await this.saveQualification(qualification);
     }
   }
 
