@@ -46,9 +46,7 @@
     </table>
   </div>
   <div *ngIf="isAnythingSelected()" class="cursor-pointer expand">
-    <h1 style="text-align: right">
-      <span class="material-icons text-danger" (click)="deleteEmployeeSelection()">delete</span>
-    </h1>
+      <app-confirmable-delete [alignButtonRight]="'true'" (deleteEmit)="deleteEmployeeSelection()"></app-confirmable-delete>
   </div>
   <div *ngIf="(employees$ | async)?.length === 0">
     <p>Es wurden keine Mitarbeiter*innen gefunden.</p>
