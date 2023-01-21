@@ -3,16 +3,13 @@
   </app-status-bar>
   <div class="row mt-4">
     <ng-container *ngIf="callbackAlertShown">
-      <ng-container *ngIf="saveSuccess; else errorAlert">
-        <div class="alert alert-success justify-content-end" role="alert">
-          {{saveMessage}}
-        </div>
-      </ng-container>
-      <ng-template #errorAlert>
-        <div class="alert alert-danger" role="alert">
-          {{saveMessage}}
-        </div>
-      </ng-template>
+      <div 
+      class="alert justify-content-end" 
+      [class.alert-success]="saveSuccess" 
+      [class.alert-danger]="!saveSuccess" 
+      role="alert">
+        {{saveMessage}}
+      </div>
     </ng-container>
   </div>
   <div class="row">
