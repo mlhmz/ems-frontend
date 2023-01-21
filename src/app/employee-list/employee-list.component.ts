@@ -32,6 +32,11 @@ export class EmployeeListComponent {
     this.resetSearch();
   }
 
+  /**
+   * Goes to an employee with the router
+   * 
+   * @param id of the employee
+   */
   goToEmployee(id: number | undefined) {
     if (id != undefined) {
       this.router.navigateByUrl("/employee/" + id)
