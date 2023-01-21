@@ -2,12 +2,18 @@
   <app-status-bar [title]="getTitle()" [editable]="'false'" [saveable]="'true'" (saveEmit)="save()">
   </app-status-bar>
   <div class="row mt-4">
-    <div *ngIf="saveSuccess==true&&showSaveSuccess==true" class="alert alert-success justify-content-end" role="alert">
-      {{saveMessage}}
-    </div>
-    <div *ngIf="saveSuccess==false&&showSaveSuccess==true" class="alert alert-danger" role="alert">
-      {{saveMessage}}
-    </div>
+    <ng-container *ngIf="showSaveSuccess == true">
+      <ng-container *ngIf="saveSuccess == true; else errorAlert">
+        <div class="alert alert-success justify-content-end" role="alert">
+          {{saveMessage}}
+        </div>
+      </ng-container>
+      <ng-template #errorAlert>
+        <div class="alert alert-danger" role="alert">
+          {{saveMessage}}
+        </div>
+      </ng-template>
+    </ng-container>
   </div>
   <div class="row">
     <div class="row my-2">

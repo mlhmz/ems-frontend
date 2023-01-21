@@ -72,12 +72,15 @@ export class EmployeeEditorComponent {
    * Saves employee, if {@link edit} is true, the employee will be just edited
    */
   save() {
+    let req;
     if (this.edit) {
-      this.editEmployee();
+      req = this.editEmployee();
     } else {
-      this.saveEmployee();
+      req = this.saveEmployee();
     }
-    this.showSaveSuccess = true;
+    req.then(() => {
+      this.showSaveSuccess = true;
+    })
     //ToDo: return to editor details after save?
   }
 
@@ -152,8 +155,8 @@ export class EmployeeEditorComponent {
   /**
    * Saves an employee and sets {@link saveMessage} as well as {@link saveSuccess}
    */
-  private saveEmployee() {
-    this.employeeService.addEmployee(this.employee)
+  private async saveEmployee() {
+    await this.employeeService.addEmployee(this.employee)
       .then(() => {
         this.saveMessage = 'Speichern erfolgreich!';
         this.saveSuccess = true;
@@ -167,8 +170,8 @@ export class EmployeeEditorComponent {
   /**
    * Edits an employee and sets {@link saveMessage} as well as {@link saveSuccess}
    */
-  private editEmployee() {
-    this.employeeService.editEmployee(this.employee)
+  private async editEmployee() {
+    await this.employeeService.editEmployee(this.employee)
       .then(() => {
         this.saveMessage = 'Speichern erfolgreich!';
         this.saveSuccess = true;
