@@ -17,10 +17,10 @@ export class EmployeeEditorComponent {
   employeeId: number = 0;
   employee: Employee = new Employee();
   qualifications$: Observable<Qualification[]>;
-  edit: boolean = false;
+  editable: boolean = false;
   saveMessage: string = '';
   saveSuccess: boolean = false;
-  showSaveSuccess: boolean = false;
+  callbackAlertShown: boolean = false;
   tagInputValue: string = '';
 
   constructor(
@@ -39,7 +39,7 @@ export class EmployeeEditorComponent {
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
     if (routeParams.has('id')) {
-      this.edit = true;
+      this.editable = true;
       this.getIdFromParams(routeParams)
       this.fetchEmployee(this.employeeId);
     }
@@ -57,10 +57,10 @@ export class EmployeeEditorComponent {
    */
   getTitle() {
     let title = "Mitarbeiter ";
-    if (this.edit == undefined) {
+    if (this.editable == undefined) {
       return "";
     }
-    if (this.edit == true) {
+    if (this.editable == true) {
       title += this.employeeId + " editieren";
     } else {
       title += "erstellen";
@@ -69,19 +69,29 @@ export class EmployeeEditorComponent {
   }
 
   /**
-   * Saves employee, if {@link edit} is true, the employee will be just edited
+   * Saves employee, if {@link editable} is true, the employee will be just edited
    */
   save() {
     let req;
-    if (this.edit) {
+    if (this.editable) {
       req = this.editEmployee();
     } else {
       req = this.saveEmployee();
     }
     req.then(() => {
-      this.showSaveSuccess = true;
-    })
+      this.showCallbackAlert('Speichern erfolgreich!', true);
+    }
+    )
+    .catch((err) => {
+      this.showCallbackAlert('Speichern fehlgeschlagen, Grund: ' + err.message, false);
+    });
     //ToDo: return to editor details after save?
+  }
+
+  private showCallbackAlert(saveMessage: string, saveSuccess: boolean) {
+    this.saveMessage = saveMessage;
+    this.saveSuccess = saveSuccess;
+    this.callbackAlertShown = true;
   }
 
   /**
@@ -157,14 +167,6 @@ export class EmployeeEditorComponent {
    */
   private async saveEmployee() {
     await this.employeeService.addEmployee(this.employee)
-      .then(() => {
-        this.saveMessage = 'Speichern erfolgreich!';
-        this.saveSuccess = true;
-      })
-      .catch((err) => {
-        this.saveMessage = 'Speichern fehlgeschlagen, Grund: ' + err.message;
-        this.saveSuccess = false;
-      });
   }
   
   /**
@@ -172,14 +174,5 @@ export class EmployeeEditorComponent {
    */
   private async editEmployee() {
     await this.employeeService.editEmployee(this.employee)
-      .then(() => {
-        this.saveMessage = 'Speichern erfolgreich!';
-        this.saveSuccess = true;
-      }
-      )
-      .catch((err) => {
-        this.saveMessage = 'Speichern fehlgeschlagen, Grund: ' + err.message;
-        this.saveSuccess = false;
-      });
   }
 }

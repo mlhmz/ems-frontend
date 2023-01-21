@@ -2,8 +2,8 @@
   <app-status-bar [title]="getTitle()" [editable]="'false'" [saveable]="'true'" (saveEmit)="save()">
   </app-status-bar>
   <div class="row mt-4">
-    <ng-container *ngIf="showSaveSuccess == true">
-      <ng-container *ngIf="saveSuccess == true; else errorAlert">
+    <ng-container *ngIf="callbackAlertShown">
+      <ng-container *ngIf="saveSuccess; else errorAlert">
         <div class="alert alert-success justify-content-end" role="alert">
           {{saveMessage}}
         </div>
