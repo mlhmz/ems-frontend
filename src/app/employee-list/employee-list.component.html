@@ -37,9 +37,9 @@
       <tbody>
         <ng-container *ngFor="let e of employees$ | async">
           <tr class="tr-hover" [class.tr-active]="isEmployeeContainedInSelection(e)" (click)="selectEmployee(e)" (dblclick)="goToEmployee(e.id)">
-            <td>{{e.id}}</td>
-            <td>{{e.firstName}}</td>
-            <td>{{e.lastName}}</td>
+            <td class="user-select-none">{{e.id}}</td>
+            <td class="user-select-none">{{e.firstName}}</td>
+            <td class="user-select-none">{{e.lastName}}</td>
           </tr>
         </ng-container>
       </tbody>
