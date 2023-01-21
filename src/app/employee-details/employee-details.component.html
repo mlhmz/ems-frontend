@@ -38,6 +38,7 @@
                 </table>
             </div>
         </div>
+        <span class="material-icons text-danger cursor-pointer" (click)="deleteEmployee(this.employee?.id)">delete</span>
     </ng-container>
     <ng-template #employeeNotAvailable>
         <app-not-found

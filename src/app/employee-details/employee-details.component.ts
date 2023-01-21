@@ -47,6 +47,13 @@ export class EmployeeDetailsComponent implements OnInit {
     this.id = Number(routeParams.get('id'));
   }
 
+  deleteEmployee(id: number | undefined) {
+    if (id != undefined) {
+      this.employeeService.deleteEmployee(id)
+      .then(() => this.goBack());
+    }
+  }
+
   /**
    * fetches an employee by its id and sets {@link found}
    * to false if the employee couldn't be found
