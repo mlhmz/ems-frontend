@@ -13,6 +13,7 @@ export class HistoryService {
   private readonly previousUrlKey = 'previous-url';
   private readonly routeStoringKey = 'avoid-route';
   private readonly defaultRoute = '/'
+  private readonly contentBlacklist: string[] = ["saveSuccess=true"]
 
   /**
    * Stores the previous route into a local storage json array history
@@ -26,12 +27,21 @@ export class HistoryService {
     var routeString: string | null = window.localStorage.getItem(this.previousUrlKey);
     if (routeString != null)  {
       routes = JSON.parse(routeString);
-      routes.push(this.getRouterUrl())
+      routes.push(this.getCleanRouteUrl())
     } else {
-      routes = [this.defaultRoute, this.getRouterUrl()];
+      routes = [this.defaultRoute, this.getCleanRouteUrl()];
     }
     routes = this.cutRoutesWhenRoutesListIsTooBig(routes, 25);
     this.saveRoutes(routes);
+  }
+
+  private getCleanRouteUrl(): string {
+    let url: string = this.getRouterUrl();
+    for (let content of this.contentBlacklist) {
+      url = url.replace(content, "")
+    }
+    console.log(url);
+    return url;
   }
 
   /**

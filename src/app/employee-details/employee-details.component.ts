@@ -14,6 +14,7 @@ export class EmployeeDetailsComponent implements OnInit {
   employee: Employee | undefined;
   id: number | undefined;
   found: boolean = true;
+  showSaveSuccess: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,7 +27,7 @@ export class EmployeeDetailsComponent implements OnInit {
    * Initial employee fetching
    */
   ngOnInit(): void {
-    this.getIdFromParams();
+    this.getRequiredDataFromParams();
     if (this.id != undefined) {
       this.fetchEmployee(this.id);
     }
@@ -42,9 +43,13 @@ export class EmployeeDetailsComponent implements OnInit {
   /**
    * gets the id from the params
    */
-  private getIdFromParams() {
+  private getRequiredDataFromParams() {
     const routeParams = this.route.snapshot.paramMap;
     this.id = Number(routeParams.get('id'));
+    const routeQueries = this.route.snapshot.queryParamMap;
+    if (routeQueries.has('saveSuccess')) {
+      this.showSaveSuccess = routeQueries.get('saveSuccess') === "true";
+    }
   }
 
   deleteEmployee(id: number | undefined) {

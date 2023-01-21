@@ -3,6 +3,13 @@
         <app-status-bar [title]="'Details Mitarbeiter ' + id" [editable]="'true'" 
         [editRoute]="'/employee/editor/' + id">
         </app-status-bar>
+        <ng-container *ngIf="showSaveSuccess">
+            <div 
+            class="alert alert-success justify-content-end" 
+            role="alert">
+            Speichern erfolgreich!
+            </div>
+        </ng-container>
         <div class="row">
             <div class="col-2">
                 <p>Vorname:</p>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { EmployeeService } from "../employee.service";
 import { Employee } from "../Employee";
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Qualification } from "../Qualification";
 import { QualificationService } from "../qualification.service";
 import { Observable, of } from "rxjs";
@@ -26,6 +26,7 @@ export class EmployeeEditorComponent {
   constructor(
     private employeeService: EmployeeService,
     private qualificationService: QualificationService,
+    private router: Router,
     private route: ActivatedRoute
   ) {
     this.employee.skillSet = [];
@@ -80,6 +81,7 @@ export class EmployeeEditorComponent {
     }
     req.then(() => {
       this.showCallbackAlert('Speichern erfolgreich!', true);
+      this.router.navigateByUrl("/employee/" + this.employeeId + "?saveSuccess=true")
     }
     )
     .catch((err) => {
