@@ -68,6 +68,8 @@ export class EmployeeService {
 
   /**
    * Updates asynchronously qualifications of the employee to match the skills array
+   * This method exists because the update route of the employee service somehow doesn't save modificated
+   * skillLists, it only validates them.
    * 
    * @param employee to be updated
    * @param skills array to be matched
@@ -77,7 +79,7 @@ export class EmployeeService {
       return;
     }
     let oldEmployeeData: Employee = await this.getEmployeeById(employee.id);
-    const qualifications = this.qualificationService.convertStringListToQualificationList(skills);
+    const qualifications = this.qualificationService.convertStringArrayToQualificationArray(skills);
     await this.qualificationService.saveNotExistingQualifications(qualifications);
     const qualificationsToAdd: Qualification[] = this.getNotInEmployeeSkillSetContainedQualifications(oldEmployeeData, qualifications);
     this.bulkAddQualificationsToEmployee(employee.id, qualificationsToAdd);
@@ -177,7 +179,7 @@ export class EmployeeService {
     let result: Qualification[] = [];
     if (employee.skillSet != undefined) {
       let skillList = employee.skillSet.filter(qualification => !this.isEmployeeQualificationIncludedInQualificationSet(qualification, qualifications))
-      result = this.qualificationService.convertStringListToQualificationList(skillList);
+      result = this.qualificationService.convertStringArrayToQualificationArray(skillList);
     }
     return result;
   }

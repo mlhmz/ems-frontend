@@ -72,9 +72,15 @@ export class QualificationService {
     });
   }
 
-  public convertStringListToQualificationList(skillList: string[]): Qualification[] {
+  /**
+   * Converts a string array to a qualification array
+   * 
+   * @param skillArray string array to convert
+   * @returns converted qualification array 
+   */
+  public convertStringArrayToQualificationArray(skillArray: string[]): Qualification[] {
     let qualifications: Qualification[] = [];
-    for (let skill of skillList) {
+    for (let skill of skillArray) {
       qualifications.push(
         this.convertStringToQualification(skill)
       );
@@ -82,16 +88,34 @@ export class QualificationService {
     return qualifications;
   }
 
+  /**
+   * Converts a string to a qualification
+   * 
+   * @param skill string to convert
+   * @returns converted qualification
+   */
   public convertStringToQualification(skill: string): Qualification {
     return new Qualification(skill);
   }
 
+  /**
+   * saves asynchronusly a qualification if it doesn't exist
+   * 
+   * @param allQualification array to check from
+   * @param qualification to check with
+   */
   private async saveQualificationIfNotExisting(qualification: Qualification, allQualifications: Qualification[]) {
     if (this.isQualificationNotExisting(qualification, allQualifications)) {
       await this.saveQualification(qualification);
     }
   }
 
+  /**
+   * Checks if qualification is existing in array
+   * 
+   * @param qualificaiton to check with
+   * @param allQualifications array to check from
+   */
   private isQualificationNotExisting(qualification: Qualification, allQualifications: Qualification[]) {
     console.log(allQualifications)
     return allQualifications.filter(entry => entry.skill === qualification.skill).length == 0;
