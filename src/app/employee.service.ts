@@ -200,13 +200,12 @@ export class EmployeeService {
    * 
    * @param employees in an array
    */
-  public bulkDeleteEmployees(employees: Employee[]) {
-    employees
-      .forEach(employee => {
-        if (employee.id != undefined) {
-          this.deleteEmployee(employee.id)
-        }
-      })
+  public async bulkDeleteEmployees(employees: Employee[]) {
+    for (let employee of employees) {
+      if (employee.id != undefined) {
+        await this.deleteEmployee(employee.id)
+      }
+    }
   }
 
   /**
