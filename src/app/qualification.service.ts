@@ -44,6 +44,11 @@ export class QualificationService {
     return qualification;
   }
 
+  /**
+   * Saves not existing qualifications from a qualification array
+   * 
+   * @param qualifications array to check from
+   */
   public async saveNotExistingQualifications(qualifications: Qualification[]) {
     let allQualifications = await firstValueFrom(this.http.get<Qualification[]>('/backend/qualifications', {
       headers: this.getHeaders()
@@ -53,6 +58,12 @@ export class QualificationService {
     }
   } 
 
+  /**
+   * Saves asynchronusly a qualification
+   * 
+   * @param qualification to save
+   * @returns qualification as promise
+   */
   public async saveQualification(qualification: Qualification): Promise<Qualification> {
     return await firstValueFrom(
       this.http.post<Qualification>(`/backend/qualifications`, qualification, { 
