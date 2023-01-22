@@ -8,10 +8,15 @@ import { AuthService } from '../auth.service';
 })
 export class NavigationBarComponent {
   @Input() itemsShown: boolean = false;
+  expanded: boolean = false;
 
   constructor (
     private authService: AuthService
   ) {}
+
+  toggleExpanded() {
+    this.expanded = !this.expanded;
+  }
 
   /**
    * Logs the user out by clearing its token
