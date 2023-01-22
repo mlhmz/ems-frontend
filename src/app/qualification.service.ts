@@ -56,7 +56,7 @@ export class QualificationService {
     for (let qualification of qualifications) {
       await this.saveQualificationIfNotExisting(qualification, allQualifications);
     }
-  } 
+  }
 
   /**
    * Saves asynchronusly a qualification
@@ -66,8 +66,23 @@ export class QualificationService {
    */
   public async saveQualification(qualification: Qualification): Promise<Qualification> {
     return await firstValueFrom(
-      this.http.post<Qualification>(`/backend/qualifications`, qualification, { 
-        headers: this.getHeaders() 
+      this.http.post<Qualification>(`/backend/qualifications`, qualification, {
+        headers: this.getHeaders()
+      })
+    );
+  }
+
+  public async bulkDeleteQualifications(qualifications: Qualification[]) {
+    for (let qualification of qualifications) {
+      await this.deleteQualification(qualification)
+    }
+  }
+
+  public async deleteQualification(qualification: Qualification) {
+    await firstValueFrom(
+      this.http.delete(`/backend/qualifications`, {
+        body: qualification,
+        headers: this.getHeaders()
       })
     );
   }

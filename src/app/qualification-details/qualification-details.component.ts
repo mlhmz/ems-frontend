@@ -43,6 +43,13 @@ export class QualificationDetailsComponent {
     this.historyService.goBack();
   }
 
+  deleteQualification() {
+    if (this.qualification != undefined) {
+      this.qualificationService.deleteQualification(this.qualification);
+      this.goBack();
+    }
+  }
+
   /**
    * Gets required data from url params
   */

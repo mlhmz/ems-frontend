@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { map, Observable, of } from 'rxjs';
 import { Qualification } from '../Qualification';
 import { QualificationService } from '../qualification.service';
@@ -11,11 +12,14 @@ import { QualificationService } from '../qualification.service';
 export class QualificationListComponent {
   bearer = '';
   qualifications$: Observable<Qualification[]>;
+  qualificationSelection: Qualification[] = [];
   searchValue: string = '';
   private searchMode: boolean = false;
 
   constructor(
-    private qualificationService: QualificationService) {
+    private qualificationService: QualificationService,
+    private router: Router,
+  ) {
     this.qualifications$ = of([]);
     this.fetchData();
   }
@@ -26,6 +30,44 @@ export class QualificationListComponent {
   fetchData() {
     this.qualifications$ = this.qualificationService.getAllQualifications();
     this.setSearchMode(false);
+  }
+
+  /**
+   * Goes to an employee with the router
+   * 
+   * @param id of the employee
+   */
+  goToQualification(id: string | undefined) {
+    if (id != undefined) {
+      this.router.navigateByUrl("/qualification/" + id)
+    }
+  }
+
+  selectQualification(qualification: Qualification) {
+    if (this.isQualificationContainedInSelection(qualification)) {
+      this.qualificationSelection = this.qualificationSelection.filter(entry => entry != qualification);
+    } else {
+      this.qualificationSelection.push(qualification);
+    }
+  }
+
+  isQualificationContainedInSelection(qualification: Qualification): boolean {
+    return this.qualificationSelection.filter(entry => entry == qualification).length != 0
+  }
+
+  isAnythingSelected(): boolean {
+    return this.qualificationSelection.length != 0;
+  }
+
+  clearSelection() {
+    this.qualificationSelection = [];
+  }
+
+  deleteQualificationSelection() {
+    this.qualificationService.bulkDeleteQualifications(this.qualificationSelection).then(() => {
+      this.clearSelection();
+      this.fetchData();
+    });
   }
 
   /**
@@ -82,7 +124,7 @@ export class QualificationListComponent {
    * @qualification to check if the text is included in the skill
    * @returns boolean if text is included in qualification skill
    */
-  private isQualificationContentContainingString(text: string, qualification : Qualification) : boolean {
+  private isQualificationContentContainingString(text: string, qualification: Qualification): boolean {
     var skill: string | undefined = qualification.skill?.toLowerCase();
     return this.isValueContainingTextIgnoreCase(skill, text)
   }

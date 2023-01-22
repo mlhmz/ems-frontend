@@ -34,12 +34,15 @@
         </thead>
         <tbody>
           <ng-container *ngFor="let q of qualifications$ | async">
-            <tr class="tr-hover" [routerLink]="['/qualification/', q.skill]">
+            <tr class="tr-hover" [class.tr-active]="isQualificationContainedInSelection(q)" (click)="selectQualification(q)" (dblclick)="goToQualification(q.skill)">
               <td>{{q.skill}}</td>
             </tr>
           </ng-container>
         </tbody>
       </table>
+      <div *ngIf="isAnythingSelected()" class="cursor-pointer expand">
+        <app-confirmable-delete [alignButtonRight]="'true'" (deleteEmit)="deleteQualificationSelection()"></app-confirmable-delete>
+    </div>
       <div *ngIf="(qualifications$ | async)?.length === 0">
         <p>Es wurden keine Qualifikationen gefunden.</p>
       </div>
