@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { AuthService } from '../auth.service';
+import { KeycloakService } from 'keycloak-angular';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -11,7 +11,7 @@ export class NavigationBarComponent {
   expanded: boolean = false;
 
   constructor (
-    private authService: AuthService
+    private keycloakService: KeycloakService,
   ) {}
 
   toggleExpanded() {
@@ -22,6 +22,6 @@ export class NavigationBarComponent {
    * Logs the user out by clearing its token
    */
   logout() {
-    this.authService.clearToken();
+    this.keycloakService.logout();
   }
 }

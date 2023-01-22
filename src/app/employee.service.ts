@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from '@angular/core';
 import { firstValueFrom, Observable } from 'rxjs';
-import { AuthService } from './auth.service';
 import { Employee } from './Employee';
 import { Qualification } from "./Qualification";
 import { QualificationService } from "./qualification.service";
@@ -10,14 +9,11 @@ import { QualificationService } from "./qualification.service";
   providedIn: 'root'
 })
 export class EmployeeService {
-  private bearer: string = '';
 
   constructor(
     private http: HttpClient,
-    private authService: AuthService,
     private qualificationService: QualificationService,
   ) {
-    this.bearer = authService.getToken();
   }
 
   /**
@@ -229,6 +225,5 @@ export class EmployeeService {
   private getHeaders(): HttpHeaders | { [header: string]: string | string[]; } | undefined {
     return new HttpHeaders()
       .set('Content-Type', 'application/json')
-      .set('Authorization', `Bearer ${this.bearer}`);
   }
 }

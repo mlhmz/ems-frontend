@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Employee } from "./Employee";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { filter, map, Observable, of } from "rxjs";
-import { AuthService } from './auth.service';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { HistoryService } from './history.service';
 
@@ -14,7 +13,6 @@ import { HistoryService } from './history.service';
 export class AppComponent {
 
   constructor(
-    private authService: AuthService,
     private historyService: HistoryService,
     private router: Router,
   ) {
@@ -24,9 +22,4 @@ export class AppComponent {
       }
     });
   }
-
-  isTokenAvailable(): boolean {
-    return this.authService.isTokenAvailable();
-  }
-
 }
