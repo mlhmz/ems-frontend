@@ -45,6 +45,9 @@
         [alignButtonRight]="'true'" 
         (deleteEmit)="deleteQualificationSelection()"
         [message]="getDeleteConfirmationMessage()"
+        [failed]="failed"
+        [failedMessage]="failedMessage"
+        (resetErrorEmit)="resetDeletionError()"
         ></app-confirmable-delete>
     </div>
       <div *ngIf="(qualifications$ | async)?.length === 0">

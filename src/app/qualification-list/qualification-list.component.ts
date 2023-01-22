@@ -10,10 +10,11 @@ import { QualificationService } from '../qualification.service';
   styleUrls: ['./qualification-list.component.css']
 })
 export class QualificationListComponent {
-  bearer = '';
   qualifications$: Observable<Qualification[]>;
   qualificationSelection: Qualification[] = [];
   searchValue: string = '';
+  failedMessage: string = '';
+  failed: boolean = false;
   private searchMode: boolean = false;
 
   constructor(
@@ -63,11 +64,29 @@ export class QualificationListComponent {
     this.qualificationSelection = [];
   }
 
-  deleteQualificationSelection() {
-    this.qualificationService.bulkDeleteQualifications(this.qualificationSelection).then(() => {
-      this.clearSelection();
-      this.fetchData();
-    });
+  async deleteQualificationSelection() {
+    if (await this.isSelectionDeletable()) {
+      this.qualificationService.bulkDeleteQualifications(this.qualificationSelection).then(() => {
+        this.clearSelection();
+        this.fetchData();
+      });
+    }
+  }
+
+  private async isSelectionDeletable() {
+    for (let selection of this.qualificationSelection) {
+      if (await this.qualificationService.isQualificationAssignedToAnyEmployee(selection)) {
+        this.failedMessage = "Die Qualifikation ist noch Mitarbeiter:innen zugewiesen.";
+        this.failed = true;
+        return false;
+      }
+    }
+    return true;
+  }
+
+  resetDeletionError() {
+    this.failed = false;
+    this.failedMessage = "";
   }
 
   getDeleteConfirmationMessage(): string {

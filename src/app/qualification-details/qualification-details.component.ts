@@ -17,6 +17,8 @@ export class QualificationDetailsComponent {
   qualificationEmployees: QualificationEmployees | undefined;
   found: boolean = true;
   showSaveSuccess: boolean = false;
+  failedMessage: string = "";
+  failed: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -43,11 +45,25 @@ export class QualificationDetailsComponent {
     this.historyService.goBack();
   }
 
-  deleteQualification() {
-    if (this.qualification != undefined) {
+  async deleteQualification() {
+    if (this.qualification != undefined && await this.isQualificationDeletable(this.qualification)) {
       this.qualificationService.deleteQualification(this.qualification);
       this.goBack();
     }
+  }
+
+  private async isQualificationDeletable(qualification: Qualification) {
+    if (await this.qualificationService.isQualificationAssignedToAnyEmployee(qualification)) {
+      this.failedMessage = "Die Qualifikation ist noch Mitarbeiter:innen zugewiesen.";
+      this.failed = true;
+      return false;
+    }
+    return true;
+  }
+
+  resetDeletionError() {
+    this.failed = false;
+    this.failedMessage = "";
   }
 
   /**

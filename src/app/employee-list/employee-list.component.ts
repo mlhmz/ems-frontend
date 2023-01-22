@@ -74,7 +74,7 @@ export class EmployeeListComponent {
     if (this.employeeSelection.length == 1) {
       return "Sollen die Mitarbeiter:innen wirklich gelöscht werden?";
     } else {
-      return `Sollen die ${this.employeeSelection.length} ausgewählten Mitarbeiter:innen wirklich gelöscht werden`;
+      return `Sollen die ${this.employeeSelection.length} ausgewählten Mitarbeiter:innen wirklich gelöscht werden?`;
     }
   }
 

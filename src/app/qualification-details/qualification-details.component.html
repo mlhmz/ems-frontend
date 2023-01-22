@@ -40,6 +40,9 @@
         <app-confirmable-delete 
         (deleteEmit)="deleteQualification()"
         [message]="'Soll die Qualifikation wirklich gelöscht werden?'"
+        [failed]="failed"
+        [failedMessage]="failedMessage"
+        (resetErrorEmit)="resetDeletionError()"
         ></app-confirmable-delete>
     </ng-container>
     <ng-template #qualificationNotFound>

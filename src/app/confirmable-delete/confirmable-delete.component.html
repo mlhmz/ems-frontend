@@ -8,13 +8,21 @@
                     <button type="button" class="btn-close" (click)="cancel()"></button>
                 </div>
                 <hr>
-                <div class="modal-body">
-                    <p>{{ message }}</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary m-1" (click)="cancel()">Abbrechen</button>
-                    <button type="button" class="btn btn-danger m-1" (click)="confirmDelete()">Löschen</button>
-                </div>
+                <ng-container *ngIf="!failed; else error">
+                    <div class="modal-body">
+                        <p>{{ message }}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary m-1" (click)="cancel()">Abbrechen</button>
+                        <button type="button" class="btn btn-danger m-1" (click)="confirmDelete()">Löschen</button>
+                    </div>
+                </ng-container>
+                <ng-template #error>
+                    <div class="modal-body">
+                        <p>{{ failedMessage }}</p>
+                    </div>
+                </ng-template>
+                
             </div>
         </div>
     </div>

@@ -10,8 +10,14 @@ export class ConfirmableDeleteComponent {
   alignButtonRight: string = "";
   @Input()
   message: string = "";
+  @Input()
+  failedMessage: string = '';
+  @Input()
+  failed: boolean = false;
   @Output()
   deleteEmit: EventEmitter<any> = new EventEmitter<any>();
+  @Output()
+  resetErrorEmit: EventEmitter<any> = new EventEmitter<any>();
   dialogShown: boolean = false;
 
   delete() {
@@ -20,6 +26,7 @@ export class ConfirmableDeleteComponent {
 
   cancel() {
     this.dialogShown = false;
+    this.resetErrorEmit.emit();
   }
 
   confirmDelete() {

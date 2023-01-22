@@ -82,6 +82,16 @@ export class QualificationService {
     );
   }
 
+  public async isQualificationAssignedToAnyEmployee(qualification: Qualification): Promise<boolean> {
+    let assigned = false;
+    await firstValueFrom(
+      this.http.get<QualificationEmployees>(`/backend/qualifications/${qualification.skill}/employees`,
+        { headers: this.getHeaders() })
+    )
+      .then(qe => { assigned = qe.employees != undefined && qe.employees.length != 0; })
+    return assigned;
+  }
+
   /**
    * Gets qualification employees by skill
    * 
