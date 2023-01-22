@@ -22,6 +22,7 @@ export class EmployeeEditorComponent {
   saveSuccess: boolean = false;
   callbackAlertShown: boolean = false;
   tagInputValue: string = '';
+  found: boolean = true;
 
   constructor(
     private employeeService: EmployeeService,
@@ -84,9 +85,9 @@ export class EmployeeEditorComponent {
       this.router.navigateByUrl("/employee/" + this.employeeId + "?saveSuccess=true")
     }
     )
-    .catch((err) => {
-      this.showCallbackAlert('Speichern fehlgeschlagen, Grund: ' + err.message, false);
-    });
+      .catch((err) => {
+        this.showCallbackAlert('Speichern fehlgeschlagen, Grund: ' + err.message, false);
+      });
     //ToDo: return to editor details after save?
   }
 
@@ -161,7 +162,8 @@ export class EmployeeEditorComponent {
    */
   private fetchEmployee(employeeId: number) {
     this.employeeService.getEmployeeById(employeeId)
-      .then(employee => this.employee = employee);
+      .then(employee => this.employee = employee)
+      .catch(() => this.found = false);
   }
 
   /**
@@ -170,7 +172,7 @@ export class EmployeeEditorComponent {
   private async saveEmployee() {
     await this.employeeService.addEmployee(this.employee)
   }
-  
+
   /**
    * Edits an employee and sets {@link saveMessage} as well as {@link saveSuccess}
    */
