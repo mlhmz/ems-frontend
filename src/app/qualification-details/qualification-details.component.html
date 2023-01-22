@@ -1,6 +1,13 @@
 <div class="container">
     <ng-container *ngIf="found; else qualificationNotFound">
         <app-status-bar [title]="'Details Qualifikation ' + skill"></app-status-bar>
+        <ng-container *ngIf="showSaveSuccess">
+            <div 
+            class="alert alert-success justify-content-end" 
+            role="alert">
+            Speichern erfolgreich!
+            </div>
+        </ng-container>
         <div class="row">
             <div class="col-2">
                 <p>Name:</p>

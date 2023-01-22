@@ -16,6 +16,7 @@ export class QualificationDetailsComponent {
   qualification: Qualification | undefined;
   qualificationEmployees: QualificationEmployees | undefined;
   found: boolean = true;
+  showSaveSuccess: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,40 +29,44 @@ export class QualificationDetailsComponent {
    * Initial fetch of qualification
    */
   ngOnInit(): void {
-    this.getSkillFromParams()
+    this.getRequiredDataFromParams()
     this.fetchQualification(this.skill);
     if (this.found) {
       this.fetchQualificationEmployees(this.skill);
     }
   }
-  
+
   /**
    * Goes back with the history service
   */
- goBack() {
-   this.historyService.goBack();
+  goBack() {
+    this.historyService.goBack();
   }
-  
+
   /**
-   * Gets the skill from the url params
+   * Gets required data from url params
   */
- private getSkillFromParams() {
-   const routeParams = this.route.snapshot.paramMap;
-   this.skill = String(routeParams.get('id'));
+  private getRequiredDataFromParams() {
+    const routeParams = this.route.snapshot.paramMap;
+    this.skill = String(routeParams.get('id'));
+    const routeQueries = this.route.snapshot.queryParamMap;
+    if (routeQueries.has('saveSuccess')) {
+      this.showSaveSuccess = routeQueries.get('saveSuccess') === "true";
+    }
   }
-  
+
   /**
    * Fetches a certain qualification by its skill,
    * also, it will set the found switch, depending if the qualification was found.
    * 
    * @param skill the skill to get
   */
- private fetchQualification(skill: string) {
-   this.qualificationService.getQualificationBySkill(skill)
-   .then(qualification => {
-     this.found = qualification != undefined;
-     this.qualification = qualification
-    })
+  private fetchQualification(skill: string) {
+    this.qualificationService.getQualificationBySkill(skill)
+      .then(qualification => {
+        this.found = qualification != undefined;
+        this.qualification = qualification
+      })
   }
 
   /**
@@ -71,10 +76,10 @@ export class QualificationDetailsComponent {
    */
   private fetchQualificationEmployees(skill: string) {
     this.qualificationService.getQualificationEmployeesBySkill(skill)
-    .subscribe(
-      qe => {
-        this.qualificationEmployees = qe;
-      }
-    )
+      .subscribe(
+        qe => {
+          this.qualificationEmployees = qe;
+        }
+      )
   }
 }
