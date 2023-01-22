@@ -70,6 +70,14 @@ export class QualificationListComponent {
     });
   }
 
+  getDeleteConfirmationMessage(): string {
+    if (this.qualificationSelection.length == 1) {
+      return "Soll die Qualifikation wirklich gelöscht werden?";
+    } else {
+      return `Sollen die ${this.qualificationSelection.length} ausgewählten Qualifikationen wirklich gelöscht werden`;
+    }
+  }
+
   /**
    * Filters qualifications that include the {@link searchValue}.
    * In order to filter the observable, it will be piped and mapped.

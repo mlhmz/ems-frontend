@@ -45,7 +45,10 @@
                 </table>
             </div>
         </div>
-        <app-confirmable-delete (deleteEmit)="deleteEmployee(this.employee?.id)"></app-confirmable-delete>
+        <app-confirmable-delete 
+        [message]="'Sollen die Mitarbeiter:innen wirklich gelöscht werden?'"
+        (deleteEmit)="deleteEmployee(this.employee?.id)"
+        ></app-confirmable-delete>
     </ng-container>
     <ng-template #employeeNotAvailable>
         <app-not-found

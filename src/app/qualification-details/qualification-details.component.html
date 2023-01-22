@@ -37,7 +37,10 @@
                 </table>
             </div>
         </div>
-        <app-confirmable-delete (deleteEmit)="deleteQualification()"></app-confirmable-delete>
+        <app-confirmable-delete 
+        (deleteEmit)="deleteQualification()"
+        [message]="'Soll die Qualifikation wirklich gelöscht werden?'"
+        ></app-confirmable-delete>
     </ng-container>
     <ng-template #qualificationNotFound>
         <app-not-found

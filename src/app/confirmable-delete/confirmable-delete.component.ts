@@ -8,6 +8,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ConfirmableDeleteComponent {
   @Input()
   alignButtonRight: string = "";
+  @Input()
+  message: string = "";
   @Output()
   deleteEmit: EventEmitter<any> = new EventEmitter<any>();
   dialogShown: boolean = false;

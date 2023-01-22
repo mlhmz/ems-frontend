@@ -41,7 +41,11 @@
         </tbody>
       </table>
       <div *ngIf="isAnythingSelected()" class="cursor-pointer expand">
-        <app-confirmable-delete [alignButtonRight]="'true'" (deleteEmit)="deleteQualificationSelection()"></app-confirmable-delete>
+        <app-confirmable-delete 
+        [alignButtonRight]="'true'" 
+        (deleteEmit)="deleteQualificationSelection()"
+        [message]="getDeleteConfirmationMessage()"
+        ></app-confirmable-delete>
     </div>
       <div *ngIf="(qualifications$ | async)?.length === 0">
         <p>Es wurden keine Qualifikationen gefunden.</p>

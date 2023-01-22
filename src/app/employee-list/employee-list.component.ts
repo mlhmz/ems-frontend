@@ -70,6 +70,14 @@ export class EmployeeListComponent {
     });
   }
 
+  getDeleteConfirmationMessage(): string {
+    if (this.employeeSelection.length == 1) {
+      return "Sollen die Mitarbeiter:innen wirklich gelöscht werden?";
+    } else {
+      return `Sollen die ${this.employeeSelection.length} ausgewählten Mitarbeiter:innen wirklich gelöscht werden`;
+    }
+  }
+
   /**
    * Filters employees by the {@link searchValue}.
    * The filtering successes by checking if the first name or the last name includes the search value.
