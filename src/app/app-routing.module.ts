@@ -13,8 +13,8 @@ const routes: Routes = [
   { path: 'employee/editor', component: EmployeeEditorComponent },
   { path: 'employee/editor/:id', component: EmployeeEditorComponent },
   { path: 'employee/:id', component: EmployeeDetailsComponent },
+  { path: 'qualification/editor', component: QualificationEditorComponent },
   { path: 'qualification/:id', component: QualificationDetailsComponent },
-  { path: 'qualification/editor/:id', component: QualificationEditorComponent },
   { path: 'qualification', component: QualificationListComponent },
 ];
 
