@@ -80,9 +80,9 @@ export class EmployeeEditorComponent {
     } else {
       req = this.saveEmployee();
     }
-    req.then(() => {
+    req.then(response => {
       this.showCallbackAlert('Speichern erfolgreich!', true);
-      this.router.navigateByUrl("/employee/" + this.employeeId + "?saveSuccess=true")
+      this.router.navigateByUrl("/employee/" + response.id + "?saveSuccess=true")
     }
     )
       .catch((err) => {
@@ -107,13 +107,6 @@ export class EmployeeEditorComponent {
       this.employee.skillSet?.push(skill)
     }
     this.tagInputValue = "";
-  }
-
-  /**
-   * Adds a new qualification
-   */
-  addNewQualification() {
-    throw new Error('not implemented');
   }
 
   /**
@@ -169,14 +162,14 @@ export class EmployeeEditorComponent {
   /**
    * Saves an employee and sets {@link saveMessage} as well as {@link saveSuccess}
    */
-  private async saveEmployee() {
-    await this.employeeService.addEmployee(this.employee)
+  private async saveEmployee(): Promise<Employee> {
+    return await this.employeeService.addEmployee(this.employee);
   }
 
   /**
    * Edits an employee and sets {@link saveMessage} as well as {@link saveSuccess}
    */
-  private async editEmployee() {
-    await this.employeeService.editEmployee(this.employee)
+  private async editEmployee(): Promise<Employee> {
+    return await this.employeeService.editEmployee(this.employee);
   }
 }
