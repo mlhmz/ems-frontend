@@ -6,16 +6,17 @@ import { EmployeeListComponent } from "./employee-list/employee-list.component";
 import { QualificationDetailsComponent } from './qualification-details/qualification-details.component';
 import { QualificationEditorComponent } from './qualification-editor/qualification-editor.component';
 import { QualificationListComponent } from './qualification-list/qualification-list.component';
+import { AuthGuard } from './security/app.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/employee', pathMatch: 'full' },
-  { path: 'employee', component: EmployeeListComponent },
-  { path: 'employee/editor', component: EmployeeEditorComponent },
-  { path: 'employee/editor/:id', component: EmployeeEditorComponent },
-  { path: 'employee/:id', component: EmployeeDetailsComponent },
-  { path: 'qualification/editor', component: QualificationEditorComponent },
-  { path: 'qualification/:id', component: QualificationDetailsComponent },
-  { path: 'qualification', component: QualificationListComponent },
+  { path: '', redirectTo: "/employee", pathMatch: 'full' },
+  { path: 'employee', component: EmployeeListComponent, canActivate: [AuthGuard] },
+  { path: 'employee/editor', component: EmployeeEditorComponent, canActivate: [AuthGuard] },
+  { path: 'employee/editor/:id', component: EmployeeEditorComponent, canActivate: [AuthGuard] },
+  { path: 'employee/:id', component: EmployeeDetailsComponent, canActivate: [AuthGuard] },
+  { path: 'qualification/editor', component: QualificationEditorComponent, canActivate: [AuthGuard] },
+  { path: 'qualification/:id', component: QualificationDetailsComponent, canActivate: [AuthGuard] },
+  { path: 'qualification', component: QualificationListComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
