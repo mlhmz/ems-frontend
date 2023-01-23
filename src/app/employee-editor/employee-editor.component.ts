@@ -4,7 +4,7 @@ import { Employee } from "../Employee";
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Qualification } from "../Qualification";
 import { QualificationService } from "../qualification.service";
-import { Observable, of } from "rxjs";
+import { firstValueFrom, Observable, of } from "rxjs";
 
 //ToDo: Validation der Eingaben?
 
@@ -16,13 +16,14 @@ import { Observable, of } from "rxjs";
 export class EmployeeEditorComponent {
   employeeId: number = 0;
   employee: Employee = new Employee();
-  qualifications$: Observable<Qualification[]>;
   editable: boolean = false;
   saveMessage: string = '';
   saveSuccess: boolean = false;
   callbackAlertShown: boolean = false;
   tagInputValue: string = '';
   found: boolean = true;
+  qualifications: Qualification[] = [];
+  suggestions: Qualification[] = [];
 
   constructor(
     private employeeService: EmployeeService,
@@ -31,7 +32,6 @@ export class EmployeeEditorComponent {
     private route: ActivatedRoute
   ) {
     this.employee.skillSet = [];
-    this.qualifications$ = of([]);
     this.fetchData();
   }
 
@@ -51,7 +51,8 @@ export class EmployeeEditorComponent {
    * Fetches all qualifications
    */
   fetchData() {
-    this.qualifications$ = this.qualificationService.getAllQualifications();
+    firstValueFrom(this.qualificationService.getAllQualifications())
+    .then(qualifications => this.qualifications = qualifications);
   }
 
   /**
@@ -109,11 +110,12 @@ export class EmployeeEditorComponent {
    * 
    * @param skill to add
    */
-  addSkillToEmployee(skill: string) {
-    if (this.isEmployeeSkillSetNotIncludingSkill(skill)) {
+  addSkillToEmployee(skill: string | undefined) {
+    if (skill != undefined && this.isEmployeeSkillSetNotIncludingSkill(skill)) {
       this.employee.skillSet?.push(skill)
     }
     this.tagInputValue = "";
+    this.clearSuggestions();
   }
 
   /**
@@ -134,6 +136,25 @@ export class EmployeeEditorComponent {
     if (this.tagInputValue.length == 0) {
       this.employee.skillSet?.pop();
     }
+  }
+
+  refreshSuggestions(event: any) {
+    const input = event.target.value;
+    this.suggestions = this.qualifications.filter(qualification => this.isSuggestionContainingSkillValue(qualification, input))
+  }
+
+  clearSuggestions() {
+    this.suggestions = [];
+  }
+
+  private isSuggestionContainingSkillValue(qualification: Qualification, input: string): boolean {
+    if (this.employee.skillSet?.filter(entry => entry === qualification.skill).length != 0) {
+      return false;
+    } 
+    if (qualification.skill != undefined && input != undefined && input.length != 0) {
+      return qualification.skill?.toLowerCase().includes(input.toLowerCase());
+    }
+    return false;
   }
 
   /**

@@ -45,16 +45,24 @@
                 <span class="cursor-pointer" (click)="removeSkill(skill)">&#x2715;</span>
               </a>
             </ng-container>
-            <input class="border-0 m-1 remove-input-focus-outline" placeholder="Qualifikation" [(ngModel)]="tagInputValue"
+            <input class="border-0 m-1 remove-input-focus-outline" placeholder="Qualifikation"
+              [(ngModel)]="tagInputValue" (input)="refreshSuggestions($event)"
               (keyup.enter)="addSkillToEmployee(tagInputValue)"
               (keyup.backspace)="removeLastSkillIfTagInputValueIsEmpty()" />
           </div>
+        </div>
+        <div class="suggestions">
+          <ul class="list-group">
+            <ng-container *ngFor="let suggestion of suggestions">
+              <li class="list-group-item" (click)="addSkillToEmployee(suggestion.skill)">{{ suggestion.skill }}</li>
+            </ng-container>
+          </ul>
         </div>
       </div>
     </div>
   </ng-container>
   <ng-template #employeeNotFound>
     <app-not-found
-            [message]="'Der Mitarbeiter mit der ID ' + employeeId + ' konnte nicht gefunden werden.'"></app-not-found>
+      [message]="'Der Mitarbeiter mit der ID ' + employeeId + ' konnte nicht gefunden werden.'"></app-not-found>
   </ng-template>
 </div>
