@@ -28,8 +28,8 @@
     </div>
 </ng-container>
 <ng-container *ngIf="alignButtonRight === 'true'; else notAligned">
-    <h1 style="text-align: right;"><span class="material-icons text-danger cursor-pointer" (click)="delete()">delete</span></h1>
+    <h1 style="text-align: right; cursor: default;"><span class="material-icons text-danger cursor-pointer" (click)="showDeleteDialog()">delete</span></h1>
 </ng-container>
 <ng-template #notAligned>
-    <span class="material-icons text-danger cursor-pointer" (click)="delete()">delete</span>
+    <span class="material-icons text-danger cursor-pointer" (click)="showDeleteDialog()">delete</span>
 </ng-template>
