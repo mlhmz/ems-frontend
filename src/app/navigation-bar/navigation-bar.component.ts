@@ -14,12 +14,15 @@ export class NavigationBarComponent {
     private keycloakService: KeycloakService,
   ) {}
 
+  /**
+   * Toggles the navigation bar expanded flag
+   */
   toggleExpanded() {
     this.expanded = !this.expanded;
   }
 
   /**
-   * Logs the user out by clearing its token
+   * Logs the user with the service of keycloak out
    */
   logout() {
     this.keycloakService.logout();

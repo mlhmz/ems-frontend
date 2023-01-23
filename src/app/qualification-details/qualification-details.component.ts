@@ -45,6 +45,9 @@ export class QualificationDetailsComponent {
     this.historyService.goBack();
   }
 
+  /**
+   * Deletes asynchronusly a qualification
+   */
   async deleteQualification() {
     if (this.qualification != undefined && await this.isQualificationDeletable(this.qualification)) {
       this.qualificationService.deleteQualification(this.qualification);
@@ -52,6 +55,13 @@ export class QualificationDetailsComponent {
     }
   }
 
+  /**
+   * Checks asynchronusly if a qualification is assigned to any employee (deletable)
+   * 
+   * @param qualification to check
+   * @returns boolean if the qualification is deletable
+   * 
+   */
   private async isQualificationDeletable(qualification: Qualification) {
     if (await this.qualificationService.isQualificationAssignedToAnyEmployee(qualification)) {
       this.failedMessage = "Die Qualifikation ist noch Mitarbeiter:innen zugewiesen.";
@@ -61,6 +71,9 @@ export class QualificationDetailsComponent {
     return true;
   }
 
+  /**
+   * Resets the deletion error of the confirmable deletion dialog
+   */
   resetDeletionError() {
     this.failed = false;
     this.failedMessage = "";

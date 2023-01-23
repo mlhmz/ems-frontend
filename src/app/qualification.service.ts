@@ -67,12 +67,22 @@ export class QualificationService {
     );
   }
 
+  /**
+   * Bulk deletes asynchronusly multiple qualifications
+   * 
+   * @param qualifications to delete
+   */
   public async bulkDeleteQualifications(qualifications: Qualification[]) {
     for (let qualification of qualifications) {
       await this.deleteQualification(qualification)
     }
   }
 
+  /**
+   * Deletes asynchronusly a qualification
+   * 
+   * @param qualification to delete
+   */
   public async deleteQualification(qualification: Qualification) {
     await firstValueFrom(
       this.http.delete(`/backend/qualifications`, {
@@ -82,6 +92,11 @@ export class QualificationService {
     );
   }
 
+  /**
+   * Checks if a qualification is assigned to any employee
+   * 
+   * @param qualification to check
+   */
   public async isQualificationAssignedToAnyEmployee(qualification: Qualification): Promise<boolean> {
     let assigned = false;
     await firstValueFrom(

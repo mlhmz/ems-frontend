@@ -35,6 +35,9 @@ export class HistoryService {
     this.saveRoutes(routes);
   }
 
+  /**
+   * Gets clean route url with removed blacklisted strings from {@link contentBlacklist}
+   */
   private getCleanRouteUrl(): string {
     let url: string = this.getRouterUrl();
     for (let content of this.contentBlacklist) {

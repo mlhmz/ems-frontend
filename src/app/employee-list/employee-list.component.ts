@@ -43,6 +43,11 @@ export class EmployeeListComponent {
     }
   }
 
+  /**
+   * Selects / unselects an employee in the {@link employeeSelection}
+   * 
+   * @param employee to select or unselect
+   */
   selectEmployee(employee: Employee) {
     if (this.isEmployeeContainedInSelection(employee)) {
       this.employeeSelection = this.employeeSelection.filter(entry => entry != employee);
@@ -51,18 +56,35 @@ export class EmployeeListComponent {
     }
   }
 
+  /**
+   * Checks if the employee is contained in the selection
+   * 
+   * @param employee to check with
+   * @returns boolean if employee is contained in selection
+   */
   isEmployeeContainedInSelection(employee: Employee): boolean {
     return this.employeeSelection.filter(entry => entry == employee).length != 0
   }
 
+  /**
+   * Checks if any entry is selected
+   * 
+   * @returns boolean if criteria is met
+   */
   isAnythingSelected(): boolean {
     return this.employeeSelection.length != 0;
   }
 
+  /**
+   * Clears {@link employeeSelection}
+   */
   clearSelection() {
     this.employeeSelection = [];
   }
 
+  /**
+   * Deletes every employee from the employee selection
+   */
   deleteEmployeeSelection() {
     this.employeeService.bulkDeleteEmployees(this.employeeSelection).then(() => {
       this.clearSelection();
@@ -70,6 +92,13 @@ export class EmployeeListComponent {
     });
   }
 
+  /**
+   * Gets delete confirmation message.
+   * If the {@link employeeSelection} size is over 1, the message will be shown as
+   * plural.
+   * 
+   * @returns string with the message
+   */
   getDeleteConfirmationMessage(): string {
     if (this.employeeSelection.length == 1) {
       return "Sollen die Mitarbeiter:innen wirklich gelöscht werden?";

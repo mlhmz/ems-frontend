@@ -91,6 +91,13 @@ export class EmployeeEditorComponent {
     //ToDo: return to editor details after save?
   }
 
+  /**
+   * Shows callback alert of the editor
+   * 
+   * @param saveMessage of the callback alet
+   * @param saveSuccess boolean, if set to false, an alert-danger message will be shown, else it is an
+   *  alert-success message 
+   */
   private showCallbackAlert(saveMessage: string, saveSuccess: boolean) {
     this.saveMessage = saveMessage;
     this.saveSuccess = saveSuccess;

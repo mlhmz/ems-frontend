@@ -64,6 +64,9 @@ export class QualificationListComponent {
     this.qualificationSelection = [];
   }
 
+  /**
+   * Deletes asynchronusly the qualification selection
+   */
   async deleteQualificationSelection() {
     if (await this.isSelectionDeletable()) {
       this.qualificationService.bulkDeleteQualifications(this.qualificationSelection).then(() => {
@@ -73,10 +76,17 @@ export class QualificationListComponent {
     }
   }
 
+  /**
+   * Checks asynchronusly if any qualification of the selection is assigned to any employee (deletable)
+   * 
+   * @param qualification to check
+   * @returns boolean if the qualification is deletable
+   * 
+   */
   private async isSelectionDeletable() {
     for (let selection of this.qualificationSelection) {
       if (await this.qualificationService.isQualificationAssignedToAnyEmployee(selection)) {
-        this.failedMessage = "Die Qualifikation ist noch Mitarbeiter:innen zugewiesen.";
+        this.failedMessage = this.getQualificationNotDeletableMessage();
         this.failed = true;
         return false;
       }
@@ -84,6 +94,22 @@ export class QualificationListComponent {
     return true;
   }
 
+  /**
+   * Checks for plural and gets by the result of the check the message
+   * 
+   * @returns the message as string
+   */
+  private getQualificationNotDeletableMessage(): string {
+    if (this.qualificationSelection.length == 1) {
+      return "Die Qualifikation ist noch Mitarbeiter:innen zugewiesen.";
+    } else {
+      return "Die Qualifikationen sind noch Mitarbeiter:innen zugewiesen"
+    }
+  }
+
+  /**
+   * Checks asynchronusly if a qualification is deletable
+   */
   resetDeletionError() {
     this.failed = false;
     this.failedMessage = "";

@@ -20,15 +20,24 @@ export class ConfirmableDeleteComponent {
   resetErrorEmit: EventEmitter<any> = new EventEmitter<any>();
   dialogShown: boolean = false;
 
-  delete() {
+  /**
+   * Shows dialog
+   */
+  showDeleteDialog() {
     this.dialogShown = true;
   }
 
+  /**
+   * Cancels delete process and closes dialog, also emits {@link resetErrorEmit}
+   */
   cancel() {
     this.dialogShown = false;
     this.resetErrorEmit.emit();
   }
 
+  /**
+   * Emits {@link deleteEmit} to parent component
+   */
   confirmDelete() {
     this.deleteEmit.emit();
   }
