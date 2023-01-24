@@ -5,29 +5,27 @@ import { HistoryService } from '../history.service';
 @Component({
   selector: 'app-status-bar',
   templateUrl: './status-bar.component.html',
-  styleUrls: ['./status-bar.component.css']
+  styleUrls: ['./status-bar.component.css'],
 })
 export class StatusBarComponent {
   @Input()
-  title: string = "";
+  title: string = '';
   @Input()
-  editable: string = "false";
+  editable: string = 'false';
   @Input()
-  editRoute: string = "";
+  editRoute: string = '';
   @Input()
-  saveable: string = "false";
+  saveable: string = 'false';
   @Output()
   saveEmit: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(
-    private historyService: HistoryService
-  ) { }
+  constructor(private historyService: HistoryService) {}
 
   /**
    * Emits the save operation to the parent component
    */
   save() {
-    this.saveEmit.emit()
+    this.saveEmit.emit();
   }
 
   /**

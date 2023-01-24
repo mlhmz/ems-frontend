@@ -1,57 +1,51 @@
 <div class="container">
-    <ng-container *ngIf="found; else employeeNotAvailable">
-        <app-status-bar [title]="'Details Mitarbeiter ' + id" [editable]="'true'" 
-        [editRoute]="'/employee/editor/' + id">
-        </app-status-bar>
-        <ng-container *ngIf="showSaveSuccess">
-            <div 
-            class="alert alert-success justify-content-end" 
-            role="alert">
-            Speichern erfolgreich!
-            </div>
-        </ng-container>
-        <div class="row">
-            <div class="col">
-                <p>Vorname:</p>
-                <p>Nachname:</p>
-                <p>Straße:</p>
-                <p>Postleitzahl:</p>
-                <p>Stadt:</p>
-                <p>Telefonnummer:</p>
-            </div>
-            <div class="col">
-                <p>{{ this.employee?.firstName }}</p>
-                <p>{{ this.employee?.lastName }}</p>
-                <p>{{ this.employee?.street }}</p>
-                <p>{{ this.employee?.postcode }}</p>
-                <p>{{ this.employee?.city }}</p>
-                <p>{{ this.employee?.phone }}</p>
-            </div>
-        </div>
-        <div class="row margin-y-10">
-            <h5>Qualifikationen</h5>
-            <div class="col">
-                <table class="table">
-                    <thead>
-                        <th>Name</th>
-                    </thead>
-                    <tbody>
-                        <ng-container *ngFor="let skill of employee?.skillSet">
-                            <tr class="tr-hover" [routerLink]="['/qualification/', skill]">
-                                <td>{{skill}}</td>
-                            </tr>
-                        </ng-container>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <app-confirmable-delete 
-        [message]="'Sollen die Mitarbeiter:innen wirklich gelöscht werden?'"
-        (deleteEmit)="deleteEmployee(this.employee?.id)"
-        ></app-confirmable-delete>
+  <ng-container *ngIf="found; else employeeNotAvailable">
+    <app-status-bar [title]="'Details Mitarbeiter ' + id" [editable]="'true'" [editRoute]="'/employee/editor/' + id">
+    </app-status-bar>
+    <ng-container *ngIf="showSaveSuccess">
+      <div class="alert alert-success justify-content-end" role="alert">Speichern erfolgreich!</div>
     </ng-container>
-    <ng-template #employeeNotAvailable>
-        <app-not-found
-            [message]="'Der Mitarbeiter mit der ID ' + id + ' konnte nicht gefunden werden.'"></app-not-found>
-    </ng-template>
+    <div class="row">
+      <div class="col">
+        <p>Vorname:</p>
+        <p>Nachname:</p>
+        <p>Straße:</p>
+        <p>Postleitzahl:</p>
+        <p>Stadt:</p>
+        <p>Telefonnummer:</p>
+      </div>
+      <div class="col">
+        <p>{{ this.employee?.firstName }}</p>
+        <p>{{ this.employee?.lastName }}</p>
+        <p>{{ this.employee?.street }}</p>
+        <p>{{ this.employee?.postcode }}</p>
+        <p>{{ this.employee?.city }}</p>
+        <p>{{ this.employee?.phone }}</p>
+      </div>
+    </div>
+    <div class="row margin-y-10">
+      <h5>Qualifikationen</h5>
+      <div class="col">
+        <table class="table">
+          <thead>
+            <th>Name</th>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let skill of employee?.skillSet">
+              <tr class="tr-hover" [routerLink]="['/qualification/', skill]">
+                <td>{{ skill }}</td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <app-confirmable-delete
+      [message]="'Sollen die Mitarbeiter:innen wirklich gelöscht werden?'"
+      (deleteEmit)="deleteEmployee(this.employee?.id)"
+    ></app-confirmable-delete>
+  </ng-container>
+  <ng-template #employeeNotAvailable>
+    <app-not-found [message]="'Der Mitarbeiter mit der ID ' + id + ' konnte nicht gefunden werden.'"></app-not-found>
+  </ng-template>
 </div>

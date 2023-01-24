@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
-import { EmployeeService } from "../employee.service";
-import { Employee } from "../Employee";
+import { EmployeeService } from '../employee.service';
+import { Employee } from '../Employee';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { Qualification } from "../Qualification";
-import { QualificationService } from "../qualification.service";
-import { firstValueFrom, Observable, of } from "rxjs";
+import { Qualification } from '../Qualification';
+import { QualificationService } from '../qualification.service';
+import { firstValueFrom, Observable, of } from 'rxjs';
 
 //ToDo: Validation der Eingaben?
 
 @Component({
   selector: 'app-employee-editor',
   templateUrl: './employee-editor.component.html',
-  styleUrls: ['./employee-editor.component.css']
+  styleUrls: ['./employee-editor.component.css'],
 })
 export class EmployeeEditorComponent {
   employeeId: number = 0;
@@ -42,7 +42,7 @@ export class EmployeeEditorComponent {
     const routeParams = this.route.snapshot.paramMap;
     if (routeParams.has('id')) {
       this.editable = true;
-      this.getIdFromParams(routeParams)
+      this.getIdFromParams(routeParams);
       this.fetchEmployee(this.employeeId);
     }
   }
@@ -51,22 +51,23 @@ export class EmployeeEditorComponent {
    * Fetches all qualifications
    */
   fetchData() {
-    firstValueFrom(this.qualificationService.getAllQualifications())
-    .then(qualifications => this.qualifications = qualifications);
+    firstValueFrom(this.qualificationService.getAllQualifications()).then(
+      (qualifications) => (this.qualifications = qualifications)
+    );
   }
 
   /**
    * Gets the title for the status bar
    */
   getTitle() {
-    let title = "Mitarbeiter ";
+    let title = 'Mitarbeiter ';
     if (this.editable == undefined) {
-      return "";
+      return '';
     }
     if (this.editable == true) {
-      title += this.employeeId + " editieren";
+      title += this.employeeId + ' editieren';
     } else {
-      title += "erstellen";
+      title += 'erstellen';
     }
     return title;
   }
@@ -81,11 +82,11 @@ export class EmployeeEditorComponent {
     } else {
       req = this.saveEmployee();
     }
-    req.then(response => {
-      this.showCallbackAlert('Speichern erfolgreich!', true);
-      this.router.navigateByUrl("/employee/" + response.id + "?saveSuccess=true")
-    }
-    )
+    req
+      .then((response) => {
+        this.showCallbackAlert('Speichern erfolgreich!', true);
+        this.router.navigateByUrl('/employee/' + response.id + '?saveSuccess=true');
+      })
       .catch((err) => {
         this.showCallbackAlert('Speichern fehlgeschlagen, Grund: ' + err.message, false);
       });
@@ -94,10 +95,10 @@ export class EmployeeEditorComponent {
 
   /**
    * Shows callback alert of the editor
-   * 
+   *
    * @param saveMessage of the callback alet
    * @param saveSuccess boolean, if set to false, an alert-danger message will be shown, else it is an
-   *  alert-success message 
+   *  alert-success message
    */
   private showCallbackAlert(saveMessage: string, saveSuccess: boolean) {
     this.saveMessage = saveMessage;
@@ -107,29 +108,29 @@ export class EmployeeEditorComponent {
 
   /**
    * Adds skill to the {@link employee}
-   * 
+   *
    * @param skill to add
    */
   addSkillToEmployee(skill: string | undefined) {
     if (skill != undefined && this.isEmployeeSkillSetNotIncludingSkill(skill)) {
-      this.employee.skillSet?.push(skill)
+      this.employee.skillSet?.push(skill);
     }
-    this.tagInputValue = "";
+    this.tagInputValue = '';
     this.clearSuggestions();
   }
 
   /**
    * Removes a skill by filtering every skill that is not equal
    * to the skill that should be removed
-   * 
+   *
    * @param skill string to check with
    */
   removeSkill(skill: string) {
-    this.employee.skillSet = this.employee.skillSet?.filter(entry => entry != skill);
+    this.employee.skillSet = this.employee.skillSet?.filter((entry) => entry != skill);
   }
 
   /**
-   * Conditionally removes the last skill of the employee skillSet 
+   * Conditionally removes the last skill of the employee skillSet
    * if the {@link tagInputValue} is empty
    */
   removeLastSkillIfTagInputValueIsEmpty() {
@@ -140,10 +141,11 @@ export class EmployeeEditorComponent {
 
   refreshSuggestions(event: any) {
     const input = event.target.value;
-    let results = this.qualifications.filter(qualification => this.isSuggestionContainingSkillValue(qualification, input));
+    let results = this.qualifications.filter((qualification) =>
+      this.isSuggestionContainingSkillValue(qualification, input)
+    );
     this.suggestions = results.slice(-4);
     scrollTo(0, document.body.scrollHeight);
-    
   }
 
   clearSuggestions() {
@@ -151,9 +153,9 @@ export class EmployeeEditorComponent {
   }
 
   private isSuggestionContainingSkillValue(qualification: Qualification, input: string): boolean {
-    if (this.employee.skillSet?.filter(entry => entry === qualification.skill).length != 0) {
+    if (this.employee.skillSet?.filter((entry) => entry === qualification.skill).length != 0) {
       return false;
-    } 
+    }
     if (qualification.skill != undefined && input != undefined && input.length != 0) {
       return qualification.skill?.toLowerCase().includes(input.toLowerCase());
     }
@@ -162,17 +164,17 @@ export class EmployeeEditorComponent {
 
   /**
    * Checks if an employee skill set is not including a certain skill
-   * 
+   *
    * @param skill string to check with
    * @returns boolean if skill is not included in skill set
    */
   private isEmployeeSkillSetNotIncludingSkill(skill: string): boolean {
-    return this.employee.skillSet?.filter(entry => entry == skill).length == 0;
+    return this.employee.skillSet?.filter((entry) => entry == skill).length == 0;
   }
 
   /**
    * Gets id from params and stores it into {@link employeeId}
-   * 
+   *
    * @param routeParams {@link ParamMap} to get the employee id from
    */
   private getIdFromParams(routeParams: ParamMap) {
@@ -181,13 +183,14 @@ export class EmployeeEditorComponent {
 
   /**
    * Fetches employee by id
-   * 
+   *
    * @param employeeId of the employee to fetch
    */
   private fetchEmployee(employeeId: number) {
-    this.employeeService.getEmployeeById(employeeId)
-      .then(employee => this.employee = employee)
-      .catch(() => this.found = false);
+    this.employeeService
+      .getEmployeeById(employeeId)
+      .then((employee) => (this.employee = employee))
+      .catch(() => (this.found = false));
   }
 
   /**

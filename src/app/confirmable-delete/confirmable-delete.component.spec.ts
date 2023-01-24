@@ -8,9 +8,8 @@ describe('ConfirmableDeleteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ConfirmableDeleteComponent ]
-    })
-    .compileComponents();
+      declarations: [ConfirmableDeleteComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ConfirmableDeleteComponent);
     component = fixture.componentInstance;

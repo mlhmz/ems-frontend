@@ -8,9 +8,8 @@ describe('QualificationListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ QualificationListComponent ]
-    })
-    .compileComponents();
+      declarations: [QualificationListComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(QualificationListComponent);
     component = fixture.componentInstance;

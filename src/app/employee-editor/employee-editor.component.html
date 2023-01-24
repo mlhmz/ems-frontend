@@ -1,68 +1,93 @@
 <div class="container">
   <ng-container *ngIf="found; else employeeNotFound">
-    <app-status-bar [title]="getTitle()" [editable]="'false'" [saveable]="'true'" (saveEmit)="save()">
-    </app-status-bar>
+    <app-status-bar [title]="getTitle()" [editable]="'false'" [saveable]="'true'" (saveEmit)="save()"> </app-status-bar>
     <div class="row mt-4">
       <ng-container *ngIf="callbackAlertShown">
-        <div class="alert justify-content-end" [class.alert-success]="saveSuccess" [class.alert-danger]="!saveSuccess"
-          role="alert">
-          {{saveMessage}}
+        <div
+          class="alert justify-content-end"
+          [class.alert-success]="saveSuccess"
+          [class.alert-danger]="!saveSuccess"
+          role="alert"
+        >
+          {{ saveMessage }}
         </div>
       </ng-container>
     </div>
     <div class="row m-auto">
       <div class="row my-2">
         <label for="firstName" class="form-label">Vorname</label>
-        <input type="email" class="form-control" id="firstName" placeholder="Max" [(ngModel)]="employee.firstName">
+        <input type="email" class="form-control" id="firstName" placeholder="Max" [(ngModel)]="employee.firstName" />
       </div>
       <div class="row my-2">
         <label for="lastName" class="form-label">Nachname</label>
-        <input type="email" class="form-control" id="lastName" placeholder="Mustermann" [(ngModel)]="employee.lastName">
+        <input
+          type="email"
+          class="form-control"
+          id="lastName"
+          placeholder="Mustermann"
+          [(ngModel)]="employee.lastName"
+        />
       </div>
       <div class="row my-2">
         <label for="street" class="form-label">Straße + Hausnr.</label>
-        <input type="email" class="form-control" id="street" placeholder="Musterstr. 11" [(ngModel)]="employee.street">
+        <input
+          type="email"
+          class="form-control"
+          id="street"
+          placeholder="Musterstr. 11"
+          [(ngModel)]="employee.street"
+        />
       </div>
       <div class="row my-2">
         <label for="postcode" class="form-label">Postleitzahl</label>
-        <input type="email" class="form-control" id="postcode" placeholder="12345" [(ngModel)]="employee.postcode">
+        <input type="email" class="form-control" id="postcode" placeholder="12345" [(ngModel)]="employee.postcode" />
       </div>
       <div class="row my-2">
         <label for="city" class="form-label">Stadt</label>
-        <input type="email" class="form-control" id="city" placeholder="Musterstadt" [(ngModel)]="employee.city">
+        <input type="email" class="form-control" id="city" placeholder="Musterstadt" [(ngModel)]="employee.city" />
       </div>
       <div class="row my-2">
         <label for="phone" class="form-label">Telefonnr.</label>
-        <input type="email" class="form-control" id="phone" placeholder="+49 123 456789" [(ngModel)]="employee.phone">
+        <input type="email" class="form-control" id="phone" placeholder="+49 123 456789" [(ngModel)]="employee.phone" />
       </div>
       <div class="row my-2">
         <label for="qualifications" clsas="form-label">Qualifikationen</label>
         <div class="form-control m-1">
           <div class="">
             <ng-container *ngFor="let skill of employee.skillSet">
-              <div class="d-inline" style="white-space: nowrap;">
-                <a class="bg-success text-light p-1 m-2 rounded text-decoration-none d-inline-block" style="white-space: normal;">
+              <div class="d-inline" style="white-space: nowrap">
+                <a
+                  class="bg-success text-light p-1 m-2 rounded text-decoration-none d-inline-block"
+                  style="white-space: normal"
+                >
                   {{ skill }}
                   <span class="cursor-pointer" (click)="removeSkill(skill)">&#x2715;</span>
                 </a>
               </div>
             </ng-container>
-            <input class="border-0 m-1 remove-input-focus-outline" placeholder="Qualifikation" [(ngModel)]="tagInputValue"
-              (input)="refreshSuggestions($event)" (keyup.enter)="addSkillToEmployee(tagInputValue)"
-              (keyup.backspace)="removeLastSkillIfTagInputValueIsEmpty()" />
+            <input
+              class="border-0 m-1 remove-input-focus-outline"
+              placeholder="Qualifikation"
+              [(ngModel)]="tagInputValue"
+              (input)="refreshSuggestions($event)"
+              (keyup.enter)="addSkillToEmployee(tagInputValue)"
+              (keyup.backspace)="removeLastSkillIfTagInputValueIsEmpty()"
+            />
           </div>
         </div>
       </div>
       <div id="qualification-input-suggestions" class="form-control mt-1" *ngIf="suggestions.length != 0">
         <ng-container *ngFor="let suggestion of suggestions">
-          <p class="p-1 px-15 cursor-pointer tr-hover list-group-item" (click)="addSkillToEmployee(suggestion.skill)">{{
-            suggestion.skill }}</p>
+          <p class="p-1 px-15 cursor-pointer tr-hover list-group-item" (click)="addSkillToEmployee(suggestion.skill)">
+            {{ suggestion.skill }}
+          </p>
         </ng-container>
       </div>
     </div>
   </ng-container>
   <ng-template #employeeNotFound>
     <app-not-found
-      [message]="'Der Mitarbeiter mit der ID ' + employeeId + ' konnte nicht gefunden werden.'"></app-not-found>
+      [message]="'Der Mitarbeiter mit der ID ' + employeeId + ' konnte nicht gefunden werden.'"
+    ></app-not-found>
   </ng-template>
 </div>

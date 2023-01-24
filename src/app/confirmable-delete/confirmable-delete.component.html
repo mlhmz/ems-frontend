@@ -1,35 +1,36 @@
 <ng-container *ngIf="dialogShown">
-    <div class="dialog-background"></div>
-    <div class="closable-modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Bestätigung</h5>
-                    <button type="button" class="btn-close" (click)="cancel()"></button>
-                </div>
-                <hr>
-                <ng-container *ngIf="!failed; else error">
-                    <div class="modal-body">
-                        <p>{{ message }}</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary m-1" (click)="cancel()">Abbrechen</button>
-                        <button type="button" class="btn btn-danger m-1" (click)="confirmDelete()">Löschen</button>
-                    </div>
-                </ng-container>
-                <ng-template #error>
-                    <div class="modal-body">
-                        <p>{{ failedMessage }}</p>
-                    </div>
-                </ng-template>
-                
-            </div>
+  <div class="dialog-background"></div>
+  <div class="closable-modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Bestätigung</h5>
+          <button type="button" class="btn-close" (click)="cancel()"></button>
         </div>
+        <hr />
+        <ng-container *ngIf="!failed; else error">
+          <div class="modal-body">
+            <p>{{ message }}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary m-1" (click)="cancel()">Abbrechen</button>
+            <button type="button" class="btn btn-danger m-1" (click)="confirmDelete()">Löschen</button>
+          </div>
+        </ng-container>
+        <ng-template #error>
+          <div class="modal-body">
+            <p>{{ failedMessage }}</p>
+          </div>
+        </ng-template>
+      </div>
     </div>
+  </div>
 </ng-container>
 <ng-container *ngIf="alignButtonRight === 'true'; else notAligned">
-    <h1 style="text-align: right; cursor: default;"><span class="material-icons text-danger cursor-pointer" (click)="showDeleteDialog()">delete</span></h1>
+  <h1 style="text-align: right; cursor: default">
+    <span class="material-icons text-danger cursor-pointer" (click)="showDeleteDialog()">delete</span>
+  </h1>
 </ng-container>
 <ng-template #notAligned>
-    <span class="material-icons text-danger cursor-pointer" (click)="showDeleteDialog()">delete</span>
+  <span class="material-icons text-danger cursor-pointer" (click)="showDeleteDialog()">delete</span>
 </ng-template>

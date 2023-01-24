@@ -4,15 +4,13 @@ import { KeycloakService } from 'keycloak-angular';
 @Component({
   selector: 'app-navigation-bar',
   templateUrl: './navigation-bar.component.html',
-  styleUrls: ['./navigation-bar.component.css']
+  styleUrls: ['./navigation-bar.component.css'],
 })
 export class NavigationBarComponent {
   @Input() itemsShown: boolean = false;
   expanded: boolean = false;
 
-  constructor (
-    private keycloakService: KeycloakService,
-  ) {}
+  constructor(private keycloakService: KeycloakService) {}
 
   /**
    * Toggles the navigation bar expanded flag

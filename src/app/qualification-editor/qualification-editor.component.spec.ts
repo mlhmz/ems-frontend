@@ -8,9 +8,8 @@ describe('QualificationEditorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ QualificationEditorComponent ]
-    })
-    .compileComponents();
+      declarations: [QualificationEditorComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(QualificationEditorComponent);
     component = fixture.componentInstance;

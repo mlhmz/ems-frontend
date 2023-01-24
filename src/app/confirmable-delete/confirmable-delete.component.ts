@@ -3,13 +3,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 @Component({
   selector: 'app-confirmable-delete',
   templateUrl: './confirmable-delete.component.html',
-  styleUrls: ['./confirmable-delete.component.css']
+  styleUrls: ['./confirmable-delete.component.css'],
 })
 export class ConfirmableDeleteComponent {
   @Input()
-  alignButtonRight: string = "";
+  alignButtonRight: string = '';
   @Input()
-  message: string = "";
+  message: string = '';
   @Input()
   failedMessage: string = '';
   @Input()
@@ -41,5 +41,4 @@ export class ConfirmableDeleteComponent {
   confirmDelete() {
     this.deleteEmit.emit();
   }
-
 }

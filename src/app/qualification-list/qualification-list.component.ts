@@ -7,7 +7,7 @@ import { QualificationService } from '../qualification.service';
 @Component({
   selector: 'app-qualification-list',
   templateUrl: './qualification-list.component.html',
-  styleUrls: ['./qualification-list.component.css']
+  styleUrls: ['./qualification-list.component.css'],
 })
 export class QualificationListComponent {
   qualifications$: Observable<Qualification[]>;
@@ -17,10 +17,7 @@ export class QualificationListComponent {
   failed: boolean = false;
   private searchMode: boolean = false;
 
-  constructor(
-    private qualificationService: QualificationService,
-    private router: Router,
-  ) {
+  constructor(private qualificationService: QualificationService, private router: Router) {
     this.qualifications$ = of([]);
     this.fetchData();
   }
@@ -35,25 +32,25 @@ export class QualificationListComponent {
 
   /**
    * Goes to an employee with the router
-   * 
+   *
    * @param id of the employee
    */
   goToQualification(id: string | undefined) {
     if (id != undefined) {
-      this.router.navigateByUrl("/qualification/" + id)
+      this.router.navigateByUrl('/qualification/' + id);
     }
   }
 
   selectQualification(qualification: Qualification) {
     if (this.isQualificationContainedInSelection(qualification)) {
-      this.qualificationSelection = this.qualificationSelection.filter(entry => entry != qualification);
+      this.qualificationSelection = this.qualificationSelection.filter((entry) => entry != qualification);
     } else {
       this.qualificationSelection.push(qualification);
     }
   }
 
   isQualificationContainedInSelection(qualification: Qualification): boolean {
-    return this.qualificationSelection.filter(entry => entry == qualification).length != 0
+    return this.qualificationSelection.filter((entry) => entry == qualification).length != 0;
   }
 
   isAnythingSelected(): boolean {
@@ -78,10 +75,10 @@ export class QualificationListComponent {
 
   /**
    * Checks asynchronusly if any qualification of the selection is assigned to any employee (deletable)
-   * 
+   *
    * @param qualification to check
    * @returns boolean if the qualification is deletable
-   * 
+   *
    */
   private async isSelectionDeletable() {
     for (let selection of this.qualificationSelection) {
@@ -96,14 +93,14 @@ export class QualificationListComponent {
 
   /**
    * Checks for plural and gets by the result of the check the message
-   * 
+   *
    * @returns the message as string
    */
   private getQualificationNotDeletableMessage(): string {
     if (this.qualificationSelection.length == 1) {
-      return "Die Qualifikation ist noch Mitarbeiter:innen zugewiesen.";
+      return 'Die Qualifikation ist noch Mitarbeiter:innen zugewiesen.';
     } else {
-      return "Die Qualifikationen sind noch Mitarbeiter:innen zugewiesen"
+      return 'Die Qualifikationen sind noch Mitarbeiter:innen zugewiesen';
     }
   }
 
@@ -112,12 +109,12 @@ export class QualificationListComponent {
    */
   resetDeletionError() {
     this.failed = false;
-    this.failedMessage = "";
+    this.failedMessage = '';
   }
 
   getDeleteConfirmationMessage(): string {
     if (this.qualificationSelection.length == 1) {
-      return "Soll die Qualifikation wirklich gelöscht werden?";
+      return 'Soll die Qualifikation wirklich gelöscht werden?';
     } else {
       return `Sollen die ${this.qualificationSelection.length} ausgewählten Qualifikationen wirklich gelöscht werden`;
     }
@@ -127,7 +124,7 @@ export class QualificationListComponent {
    * Filters qualifications that include the {@link searchValue}.
    * In order to filter the observable, it will be piped and mapped.
    * Also, the {@link searchMode} will be set to true.
-   * 
+   *
    * If the content is empty, {@link fetchData} will be executed.
    */
   searchForString() {
@@ -137,8 +134,10 @@ export class QualificationListComponent {
     }
 
     this.qualifications$ = this.qualifications$.pipe(
-      map(
-        qualifications => qualifications.filter(qualification => this.isQualificationContentContainingString(this.searchValue, qualification))
+      map((qualifications) =>
+        qualifications.filter((qualification) =>
+          this.isQualificationContentContainingString(this.searchValue, qualification)
+        )
       )
     );
     this.setSearchMode(true);
@@ -146,7 +145,7 @@ export class QualificationListComponent {
 
   /**
    * Checks if search mode is enabled
-   * 
+   *
    * @returns if search mode is enabled
    */
   isSearchModeEnabled(): boolean {
@@ -155,7 +154,7 @@ export class QualificationListComponent {
 
   /**
    * Sets the search mode state
-   * 
+   *
    * @param state which the search mode should be set to
    */
   setSearchMode(state: boolean) {
@@ -167,24 +166,24 @@ export class QualificationListComponent {
    */
   resetSearch() {
     this.setSearchMode(false);
-    this.searchValue = "";
+    this.searchValue = '';
   }
 
   /**
    * Checks if the qualification content is containing the text string
-   * 
+   *
    * @param text string to check if its content is included in the qualification skill
    * @qualification to check if the text is included in the skill
    * @returns boolean if text is included in qualification skill
    */
   private isQualificationContentContainingString(text: string, qualification: Qualification): boolean {
     var skill: string | undefined = qualification.skill?.toLowerCase();
-    return this.isValueContainingTextIgnoreCase(skill, text)
+    return this.isValueContainingTextIgnoreCase(skill, text);
   }
 
   /**
    * Checks if value is containing text, while text is set to lower case
-   * 
+   *
    * @param value to check if text is included
    * @param text to check if its content is included in the value string
    * @returns boolean if value is containing text

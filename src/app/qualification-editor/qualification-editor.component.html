@@ -1,20 +1,21 @@
 <div class="container">
-    <app-status-bar [title]="'Qualifikation erstellen'" [saveable]="'true'" (saveEmit)="save()"></app-status-bar>
-    <div class="row mt-4">
-        <ng-container *ngIf="callbackAlertShown">
-          <div 
-          class="alert justify-content-end" 
-          [class.alert-success]="saveSuccess" 
-          [class.alert-danger]="!saveSuccess" 
-          role="alert">
-            {{saveMessage}}
-          </div>
-        </ng-container>
+  <app-status-bar [title]="'Qualifikation erstellen'" [saveable]="'true'" (saveEmit)="save()"></app-status-bar>
+  <div class="row mt-4">
+    <ng-container *ngIf="callbackAlertShown">
+      <div
+        class="alert justify-content-end"
+        [class.alert-success]="saveSuccess"
+        [class.alert-danger]="!saveSuccess"
+        role="alert"
+      >
+        {{ saveMessage }}
+      </div>
+    </ng-container>
+  </div>
+  <div class="row m-auto">
+    <div class="row">
+      <label for="name" class="form-label">Name</label>
+      <input placeholder="Name" class="form-control" [(ngModel)]="qualification.skill" />
     </div>
-    <div class="row m-auto">
-        <div class="row">
-            <label for="name" class="form-label">Name</label>
-            <input placeholder="Name" class="form-control" [(ngModel)]="qualification.skill"/>
-        </div>
-    </div>
+  </div>
 </div>

@@ -2,18 +2,15 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HistoryService {
-
-  constructor(
-    private router: Router
-  ) { }
+  constructor(private router: Router) {}
 
   private readonly previousUrlKey = 'previous-url';
   private readonly routeStoringKey = 'avoid-route';
-  private readonly defaultRoute = '/'
-  private readonly contentBlacklist: string[] = ["saveSuccess=true"]
+  private readonly defaultRoute = '/';
+  private readonly contentBlacklist: string[] = ['saveSuccess=true'];
 
   /**
    * Stores the previous route into a local storage json array history
@@ -25,9 +22,9 @@ export class HistoryService {
     }
     var routes: string[];
     var routeString: string | null = window.localStorage.getItem(this.previousUrlKey);
-    if (routeString != null)  {
+    if (routeString != null) {
       routes = JSON.parse(routeString);
-      routes.push(this.getCleanRouteUrl())
+      routes.push(this.getCleanRouteUrl());
     } else {
       routes = [this.defaultRoute, this.getCleanRouteUrl()];
     }
@@ -41,7 +38,7 @@ export class HistoryService {
   private getCleanRouteUrl(): string {
     let url: string = this.getRouterUrl();
     for (let content of this.contentBlacklist) {
-      url = url.replace(content, "")
+      url = url.replace(content, '');
     }
     console.log(url);
     return url;
@@ -49,21 +46,21 @@ export class HistoryService {
 
   /**
    * Cuts routes if list has over x entries
-   * 
+   *
    * @param routes of the application
    * @param maxEntries param to rule how many entries should be maximally allowed
    * @returns cutted string array
    */
   private cutRoutesWhenRoutesListIsTooBig(routes: string[], maxEntries: number): string[] {
     if (routes.length > maxEntries) {
-      return routes.slice(-maxEntries)
+      return routes.slice(-maxEntries);
     }
     return routes;
   }
 
   /**
    * Saves routes array as json array to local storage
-   * 
+   *
    * @param routes array
    */
   private saveRoutes(routes: string[]) {
@@ -72,7 +69,7 @@ export class HistoryService {
 
   /**
    * Gets current route url from router
-   * 
+   *
    * @returns route url as string
    */
   private getRouterUrl(): string {
@@ -94,23 +91,23 @@ export class HistoryService {
       window.localStorage.setItem(this.previousUrlKey, JSON.stringify(routes));
       this.router.navigateByUrl(lastRoute);
     } else {
-      this.router.navigateByUrl("/");
+      this.router.navigateByUrl('/');
     }
   }
 
   /**
    * Checks if routes should be stored
-   * 
+   *
    * @returns boolean if routes should be stored
    */
   private isRoutesStored(): boolean {
     const routesStored = window.localStorage.getItem(this.routeStoringKey);
-    return routesStored != undefined && routesStored === "true";
+    return routesStored != undefined && routesStored === 'true';
   }
 
   /**
    * Sets if routes should be stored
-   * 
+   *
    * @param routesStored boolean to enable and disable
    */
   private setRoutesStored(routesStored: boolean) {
@@ -119,10 +116,10 @@ export class HistoryService {
 
   /**
    * Gets last route from array
-   * 
+   *
    * @param routes as string array
    * @returns last route
-   * 
+   *
    */
   private getLastRoute(routes: string[]): string {
     return routes.slice(-1)[0];

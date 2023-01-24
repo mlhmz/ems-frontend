@@ -8,7 +8,7 @@ import { Qualification } from '../Qualification';
 @Component({
   selector: 'app-employee-details',
   templateUrl: './employee-details.component.html',
-  styleUrls: ['./employee-details.component.css']
+  styleUrls: ['./employee-details.component.css'],
 })
 export class EmployeeDetailsComponent implements OnInit {
   employee: Employee | undefined;
@@ -19,9 +19,8 @@ export class EmployeeDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private employeeService: EmployeeService,
-    private historyService: HistoryService,
-  ) {
-  }
+    private historyService: HistoryService
+  ) {}
 
   /**
    * Initial employee fetching
@@ -38,7 +37,7 @@ export class EmployeeDetailsComponent implements OnInit {
    */
   goBack(): void {
     this.historyService.goBack();
-  } 
+  }
 
   /**
    * gets the id from the params
@@ -48,26 +47,26 @@ export class EmployeeDetailsComponent implements OnInit {
     this.id = Number(routeParams.get('id'));
     const routeQueries = this.route.snapshot.queryParamMap;
     if (routeQueries.has('saveSuccess')) {
-      this.showSaveSuccess = routeQueries.get('saveSuccess') === "true";
+      this.showSaveSuccess = routeQueries.get('saveSuccess') === 'true';
     }
   }
 
   deleteEmployee(id: number | undefined) {
     if (id != undefined) {
-      this.employeeService.deleteEmployee(id)
-      .then(() => this.goBack());
+      this.employeeService.deleteEmployee(id).then(() => this.goBack());
     }
   }
 
   /**
    * fetches an employee by its id and sets {@link found}
    * to false if the employee couldn't be found
-   * 
+   *
    * @param id of the employee
    */
   private fetchEmployee(id: number) {
-    this.employeeService.getEmployeeById(id)
-    .then(employee => this.employee = employee)
-    .catch(() => this.found = false);
+    this.employeeService
+      .getEmployeeById(id)
+      .then((employee) => (this.employee = employee))
+      .catch(() => (this.found = false));
   }
 }
