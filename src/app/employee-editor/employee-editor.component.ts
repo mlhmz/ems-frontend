@@ -140,7 +140,10 @@ export class EmployeeEditorComponent {
 
   refreshSuggestions(event: any) {
     const input = event.target.value;
-    this.suggestions = this.qualifications.filter(qualification => this.isSuggestionContainingSkillValue(qualification, input))
+    let results = this.qualifications.filter(qualification => this.isSuggestionContainingSkillValue(qualification, input));
+    this.suggestions = results.slice(-4);
+    scrollTo(0, document.body.scrollHeight);
+    
   }
 
   clearSuggestions() {
