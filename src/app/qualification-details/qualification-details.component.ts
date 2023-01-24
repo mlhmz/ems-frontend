@@ -12,13 +12,13 @@ import { QualificationEmployees } from '../QualificationEmployees';
   styleUrls: ['./qualification-details.component.css'],
 })
 export class QualificationDetailsComponent {
-  skill: string = '';
+  skill = '';
   qualification: Qualification | undefined;
   qualificationEmployees: QualificationEmployees | undefined;
-  found: boolean = true;
-  showSaveSuccess: boolean = false;
-  failedMessage: string = '';
-  failed: boolean = false;
+  found = true;
+  showSaveSuccess = false;
+  failedMessage = '';
+  failed = false;
 
   constructor(
     private route: ActivatedRoute,

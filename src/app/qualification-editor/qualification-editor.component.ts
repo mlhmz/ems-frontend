@@ -10,9 +10,9 @@ import { QualificationService } from '../qualification.service';
 })
 export class QualificationEditorComponent {
   qualification: Qualification;
-  saveSuccess: boolean = false;
-  saveMessage: string = '';
-  callbackAlertShown: boolean = false;
+  saveSuccess = false;
+  saveMessage = '';
+  callbackAlertShown = false;
 
   constructor(private qualificationService: QualificationService, private router: Router) {
     this.qualification = new Qualification();

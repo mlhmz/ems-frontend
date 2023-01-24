@@ -76,7 +76,7 @@
           </div>
         </div>
       </div>
-      <div id="qualification-input-suggestions" class="form-control mt-1" *ngIf="suggestions.length != 0">
+      <div id="qualification-input-suggestions" class="form-control mt-1" *ngIf="suggestions.length !== 0">
         <ng-container *ngFor="let suggestion of suggestions">
           <p class="p-1 px-15 cursor-pointer tr-hover list-group-item" (click)="addSkillToEmployee(suggestion.skill)">
             {{ suggestion.skill }}

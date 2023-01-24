@@ -13,8 +13,8 @@ import { Qualification } from '../Qualification';
 export class EmployeeDetailsComponent implements OnInit {
   employee: Employee | undefined;
   id: number | undefined;
-  found: boolean = true;
-  showSaveSuccess: boolean = false;
+  found = true;
+  showSaveSuccess = false;
 
   constructor(
     private route: ActivatedRoute,

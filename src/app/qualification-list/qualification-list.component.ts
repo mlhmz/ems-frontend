@@ -12,10 +12,10 @@ import { QualificationService } from '../qualification.service';
 export class QualificationListComponent {
   qualifications$: Observable<Qualification[]>;
   qualificationSelection: Qualification[] = [];
-  searchValue: string = '';
-  failedMessage: string = '';
-  failed: boolean = false;
-  private searchMode: boolean = false;
+  searchValue = '';
+  failedMessage = '';
+  failed = false;
+  private searchMode = false;
 
   constructor(private qualificationService: QualificationService, private router: Router) {
     this.qualifications$ = of([]);
@@ -81,7 +81,7 @@ export class QualificationListComponent {
    *
    */
   private async isSelectionDeletable() {
-    for (let selection of this.qualificationSelection) {
+    for (const selection of this.qualificationSelection) {
       if (await this.qualificationService.isQualificationAssignedToAnyEmployee(selection)) {
         this.failedMessage = this.getQualificationNotDeletableMessage();
         this.failed = true;
@@ -177,7 +177,7 @@ export class QualificationListComponent {
    * @returns boolean if text is included in qualification skill
    */
   private isQualificationContentContainingString(text: string, qualification: Qualification): boolean {
-    var skill: string | undefined = qualification.skill?.toLowerCase();
+    const skill: string | undefined = qualification.skill?.toLowerCase();
     return this.isValueContainingTextIgnoreCase(skill, text);
   }
 

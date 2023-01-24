@@ -75,7 +75,7 @@ export class EmployeeService {
     if (employee.id == undefined) {
       return;
     }
-    let oldEmployeeData: Employee = await this.getEmployeeById(employee.id);
+    const oldEmployeeData: Employee = await this.getEmployeeById(employee.id);
     const qualifications = this.qualificationService.convertStringArrayToQualificationArray(skills);
     await this.qualificationService.saveNotExistingQualifications(qualifications);
     const qualificationsToAdd: Qualification[] = this.getNotInEmployeeSkillSetContainedQualifications(
@@ -97,7 +97,7 @@ export class EmployeeService {
    * @param qualifications to add to the employee
    */
   public bulkAddQualificationsToEmployee(employeeId: number, qualifications: Qualification[]) {
-    for (let qualification of qualifications) {
+    for (const qualification of qualifications) {
       this.addQualificationToEmployee(employeeId, qualification);
     }
   }
@@ -122,7 +122,7 @@ export class EmployeeService {
    * @param qualifications to remove from the employee
    */
   public bulkDeleteQualificationsFromEmployee(employeeId: number, qualificationsToRemove: Qualification[]) {
-    for (let qualification of qualificationsToRemove) {
+    for (const qualification of qualificationsToRemove) {
       this.deleteQualificationFromEmployee(employeeId, qualification);
     }
   }
@@ -188,7 +188,7 @@ export class EmployeeService {
   ): Qualification[] {
     let result: Qualification[] = [];
     if (employee.skillSet != undefined) {
-      let skillList = employee.skillSet.filter(
+      const skillList = employee.skillSet.filter(
         (qualification) => !this.isEmployeeQualificationIncludedInQualificationSet(qualification, qualifications)
       );
       result = this.qualificationService.convertStringArrayToQualificationArray(skillList);
@@ -212,7 +212,7 @@ export class EmployeeService {
    * @param employees in an array
    */
   public async bulkDeleteEmployees(employees: Employee[]) {
-    for (let employee of employees) {
+    for (const employee of employees) {
       if (employee.id != undefined) {
         await this.deleteEmployee(employee.id);
       }

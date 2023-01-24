@@ -14,14 +14,14 @@ import { firstValueFrom, Observable, of } from 'rxjs';
   styleUrls: ['./employee-editor.component.css'],
 })
 export class EmployeeEditorComponent {
-  employeeId: number = 0;
+  employeeId = 0;
   employee: Employee = new Employee();
-  editable: boolean = false;
-  saveMessage: string = '';
-  saveSuccess: boolean = false;
-  callbackAlertShown: boolean = false;
-  tagInputValue: string = '';
-  found: boolean = true;
+  editable = false;
+  saveMessage = '';
+  saveSuccess = false;
+  callbackAlertShown = false;
+  tagInputValue = '';
+  found = true;
   qualifications: Qualification[] = [];
   suggestions: Qualification[] = [];
 
@@ -141,7 +141,7 @@ export class EmployeeEditorComponent {
 
   refreshSuggestions(event: any) {
     const input = event.target.value;
-    let results = this.qualifications.filter((qualification) =>
+    const results = this.qualifications.filter((qualification) =>
       this.isSuggestionContainingSkillValue(qualification, input)
     );
     this.suggestions = results.slice(-4);

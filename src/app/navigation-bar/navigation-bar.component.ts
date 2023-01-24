@@ -7,8 +7,8 @@ import { KeycloakService } from 'keycloak-angular';
   styleUrls: ['./navigation-bar.component.css'],
 })
 export class NavigationBarComponent {
-  @Input() itemsShown: boolean = false;
-  expanded: boolean = false;
+  @Input() itemsShown = false;
+  expanded = false;
 
   constructor(private keycloakService: KeycloakService) {}
 

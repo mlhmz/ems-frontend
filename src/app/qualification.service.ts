@@ -44,12 +44,12 @@ export class QualificationService {
    * @param qualifications array to check from
    */
   public async saveNotExistingQualifications(qualifications: Qualification[]) {
-    let allQualifications = await firstValueFrom(
+    const allQualifications = await firstValueFrom(
       this.http.get<Qualification[]>('/backend/qualifications', {
         headers: this.getHeaders(),
       })
     );
-    for (let qualification of qualifications) {
+    for (const qualification of qualifications) {
       await this.saveQualificationIfNotExisting(qualification, allQualifications);
     }
   }
@@ -74,7 +74,7 @@ export class QualificationService {
    * @param qualifications to delete
    */
   public async bulkDeleteQualifications(qualifications: Qualification[]) {
-    for (let qualification of qualifications) {
+    for (const qualification of qualifications) {
       await this.deleteQualification(qualification);
     }
   }
@@ -128,8 +128,8 @@ export class QualificationService {
    * @returns converted qualification array
    */
   public convertStringArrayToQualificationArray(skillArray: string[]): Qualification[] {
-    let qualifications: Qualification[] = [];
-    for (let skill of skillArray) {
+    const qualifications: Qualification[] = [];
+    for (const skill of skillArray) {
       qualifications.push(this.convertStringToQualification(skill));
     }
     return qualifications;

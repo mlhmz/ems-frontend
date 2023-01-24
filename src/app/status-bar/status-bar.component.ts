@@ -9,13 +9,13 @@ import { HistoryService } from '../history.service';
 })
 export class StatusBarComponent {
   @Input()
-  title: string = '';
+  title = '';
   @Input()
-  editable: boolean = false;
+  editable = false;
   @Input()
-  editRoute: string = '';
+  editRoute = '';
   @Input()
-  saveable: boolean = false;
+  saveable = false;
   @Output()
   saveEmit: EventEmitter<any> = new EventEmitter<any>();
 

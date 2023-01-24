@@ -12,9 +12,9 @@ import { EmployeeService } from '../employee.service';
 export class EmployeeListComponent {
   bearer = '';
   employees$: Observable<Employee[]>;
-  searchValue: string = '';
+  searchValue = '';
   employeeSelection: Employee[] = [];
-  private searchMode: boolean = false;
+  private searchMode = false;
 
   constructor(private employeeService: EmployeeService, private router: Router) {
     this.employees$ = of([]);
@@ -163,9 +163,9 @@ export class EmployeeListComponent {
    * @returns boolean if text is included in qualification skill
    */
   isEmployeeContentContainingString(text: string, employee: Employee): boolean {
-    var id: string | undefined = employee.id?.toString();
-    var firstName: string | undefined = employee.firstName?.toLowerCase();
-    var lastName: string | undefined = employee.lastName?.toLowerCase();
+    const id: string | undefined = employee.id?.toString();
+    const firstName: string | undefined = employee.firstName?.toLowerCase();
+    const lastName: string | undefined = employee.lastName?.toLowerCase();
     return (
       this.isValueContainingTextIgnoreCase(firstName, text) ||
       this.isValueContainingTextIgnoreCase(lastName, text) ||

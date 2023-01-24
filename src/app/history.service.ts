@@ -20,8 +20,8 @@ export class HistoryService {
       this.setRoutesStored(false);
       return;
     }
-    var routes: string[];
-    var routeString: string | null = window.localStorage.getItem(this.previousUrlKey);
+    let routes: string[];
+    const routeString: string | null = window.localStorage.getItem(this.previousUrlKey);
     if (routeString != null) {
       routes = JSON.parse(routeString);
       routes.push(this.getCleanRouteUrl());
@@ -37,7 +37,7 @@ export class HistoryService {
    */
   private getCleanRouteUrl(): string {
     let url: string = this.getRouterUrl();
-    for (let content of this.contentBlacklist) {
+    for (const content of this.contentBlacklist) {
       url = url.replace(content, '');
     }
     console.log(url);
@@ -80,8 +80,8 @@ export class HistoryService {
    * Goes to last route, and then removes last route
    */
   public goBack(): void {
-    var routes: string[];
-    var routeString: string | null = window.localStorage.getItem(this.previousUrlKey);
+    let routes: string[];
+    const routeString: string | null = window.localStorage.getItem(this.previousUrlKey);
     let lastRoute;
     this.setRoutesStored(true);
     if (routeString != null) {
