@@ -51,12 +51,11 @@
               (keyup.backspace)="removeLastSkillIfTagInputValueIsEmpty()" />
           </div>
         </div>
-        <div class="suggestions">
-          <ul class="list-group">
-            <ng-container *ngFor="let suggestion of suggestions">
-              <li class="list-group-item" (click)="addSkillToEmployee(suggestion.skill)">{{ suggestion.skill }}</li>
-            </ng-container>
-          </ul>
+        <div class="form-control" *ngIf="suggestions.length != 0">
+          <ng-container *ngFor="let suggestion of suggestions">
+              <p class="p-1 px-15 cursor-pointer tr-hover list-group-item"
+              (click)="addSkillToEmployee(suggestion.skill)">{{ suggestion.skill }}</p>
+          </ng-container>
         </div>
       </div>
     </div>
