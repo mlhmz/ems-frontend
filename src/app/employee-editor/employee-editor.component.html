@@ -37,26 +37,27 @@
       </div>
       <div class="row my-2">
         <label for="qualifications" clsas="form-label">Qualifikationen</label>
-        <div class="form-control">
-          <div class="inline-block m-1">
+        <div class="form-control m-1">
+          <div class="">
             <ng-container *ngFor="let skill of employee.skillSet">
-              <a class="bg-success text-light p-1 m-2 rounded text-decoration-none" style="white-space: pre-line">
-                {{ skill }}
-                <span class="cursor-pointer" (click)="removeSkill(skill)">&#x2715;</span>
-              </a>
+              <div class="d-inline" style="white-space: nowrap;">
+                <a class="bg-success text-light p-1 m-2 rounded text-decoration-none d-inline-block" style="white-space: normal;">
+                  {{ skill }}
+                  <span class="cursor-pointer" (click)="removeSkill(skill)">&#x2715;</span>
+                </a>
+              </div>
             </ng-container>
-            <input class="border-0 m-1 remove-input-focus-outline" placeholder="Qualifikation"
-              [(ngModel)]="tagInputValue" (input)="refreshSuggestions($event)"
-              (keyup.enter)="addSkillToEmployee(tagInputValue)"
+            <input class="border-0 m-1 remove-input-focus-outline" placeholder="Qualifikation" [(ngModel)]="tagInputValue"
+              (input)="refreshSuggestions($event)" (keyup.enter)="addSkillToEmployee(tagInputValue)"
               (keyup.backspace)="removeLastSkillIfTagInputValueIsEmpty()" />
           </div>
         </div>
-        <div id="qualification-input-suggestions" class="form-control mt-1" *ngIf="suggestions.length != 0">
-          <ng-container *ngFor="let suggestion of suggestions">
-              <p class="p-1 px-15 cursor-pointer tr-hover list-group-item"
-              (click)="addSkillToEmployee(suggestion.skill)">{{ suggestion.skill }}</p>
-          </ng-container>
-        </div>
+      </div>
+      <div id="qualification-input-suggestions" class="form-control mt-1" *ngIf="suggestions.length != 0">
+        <ng-container *ngFor="let suggestion of suggestions">
+          <p class="p-1 px-15 cursor-pointer tr-hover list-group-item" (click)="addSkillToEmployee(suggestion.skill)">{{
+            suggestion.skill }}</p>
+        </ng-container>
       </div>
     </div>
   </ng-container>
