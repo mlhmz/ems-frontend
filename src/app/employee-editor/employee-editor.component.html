@@ -1,6 +1,6 @@
 <div class="container">
   <ng-container *ngIf="found; else employeeNotFound">
-    <app-status-bar [title]="getTitle()" [editable]="false" [saveable]="false" (saveEmit)="save()"> </app-status-bar>
+    <app-status-bar [title]="getTitle()" [editable]="false" [saveable]="true" (saveEmit)="save()"> </app-status-bar>
     <div class="row mt-4">
       <ng-container *ngIf="callbackAlertShown">
         <div
