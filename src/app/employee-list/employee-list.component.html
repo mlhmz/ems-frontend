@@ -1,33 +1,27 @@
 <div class="container">
   <div class="row">
-    <div class="col">
-      <h4>Mitarbeiter-Liste</h4>
-    </div>
-    <div class="col"></div>
-    <div class="col">
-      <div class="row">
-        <div class="col-1 center-items">
-          <span class="material-icons text-success cursor-pointer" [routerLink]="['/employee/editor']">add</span>
-        </div>
-        <div class="col-7" id="searchBox">
-          <form (submit)="searchForString()">
-            <input class="form-control form" placeholder="Suche..." 
-            [(ngModel)]="searchValue" name="searchValue"/>
-          </form>
-        </div>
-        <div class="col-1 center-items">
-            <span class="material-icons text-success cursor-pointer" (click)="searchForString()">search</span>
-        </div>
-        <div class="col-1 center-items">
+    <div class="row ms-1">
+      <div class="col d-flex align-items-center">
+        <h5 class="m-0">Mitarbeiter-Liste</h5>
+      </div>
+      <div class="col">
+        <p style="text-align: right;" class="align-self-center m-2 me-4">
+          <span class="material-icons text-success cursor-pointer me-1" [routerLink]="['/employee/editor']">add</span>
+          <span class="material-icons text-success cursor-pointer me-1" (click)="searchForString()">search</span>
           <span class="material-icons text-success cursor-pointer" (click)="fetchData()">
             <ng-container *ngIf="isSearchModeEnabled(); else reload">backspace</ng-container>
             <ng-template #reload>refresh</ng-template>
           </span>
-        </div>
+        </p>
       </div>
     </div>
+    <div class="row m-auto">
+        <form (submit)="searchForString()">
+          <input class="form-control form" placeholder="Suche..." [(ngModel)]="searchValue" name="searchValue" />
+        </form>
+    </div>
   </div>
-  <div class="row">
+  <div class="row m-auto mt-3">
     <table class="table">
       <thead>
         <th>ID</th>
@@ -36,7 +30,8 @@
       </thead>
       <tbody>
         <ng-container *ngFor="let e of employees$ | async">
-          <tr class="tr-hover" [class.tr-active]="isEmployeeContainedInSelection(e)" (click)="selectEmployee(e)" (dblclick)="goToEmployee(e.id)">
+          <tr class="tr-hover" [class.tr-active]="isEmployeeContainedInSelection(e)" (click)="selectEmployee(e)"
+            (dblclick)="goToEmployee(e.id)">
             <td class="user-select-none">{{e.id}}</td>
             <td class="user-select-none">{{e.firstName}}</td>
             <td class="user-select-none">{{e.lastName}}</td>
@@ -46,11 +41,8 @@
     </table>
   </div>
   <div *ngIf="isAnythingSelected()" class="cursor-pointer expand">
-      <app-confirmable-delete 
-      [alignButtonRight]="'true'" 
-      (deleteEmit)="deleteEmployeeSelection()"
-      [message]="getDeleteConfirmationMessage()"
-      ></app-confirmable-delete>
+    <app-confirmable-delete [alignButtonRight]="'true'" (deleteEmit)="deleteEmployeeSelection()"
+      [message]="getDeleteConfirmationMessage()"></app-confirmable-delete>
   </div>
   <div *ngIf="(employees$ | async)?.length === 0">
     <p>Es wurden keine Mitarbeiter*innen gefunden.</p>

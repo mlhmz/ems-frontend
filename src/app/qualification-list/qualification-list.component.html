@@ -1,57 +1,48 @@
 <div class="container">
-    <div class="row">
-      <div class="col">
-        <h4>Qualifikationen-Liste</h4>
+  <div class="row">
+    <div class="row ms-1">
+      <div class="col d-flex align-items-center">
+        <h5 class="m-0">Qualifikationen-Liste</h5>
       </div>
-      <div class="col"></div>
       <div class="col">
-        <div class="row">
-          <div class="col-1 center-items">
-            <span class="material-icons text-success cursor-pointer" [routerLink]="['/qualification/editor']">add</span>
-          </div>
-          <div class="col-7" id="searchBox">
-            <form (submit)="searchForString()">
-              <input class="form-control form" placeholder="Suche..." 
-              [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}">
-            </form>
-          </div>
-          <div class="col-1 center-items">
-              <span class="material-icons text-success cursor-pointer" (click)="searchForString()">search</span>
-          </div>
-          <div class="col-1 center-items">
-            <span class="material-icons text-success cursor-pointer" (click)="fetchData()">
-              <ng-container *ngIf="isSearchModeEnabled(); else reload">backspace</ng-container>
-              <ng-template #reload>refresh</ng-template>
-            </span>
-          </div>
-        </div>
+        <p style="text-align: right;" class="align-self-center m-2 me-4">
+          <span class="material-icons text-success cursor-pointer me-1" [routerLink]="['/qualification/editor']">add</span>
+          <span class="material-icons text-success cursor-pointer me-1" (click)="searchForString()">search</span>
+          <span class="material-icons text-success cursor-pointer" (click)="fetchData()">
+            <ng-container *ngIf="isSearchModeEnabled(); else reload">backspace</ng-container>
+            <ng-template #reload>refresh</ng-template>
+          </span>
+        </p>
       </div>
     </div>
-    <div class="row">
-      <table class="table">
-        <thead>
-          <th>Name</th>
-        </thead>
-        <tbody>
-          <ng-container *ngFor="let q of qualifications$ | async">
-            <tr class="tr-hover" [class.tr-active]="isQualificationContainedInSelection(q)" (click)="selectQualification(q)" (dblclick)="goToQualification(q.skill)">
-              <td>{{q.skill}}</td>
-            </tr>
-          </ng-container>
-        </tbody>
-      </table>
-      <div *ngIf="isAnythingSelected()" class="cursor-pointer expand">
-        <app-confirmable-delete 
-        [alignButtonRight]="'true'" 
-        (deleteEmit)="deleteQualificationSelection()"
-        [message]="getDeleteConfirmationMessage()"
-        [failed]="failed"
-        [failedMessage]="failedMessage"
-        (resetErrorEmit)="resetDeletionError()"
-        ></app-confirmable-delete>
-    </div>
-      <div *ngIf="(qualifications$ | async)?.length === 0">
-        <p>Es wurden keine Qualifikationen gefunden.</p>
-      </div>
+    <div class="row m-auto">
+      <form (submit)="searchForString()">
+        <input class="form-control form" placeholder="Suche..." [(ngModel)]="searchValue"
+          [ngModelOptions]="{standalone: true}">
+      </form>
     </div>
   </div>
+  <div class="row m-auto mt-3">
+    <table class="table">
+      <thead>
+        <th>Name</th>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let q of qualifications$ | async">
+          <tr class="tr-hover" [class.tr-active]="isQualificationContainedInSelection(q)"
+            (click)="selectQualification(q)" (dblclick)="goToQualification(q.skill)">
+            <td>{{q.skill}}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+    <div *ngIf="isAnythingSelected()" class="cursor-pointer expand">
+      <app-confirmable-delete [alignButtonRight]="'true'" (deleteEmit)="deleteQualificationSelection()"
+        [message]="getDeleteConfirmationMessage()" [failed]="failed" [failedMessage]="failedMessage"
+        (resetErrorEmit)="resetDeletionError()"></app-confirmable-delete>
+    </div>
+    <div *ngIf="(qualifications$ | async)?.length === 0">
+      <p>Es wurden keine Qualifikationen gefunden.</p>
+    </div>
+  </div>
+</div>
