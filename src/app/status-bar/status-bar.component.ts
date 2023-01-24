@@ -11,11 +11,11 @@ export class StatusBarComponent {
   @Input()
   title: string = '';
   @Input()
-  editable: string = 'false';
+  editable: boolean = false;
   @Input()
   editRoute: string = '';
   @Input()
-  saveable: string = 'false';
+  saveable: boolean = false;
   @Output()
   saveEmit: EventEmitter<any> = new EventEmitter<any>();
 

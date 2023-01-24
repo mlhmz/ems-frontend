@@ -1,6 +1,6 @@
 <div class="container">
   <ng-container *ngIf="found; else employeeNotAvailable">
-    <app-status-bar [title]="'Details Mitarbeiter ' + id" [editable]="'true'" [editRoute]="'/employee/editor/' + id">
+    <app-status-bar [title]="'Details Mitarbeiter ' + id" [editable]="true" [editRoute]="'/employee/editor/' + id">
     </app-status-bar>
     <ng-container *ngIf="showSaveSuccess">
       <div class="alert alert-success justify-content-end" role="alert">Speichern erfolgreich!</div>
