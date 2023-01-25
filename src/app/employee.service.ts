@@ -13,17 +13,13 @@ export class EmployeeService {
   constructor(private http: HttpClient, private qualificationService: QualificationService) {}
 
   public isEmployeeValid(employee: Employee): boolean {
-    return this.getAllFieldValidationResults(employee).filter(
-      result => !result.valid
-    ).length == 0;
+    return this.getAllFieldValidationResults(employee).filter((result) => !result.valid).length == 0;
   }
 
   public getAllFieldValidationResults(employee: Employee): ValidationResult[] {
     const validationResults = [];
     for (const field of Employee.ALL_FIELDS) {
-      validationResults.push(
-        this.getFieldValidationResult(field, employee)
-      );
+      validationResults.push(this.getFieldValidationResult(field, employee));
     }
     return validationResults;
   }
