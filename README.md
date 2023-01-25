@@ -2,6 +2,8 @@
 
 Dies ist das Repository von Fabian, Malek und Moritz für das Projekt im Lernfach 10.
 
+Wir haben uns die _Mühe_ gemacht tsdocs aufzusetzen und diese mit Compodocs zu bauen. Diese sind unter https://mlhmz.github.io/ems-frontend/ zu finden
+
 ## Requirements
 
 * Docker https://docs.docker.com/get-docker/
