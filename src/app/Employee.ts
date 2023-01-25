@@ -1,4 +1,3 @@
-
 export class Employee {
   public static readonly LAST_NAME_FIELD_NAME = 'lastName';
   public static readonly FIRST_NAME_FIELD_NAME = 'firstName';

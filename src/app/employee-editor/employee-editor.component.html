@@ -32,13 +32,7 @@
       </div>
       <div class="row my-2">
         <label for="street" class="form-label">Straße + Hausnr.</label>
-        <input
-          type="text"
-          class="form-control"
-          id="street"
-          placeholder="Musterstr. 11"
-          [(ngModel)]="employee.street"
-        />
+        <input type="text" class="form-control" id="street" placeholder="Musterstr. 11" [(ngModel)]="employee.street" />
         <p class="text-danger">{{ getFieldValidationResult('street') }}</p>
       </div>
       <div class="row my-2">

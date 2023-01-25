@@ -14,7 +14,7 @@ export class QualificationService {
   /**
    * Checks if a qualification is overall valid or if it has any
    * failed validation results
-   * 
+   *
    * @param qualification - to check if it is valid
    * @returns boolean if the qualification is valid
    */
@@ -24,7 +24,7 @@ export class QualificationService {
 
   /**
    * Gets all fields validation results
-   * 
+   *
    * @param qualification - that owns the fields that are being checked
    * @returns {@link ValidationResult} with an array of validation results
    */
@@ -39,9 +39,9 @@ export class QualificationService {
   /**
    * Gets the field validation result of the qualification fields
    * that are defined in the {@link Qualifcation} constants
-   * 
+   *
    * @param field - thats validation result is required
-   * @param qualification - that owns the field that is being checked 
+   * @param qualification - that owns the field that is being checked
    * @returns {@link ValidationResult} of the qualification
    * @throws {@link Error} if the field doesnt exist
    */
@@ -63,7 +63,7 @@ export class QualificationService {
   /**
    * Gets the gui representation of the qualifications fields
    * that are defined in the {@link Qualification} constants
-   * 
+   *
    * @param field - thats gui representation is required
    * @returns string of the gui rep
    * @throws {@link Error} if the field doesnt exists
@@ -83,7 +83,7 @@ export class QualificationService {
   /**
    * Gets field content of the fields that are also defined as constants in the
    * {@link Qualification} class
-   * 
+   *
    * @param field - thats content is getted
    * @param qualification - that owns the field
    * @returns string if the field exists, otherwise it will return undefined
@@ -131,13 +131,13 @@ export class QualificationService {
 
   /**
    * Checks if qualification is existing
-   * 
+   *
    * @param qualification - to check with
    * @returns boolean as promise if the qualification is existing
    */
   public async isQualificationExisting(qualification: Qualification): Promise<boolean> {
     if (qualification.skill != undefined) {
-      return await this.getQualificationBySkill(qualification.skill) != undefined; 
+      return (await this.getQualificationBySkill(qualification.skill)) != undefined;
     } else {
       throw new Error('The qualification skill is undefined');
     }

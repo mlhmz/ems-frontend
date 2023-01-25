@@ -12,7 +12,7 @@ export class AuthGuard extends KeycloakAuthGuard {
 
   /**
    * Checks if access is allowed with keycloak
-   * 
+   *
    * @param route - current route
    * @param state - state snapshot of the router
    */

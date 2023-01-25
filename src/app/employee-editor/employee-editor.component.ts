@@ -101,7 +101,7 @@ export class EmployeeEditorComponent implements OnInit {
 
   /**
    * Gets the field validation result from the {@link employeeService}
-   * 
+   *
    * @param field - to get the validation result from
    */
   getFieldValidationResult(field: string) {
@@ -160,7 +160,7 @@ export class EmployeeEditorComponent implements OnInit {
 
   /**
    * Refreshes suggestions
-   * 
+   *
    * @param event - to trigger the refresh with
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -182,10 +182,10 @@ export class EmployeeEditorComponent implements OnInit {
 
   /**
    * Checks if the qualification is containing the input
-   * 
+   *
    * @param qualification - to check
    * @param input - to check
-   * @returns boolean if criteria is met 
+   * @returns boolean if criteria is met
    */
   private isQualificationContainingSkillValue(qualification: Qualification, input: string): boolean {
     if (this.employee.skillSet?.filter((entry) => entry === qualification.skill).length != 0) {

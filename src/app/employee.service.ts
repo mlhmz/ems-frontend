@@ -15,7 +15,7 @@ export class EmployeeService {
   /**
    * Checks if an employee is overall valid or if it has any
    * failed validation results
-   * 
+   *
    * @param employee - to check if it is valid
    * @returns boolean if the employee is valid
    */
@@ -25,7 +25,7 @@ export class EmployeeService {
 
   /**
    * Gets all fields validation results
-   * 
+   *
    * @param employee - that owns the fields that are being checked
    * @returns {@link ValidationResult} with an array of validation results
    */
@@ -40,9 +40,9 @@ export class EmployeeService {
   /**
    * Gets the field validation result of the employee fields
    * that are defined in the {@link Employee} constants
-   * 
+   *
    * @param field - thats validation result is required
-   * @param employee - that owns the field that is being checked 
+   * @param employee - that owns the field that is being checked
    * @returns {@link ValidationResult} of the employee
    * @throws {@link Error} if the field doesnt exist
    */
@@ -76,7 +76,7 @@ export class EmployeeService {
   /**
    * Gets the gui representation of the employee fields
    * that are defined in the {@link Employee} constants
-   * 
+   *
    * @param field - thats gui representation is required
    * @returns string of the gui rep
    * @throws {@link Error} if the field doesnt exists
@@ -111,7 +111,7 @@ export class EmployeeService {
   /**
    * Gets field content of the fields that are also defined as constants in the
    * {@link Employee} class
-   * 
+   *
    * @param field - thats content is getted
    * @param employee - that owns the field
    * @returns string if the field exists, otherwise it will return undefined

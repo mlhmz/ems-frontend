@@ -51,7 +51,7 @@ export class QualificationListComponent {
 
   /**
    * Checks if the qualification is contained in the selection
-   * 
+   *
    * @param qualification - to check
    * @returns boolean if qualification is met
    */
@@ -61,7 +61,7 @@ export class QualificationListComponent {
 
   /**
    * checks if anything is selected
-   * 
+   *
    * @returns boolean if anything is selected
    */
   isAnythingSelected(): boolean {
@@ -129,7 +129,7 @@ export class QualificationListComponent {
   /**
    * Gets qualification deletion message and checks
    * if it is singular or plural
-   * 
+   *
    * @returns qualification deletion message as string
    */
   getDeleteConfirmationMessage(): string {
