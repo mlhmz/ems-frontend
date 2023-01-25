@@ -3,12 +3,64 @@ import { Injectable } from '@angular/core';
 import { firstValueFrom, Observable } from 'rxjs';
 import { Qualification } from './Qualification';
 import { QualificationEmployees } from './QualificationEmployees';
+import { ValidationResult } from './ValidationResult';
 
 @Injectable({
   providedIn: 'root',
 })
 export class QualificationService {
   constructor(private http: HttpClient) {}
+
+  public isEmployeeValid(qualfication: Qualification): boolean {
+    return this.getAllFieldValidationResults(qualfication).filter((result) => !result.valid).length == 0;
+  }
+
+  public getAllFieldValidationResults(qualfication: Qualification): ValidationResult[] {
+    const validationResults = [];
+    for (const field of Qualification.ALL_FIELDS) {
+      validationResults.push(this.getFieldValidationResult(field, qualfication));
+    }
+    return validationResults;
+  }
+
+  public getFieldValidationResult(field: string, qualification: Qualification): ValidationResult {
+    let validationResult: ValidationResult;
+    switch (field) {
+      case Qualification.SKILL_FIELD_NAME:
+        validationResult = new ValidationResult().buildMandatoryStringValidator(
+          this.getGuiRep(field),
+          this.getFieldContent(field, qualification)
+        );
+        break;
+      default:
+        throw new Error('Invalid field identifier');
+    }
+    return validationResult;
+  }
+
+  private getGuiRep(field: string): string {
+    let guiRep: string | undefined;
+    switch (field) {
+      case Qualification.SKILL_FIELD_NAME:
+        guiRep = 'Qualifikation';
+        break;
+      default:
+        throw new Error('Invalid field identifier');
+    }
+    return guiRep;
+  }
+
+  private getFieldContent(field: string, qualification: Qualification): string | undefined {
+    let content: string | undefined;
+    switch (field) {
+      case Qualification.SKILL_FIELD_NAME:
+        content = qualification.skill;
+        break;
+      default:
+        throw new Error('Invalid field identifier');
+    }
+    return content;
+  }
 
   /**
    * Gets all qualifications from service.

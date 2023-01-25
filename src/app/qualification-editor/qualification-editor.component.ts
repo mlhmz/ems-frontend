@@ -13,12 +13,18 @@ export class QualificationEditorComponent {
   saveSuccess = false;
   saveMessage = '';
   callbackAlertShown = false;
+  validatorShown = false;
 
   constructor(private qualificationService: QualificationService, private router: Router) {
     this.qualification = new Qualification();
   }
 
   save() {
+    if (!this.qualificationService.isEmployeeValid(this.qualification)) {
+      this.validatorShown = true;
+      this.showCallbackAlert("Speichern fehlgeschlagen, Grund: Die Daten sind nicht valide.", false);
+      return;
+    }
     this.qualificationService
       .saveQualification(this.qualification)
       .then(() => {
@@ -26,6 +32,14 @@ export class QualificationEditorComponent {
         this.router.navigateByUrl('/qualification/' + this.qualification.skill + '?saveSuccess=true');
       })
       .catch(() => this.showCallbackAlert('Speichern fehlgeschlagen', false));
+  }
+
+  getFieldValidationResult(field: string) {
+    if (this.validatorShown && !this.qualificationService.isEmployeeValid(this.qualification)) {
+      return this.qualificationService.getFieldValidationResult(field, this.qualification).message;
+    } else {
+      return "";
+    }
   }
 
   private showCallbackAlert(saveMessage: string, saveSuccess: boolean) {

@@ -16,6 +16,7 @@
     <div class="row">
       <label for="name" class="form-label">Name</label>
       <input placeholder="Name" class="form-control" [(ngModel)]="qualification.skill" />
+      <p class="text-danger">{{ getFieldValidationResult('skill') }}</p>
     </div>
   </div>
 </div>
