@@ -29,6 +29,4 @@ jobs:
     - run: npm ci
     - run: npm run lint
     - run: npm run build --if-present
-    - name: Prettier Action
-      uses: creyD/prettier_action@v4.2
 
