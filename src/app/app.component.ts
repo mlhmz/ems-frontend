@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import { Employee } from './Employee';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { filter, map, Observable, of } from 'rxjs';
-import { NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { NavigationStart, Router } from '@angular/router';
 import { HistoryService } from './history.service';
 
 @Component({
