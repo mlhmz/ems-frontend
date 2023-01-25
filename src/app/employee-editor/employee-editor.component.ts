@@ -77,7 +77,7 @@ export class EmployeeEditorComponent implements OnInit {
   save() {
     if (!this.employeeService.isEmployeeValid(this.employee)) {
       this.validatorShown = true;
-      this.showCallbackAlert("Speichern fehlgeschlagen, Grund: Die Daten sind nicht valide.", false);
+      this.showCallbackAlert('Speichern fehlgeschlagen, Grund: Die Daten sind nicht valide.', false);
       return;
     }
     let req;
@@ -91,14 +91,19 @@ export class EmployeeEditorComponent implements OnInit {
         this.showCallbackAlert('Speichern erfolgreich!', true);
         this.router.navigateByUrl('/employee/' + response.id + '?saveSuccess=true');
       })
-      .catch(err => this.showCallbackAlert(`Speichern fehlgeschlagen. Grund: ${err.error.message}. Bitte kontaktieren Sie die Entwicklung.`, false));
+      .catch((err) =>
+        this.showCallbackAlert(
+          `Speichern fehlgeschlagen. Grund: ${err.error.message}. Falls Ihnen dies nicht weitergeholfen hat, kontaktieren Sie bitte den Support.`,
+          false
+        )
+      );
   }
 
   getFieldValidationResult(field: string) {
     if (this.validatorShown && !this.employeeService.isEmployeeValid(this.employee)) {
       return this.employeeService.getFieldValidationResult(field, this.employee).message;
     } else {
-      return "";
+      return '';
     }
   }
 
@@ -199,7 +204,7 @@ export class EmployeeEditorComponent implements OnInit {
     this.employeeService
       .getEmployeeById(employeeId)
       .then((employee) => {
-        this.employee = employee
+        this.employee = employee;
         this.validatorShown = true;
       })
       .catch(() => (this.found = false));

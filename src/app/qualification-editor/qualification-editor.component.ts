@@ -31,7 +31,10 @@ export class QualificationEditorComponent {
         this.showCallbackAlert('Speichern erfolgreich', true);
         this.router.navigateByUrl('/qualification/' + this.qualification.skill + '?saveSuccess=true');
       })
-      .catch(err => this.showCallbackAlert(`Speichern fehlgeschlagen. Grund: ${err.error.message}. Bitte kontaktieren Sie die Entwicklung.`, false));
+      .catch(err => this.showCallbackAlert(
+        `Speichern fehlgeschlagen. Grund: ${err.error.message}. Falls Ihnen dies nicht weitergeholfen hat, kontaktieren Sie bitte den Support.`,
+        false
+      ));
   }
 
   getFieldValidationResult(field: string) {
