@@ -1,0 +1,1218 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>employee-frontend-starter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">employee-frontend-starter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  QualificationDetailsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/qualification-details/qualification-details.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-qualification-details</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./qualification-details.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./qualification-details.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#failed" >failed</a>
+                            </li>
+                            <li>
+                                <a href="#failedMessage" >failedMessage</a>
+                            </li>
+                            <li>
+                                <a href="#found" >found</a>
+                            </li>
+                            <li>
+                                <a href="#qualification" >qualification</a>
+                            </li>
+                            <li>
+                                <a href="#qualificationEmployees" >qualificationEmployees</a>
+                            </li>
+                            <li>
+                                <a href="#showSaveSuccess" >showSaveSuccess</a>
+                            </li>
+                            <li>
+                                <a href="#skill" >skill</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteQualification" >deleteQualification</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#fetchQualification" >fetchQualification</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#fetchQualificationEmployees" >fetchQualificationEmployees</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getRequiredDataFromParams" >getRequiredDataFromParams</a>
+                            </li>
+                            <li>
+                                <a href="#goBack" >goBack</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#isQualificationDeletable" >isQualificationDeletable</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#resetDeletionError" >resetDeletionError</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, qualificationService: <a href="../injectables/QualificationService.html" target="_self">QualificationService</a>, historyService: <a href="../injectables/HistoryService.html" target="_self">HistoryService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/qualification-details/qualification-details.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>qualificationService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/QualificationService.html" target="_self" >QualificationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>historyService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/HistoryService.html" target="_self" >HistoryService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteQualification"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>deleteQualification</b></span>
+                        <a href="#deleteQualification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteQualification()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/qualification-details/qualification-details.component.ts:49</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Deletes asynchronusly a qualification</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchQualification"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>fetchQualification</b></span>
+                        <a href="#fetchQualification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchQualification(skill: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="98"
+                            class="link-to-prism">src/app/qualification-details/qualification-details.component.ts:98</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Fetches a certain qualification by its skill,
+also, it will set the found switch, depending if the qualification was found.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>skill</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>the skill to get</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchQualificationEmployees"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>fetchQualificationEmployees</b></span>
+                        <a href="#fetchQualificationEmployees"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchQualificationEmployees(skill: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="110"
+                            class="link-to-prism">src/app/qualification-details/qualification-details.component.ts:110</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Fetches QualificationEmployees with a certain skill</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>skill</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>to get the qualification employees</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getRequiredDataFromParams"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>getRequiredDataFromParams</b></span>
+                        <a href="#getRequiredDataFromParams"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getRequiredDataFromParams()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="83"
+                            class="link-to-prism">src/app/qualification-details/qualification-details.component.ts:83</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets required data from url params</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goBack"></a>
+                    <span class="name">
+                        <span ><b>goBack</b></span>
+                        <a href="#goBack"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goBack()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/app/qualification-details/qualification-details.component.ts:42</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Goes back with the history service</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isQualificationDeletable"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>isQualificationDeletable</b></span>
+                        <a href="#isQualificationDeletable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isQualificationDeletable(qualification: <a href="../classes/Qualification.html" target="_self">Qualification</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="63"
+                            class="link-to-prism">src/app/qualification-details/qualification-details.component.ts:63</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Checks asynchronusly if a qualification is assigned to any employee (deletable)</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>qualification</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>to check</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>boolean if the qualification is deletable</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/qualification-details/qualification-details.component.ts:31</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Initial fetch of qualification</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetDeletionError"></a>
+                    <span class="name">
+                        <span ><b>resetDeletionError</b></span>
+                        <a href="#resetDeletionError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>resetDeletionError()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">src/app/qualification-details/qualification-details.component.ts:75</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Resets the deletion error of the confirmable deletion dialog</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="failed"></a>
+                    <span class="name">
+                        <span ><b>failed</b></span>
+                        <a href="#failed"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/qualification-details/qualification-details.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="failedMessage"></a>
+                    <span class="name">
+                        <span ><b>failedMessage</b></span>
+                        <a href="#failedMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/qualification-details/qualification-details.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="found"></a>
+                    <span class="name">
+                        <span ><b>found</b></span>
+                        <a href="#found"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/qualification-details/qualification-details.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="qualification"></a>
+                    <span class="name">
+                        <span ><b>qualification</b></span>
+                        <a href="#qualification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Qualification.html" target="_self" >Qualification | undefined</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/qualification-details/qualification-details.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="qualificationEmployees"></a>
+                    <span class="name">
+                        <span ><b>qualificationEmployees</b></span>
+                        <a href="#qualificationEmployees"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>QualificationEmployees | undefined</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/qualification-details/qualification-details.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showSaveSuccess"></a>
+                    <span class="name">
+                        <span ><b>showSaveSuccess</b></span>
+                        <a href="#showSaveSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/qualification-details/qualification-details.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="skill"></a>
+                    <span class="name">
+                        <span ><b>skill</b></span>
+                        <a href="#skill"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/qualification-details/qualification-details.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { HistoryService } from &#x27;../history.service&#x27;;
+import { Qualification } from &#x27;../Qualification&#x27;;
+import { QualificationService } from &#x27;../qualification.service&#x27;;
+import { QualificationEmployees } from &#x27;../QualificationEmployees&#x27;;
+
+@Component({
+  selector: &#x27;app-qualification-details&#x27;,
+  templateUrl: &#x27;./qualification-details.component.html&#x27;,
+  styleUrls: [&#x27;./qualification-details.component.css&#x27;],
+})
+export class QualificationDetailsComponent implements OnInit {
+  skill &#x3D; &#x27;&#x27;;
+  qualification: Qualification | undefined;
+  qualificationEmployees: QualificationEmployees | undefined;
+  found &#x3D; true;
+  showSaveSuccess &#x3D; false;
+  failedMessage &#x3D; &#x27;&#x27;;
+  failed &#x3D; false;
+
+  constructor(
+    private route: ActivatedRoute,
+    private qualificationService: QualificationService,
+    private historyService: HistoryService
+  ) {}
+
+  /**
+   * Initial fetch of qualification
+   */
+  ngOnInit(): void {
+    this.getRequiredDataFromParams();
+    this.fetchQualification(this.skill);
+    if (this.found) {
+      this.fetchQualificationEmployees(this.skill);
+    }
+  }
+
+  /**
+   * Goes back with the history service
+   */
+  goBack() {
+    this.historyService.goBack();
+  }
+
+  /**
+   * Deletes asynchronusly a qualification
+   */
+  async deleteQualification() {
+    if (this.qualification !&#x3D; undefined &amp;&amp; (await this.isQualificationDeletable(this.qualification))) {
+      this.qualificationService.deleteQualification(this.qualification);
+      this.goBack();
+    }
+  }
+
+  /**
+   * Checks asynchronusly if a qualification is assigned to any employee (deletable)
+   *
+   * @param qualification - to check
+   * @returns boolean if the qualification is deletable
+   *
+   */
+  private async isQualificationDeletable(qualification: Qualification) {
+    if (await this.qualificationService.isQualificationAssignedToAnyEmployee(qualification)) {
+      this.failedMessage &#x3D; &#x27;Die Qualifikation ist noch Mitarbeiter:innen zugewiesen.&#x27;;
+      this.failed &#x3D; true;
+      return false;
+    }
+    return true;
+  }
+
+  /**
+   * Resets the deletion error of the confirmable deletion dialog
+   */
+  resetDeletionError() {
+    this.failed &#x3D; false;
+    this.failedMessage &#x3D; &#x27;&#x27;;
+  }
+
+  /**
+   * Gets required data from url params
+   */
+  private getRequiredDataFromParams() {
+    const routeParams &#x3D; this.route.snapshot.paramMap;
+    this.skill &#x3D; String(routeParams.get(&#x27;id&#x27;));
+    const routeQueries &#x3D; this.route.snapshot.queryParamMap;
+    if (routeQueries.has(&#x27;saveSuccess&#x27;)) {
+      this.showSaveSuccess &#x3D; routeQueries.get(&#x27;saveSuccess&#x27;) &#x3D;&#x3D;&#x3D; &#x27;true&#x27;;
+    }
+  }
+
+  /**
+   * Fetches a certain qualification by its skill,
+   * also, it will set the found switch, depending if the qualification was found.
+   *
+   * @param skill - the skill to get
+   */
+  private fetchQualification(skill: string) {
+    this.qualificationService.getQualificationBySkill(skill).then((qualification) &#x3D;&gt; {
+      this.found &#x3D; qualification !&#x3D; undefined;
+      this.qualification &#x3D; qualification;
+    });
+  }
+
+  /**
+   * Fetches QualificationEmployees with a certain skill
+   *
+   * @param skill - to get the qualification employees
+   */
+  private fetchQualificationEmployees(skill: string) {
+    this.qualificationService.getQualificationEmployeesBySkill(skill).subscribe((qe) &#x3D;&gt; {
+      this.qualificationEmployees &#x3D; qe;
+    });
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;ng-container *ngIf&#x3D;&quot;found; else qualificationNotFound&quot;&gt;
+    &lt;app-status-bar [title]&#x3D;&quot;&#x27;Details Qualifikation &#x27; + skill&quot;&gt;&lt;/app-status-bar&gt;
+    &lt;ng-container *ngIf&#x3D;&quot;showSaveSuccess&quot;&gt;
+      &lt;div class&#x3D;&quot;alert alert-success justify-content-end&quot; role&#x3D;&quot;alert&quot;&gt;Speichern erfolgreich!&lt;/div&gt;
+    &lt;/ng-container&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+      &lt;div class&#x3D;&quot;col&quot;&gt;
+        &lt;p&gt;Name:&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;col&quot;&gt;
+        &lt;p&gt;{{ this.qualification?.skill }}&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+      &lt;h5&gt;Mitarbeiter&lt;/h5&gt;
+      &lt;div class&#x3D;&quot;col&quot;&gt;
+        &lt;table class&#x3D;&quot;table&quot;&gt;
+          &lt;thead&gt;
+            &lt;th&gt;ID&lt;/th&gt;
+            &lt;th&gt;Vorname&lt;/th&gt;
+            &lt;th&gt;Nachname&lt;/th&gt;
+          &lt;/thead&gt;
+          &lt;tbody&gt;
+            &lt;ng-container *ngFor&#x3D;&quot;let e of qualificationEmployees?.employees&quot;&gt;
+              &lt;tr class&#x3D;&quot;tr-hover&quot; [routerLink]&#x3D;&quot;[&#x27;/employee/&#x27;, e.id]&quot;&gt;
+                &lt;td&gt;{{ e.id }}&lt;/td&gt;
+                &lt;td&gt;{{ e.firstName }}&lt;/td&gt;
+                &lt;td&gt;{{ e.lastName }}&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/ng-container&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;app-confirmable-delete
+      (deleteEmit)&#x3D;&quot;deleteQualification()&quot;
+      [message]&#x3D;&quot;&#x27;Soll die Qualifikation wirklich gelöscht werden?&#x27;&quot;
+      [failed]&#x3D;&quot;failed&quot;
+      [failedMessage]&#x3D;&quot;failedMessage&quot;
+      (resetErrorEmit)&#x3D;&quot;resetDeletionError()&quot;
+    &gt;&lt;/app-confirmable-delete&gt;
+  &lt;/ng-container&gt;
+  &lt;ng-template #qualificationNotFound&gt;
+    &lt;app-not-found [message]&#x3D;&quot;&#x27;Die Qualifikation &#x27; + skill + &#x27; konnte nicht gefunden werden.&#x27;&quot;&gt;&lt;/app-not-found&gt;
+  &lt;/ng-template&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./qualification-details.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <ng-container *ngIf="found; else qualificationNotFound">    <app-status-bar [title]="\'Details Qualifikation \' + skill"></app-status-bar>    <ng-container *ngIf="showSaveSuccess">      <div class="alert alert-success justify-content-end" role="alert">Speichern erfolgreich!</div>    </ng-container>    <div class="row">      <div class="col">        <p>Name:</p>      </div>      <div class="col">        <p>{{ this.qualification?.skill }}</p>      </div>    </div>    <div class="row">      <h5>Mitarbeiter</h5>      <div class="col">        <table class="table">          <thead>            <th>ID</th>            <th>Vorname</th>            <th>Nachname</th>          </thead>          <tbody>            <ng-container *ngFor="let e of qualificationEmployees?.employees">              <tr class="tr-hover" [routerLink]="[\'/employee/\', e.id]">                <td>{{ e.id }}</td>                <td>{{ e.firstName }}</td>                <td>{{ e.lastName }}</td>              </tr>            </ng-container>          </tbody>        </table>      </div>    </div>    <app-confirmable-delete      (deleteEmit)="deleteQualification()"      [message]="\'Soll die Qualifikation wirklich gelöscht werden?\'"      [failed]="failed"      [failedMessage]="failedMessage"      (resetErrorEmit)="resetDeletionError()"    ></app-confirmable-delete>  </ng-container>  <ng-template #qualificationNotFound>    <app-not-found [message]="\'Die Qualifikation \' + skill + \' konnte nicht gefunden werden.\'"></app-not-found>  </ng-template></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ConfirmableDeleteComponent', 'selector': 'app-confirmable-delete'},{'name': 'EmployeeDetailsComponent', 'selector': 'app-employee-details'},{'name': 'EmployeeEditorComponent', 'selector': 'app-employee-editor'},{'name': 'EmployeeListComponent', 'selector': 'app-employee-list'},{'name': 'NavigationBarComponent', 'selector': 'app-navigation-bar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'QualificationDetailsComponent', 'selector': 'app-qualification-details'},{'name': 'QualificationEditorComponent', 'selector': 'app-qualification-editor'},{'name': 'QualificationListComponent', 'selector': 'app-qualification-list'},{'name': 'StatusBarComponent', 'selector': 'app-status-bar'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'QualificationDetailsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'QualificationDetailsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

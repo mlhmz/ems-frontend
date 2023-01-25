@@ -1,0 +1,2219 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>employee-frontend-starter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">employee-frontend-starter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li >QualificationService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/qualification.service.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#bulkDeleteQualifications" >bulkDeleteQualifications</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#convertStringArrayToQualificationArray" >convertStringArrayToQualificationArray</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#convertStringToQualification" >convertStringToQualification</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteQualification" >deleteQualification</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getAllFieldValidationResults" >getAllFieldValidationResults</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getAllQualifications" >getAllQualifications</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getFieldContent" >getFieldContent</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getFieldValidationResult" >getFieldValidationResult</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getGuiRep" >getGuiRep</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getHeaders" >getHeaders</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getQualificationBySkill" >getQualificationBySkill</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getQualificationEmployeesBySkill" >getQualificationEmployeesBySkill</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getQualificationFromListByDesignation" >getQualificationFromListByDesignation</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#isQualificationAssignedToAnyEmployee" >isQualificationAssignedToAnyEmployee</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#isQualificationExisting" >isQualificationExisting</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#isQualificationNotExisting" >isQualificationNotExisting</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#isQualificationValid" >isQualificationValid</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#saveNotExistingQualifications" >saveNotExistingQualifications</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#saveQualification" >saveQualification</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#saveQualificationIfNotExisting" >saveQualificationIfNotExisting</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/qualification.service.ts:11</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="bulkDeleteQualifications"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>bulkDeleteQualifications</b></span>
+                        <a href="#bulkDeleteQualifications"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>bulkDeleteQualifications(qualifications: <a href="../classes/Qualification.html" target="_self">Qualification[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="181"
+                            class="link-to-prism">src/app/qualification.service.ts:181</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Bulk deletes asynchronusly multiple qualifications</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>qualifications</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>to delete</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="convertStringArrayToQualificationArray"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>convertStringArrayToQualificationArray</b></span>
+                        <a href="#convertStringArrayToQualificationArray"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>convertStringArrayToQualificationArray(skillArray: string[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="235"
+                            class="link-to-prism">src/app/qualification.service.ts:235</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Converts a string array to a qualification array</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>skillArray</td>
+                                    <td>
+                                            <code>string[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>string array to convert</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Qualification.html" target="_self" >Qualification[]</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>converted qualification array</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="convertStringToQualification"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>convertStringToQualification</b></span>
+                        <a href="#convertStringToQualification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>convertStringToQualification(skill: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="249"
+                            class="link-to-prism">src/app/qualification.service.ts:249</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Converts a string to a qualification</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>skill</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>string to convert</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Qualification.html" target="_self" >Qualification</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>converted qualification</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteQualification"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>deleteQualification</b></span>
+                        <a href="#deleteQualification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteQualification(qualification: <a href="../classes/Qualification.html" target="_self">Qualification</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="192"
+                            class="link-to-prism">src/app/qualification.service.ts:192</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Deletes asynchronusly a qualification</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>qualification</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>to delete</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAllFieldValidationResults"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getAllFieldValidationResults</b></span>
+                        <a href="#getAllFieldValidationResults"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAllFieldValidationResults(qualfication: <a href="../classes/Qualification.html" target="_self">Qualification</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/qualification.service.ts:31</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets all fields validation results</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>qualfication</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/ValidationResult.html" target="_self" >ValidationResult[]</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAllQualifications"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getAllQualifications</b></span>
+                        <a href="#getAllQualifications"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAllQualifications()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="109"
+                            class="link-to-prism">src/app/qualification.service.ts:109</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets all qualifications from service.</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Qualification.html" target="_self" >Observable&lt;Qualification[]&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Qualifications array as observable</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFieldContent"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>getFieldContent</b></span>
+                        <a href="#getFieldContent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getFieldContent(field: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, qualification: <a href="../classes/Qualification.html" target="_self">Qualification</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="92"
+                            class="link-to-prism">src/app/qualification.service.ts:92</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets field content of the fields that are also defined as constants in the
+<a href="../classes/Qualification.html">Qualification</a> class</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>field</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>thats content is getted</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>qualification</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>that owns the field</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>string | undefined</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>string if the field exists, otherwise it will return undefined</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFieldValidationResult"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getFieldValidationResult</b></span>
+                        <a href="#getFieldValidationResult"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getFieldValidationResult(field: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, qualification: <a href="../classes/Qualification.html" target="_self">Qualification</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/app/qualification.service.ts:48</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets the field validation result of the qualification fields
+that are defined in the <a href="Qualifcation">Qualifcation</a> constants</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>field</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>thats validation result is required</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>qualification</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>that owns the field that is being checked</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/ValidationResult.html" target="_self" >ValidationResult</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getGuiRep"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>getGuiRep</b></span>
+                        <a href="#getGuiRep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getGuiRep(field: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/app/qualification.service.ts:71</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets the gui representation of the qualifications fields
+that are defined in the <a href="../classes/Qualification.html">Qualification</a> constants</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>field</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>thats gui representation is required</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>string of the gui rep</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getHeaders"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>getHeaders</b></span>
+                        <a href="#getHeaders"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getHeaders()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="290"
+                            class="link-to-prism">src/app/qualification.service.ts:290</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets required Headers for Qualification related requests</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>HttpHeaders | literal type | undefined</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>headers for requests</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getQualificationBySkill"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>getQualificationBySkill</b></span>
+                        <a href="#getQualificationBySkill"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getQualificationBySkill(skill: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="121"
+                            class="link-to-prism">src/app/qualification.service.ts:121</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets asynchronously a qualification by its skill.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>skill</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>as string</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Qualification.html" target="_self" >Promise&lt;Qualification | undefined&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Qualification as Promise</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getQualificationEmployeesBySkill"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getQualificationEmployeesBySkill</b></span>
+                        <a href="#getQualificationEmployeesBySkill"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getQualificationEmployeesBySkill(skill: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="223"
+                            class="link-to-prism">src/app/qualification.service.ts:223</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets qualification employees by skill</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>skill</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>to get the qualifications employees object</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;QualificationEmployees&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getQualificationFromListByDesignation"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>getQualificationFromListByDesignation</b></span>
+                        <a href="#getQualificationFromListByDesignation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getQualificationFromListByDesignation(qualifications: <a href="../classes/Qualification.html" target="_self">Qualification[]</a>, skill: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="281"
+                            class="link-to-prism">src/app/qualification.service.ts:281</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Filters a qualification from a list by its skill.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>qualifications</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>skill</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Qualification.html" target="_self" >Qualification</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Qualifcation which equals the skill, or null if qualification doesn&#39;t exists</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isQualificationAssignedToAnyEmployee"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>isQualificationAssignedToAnyEmployee</b></span>
+                        <a href="#isQualificationAssignedToAnyEmployee"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isQualificationAssignedToAnyEmployee(qualification: <a href="../classes/Qualification.html" target="_self">Qualification</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="206"
+                            class="link-to-prism">src/app/qualification.service.ts:206</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Checks if a qualification is assigned to any employee</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>qualification</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>to check</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isQualificationExisting"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>isQualificationExisting</b></span>
+                        <a href="#isQualificationExisting"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isQualificationExisting(qualification: <a href="../classes/Qualification.html" target="_self">Qualification</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="138"
+                            class="link-to-prism">src/app/qualification.service.ts:138</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Checks if qualification is existing</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>qualification</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>to check with</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>boolean as promise if the qualification is existing</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isQualificationNotExisting"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>isQualificationNotExisting</b></span>
+                        <a href="#isQualificationNotExisting"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isQualificationNotExisting(qualification: <a href="../classes/Qualification.html" target="_self">Qualification</a>, allQualifications: <a href="../classes/Qualification.html" target="_self">Qualification[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="271"
+                            class="link-to-prism">src/app/qualification.service.ts:271</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Checks if qualification is existing in array</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>qualification</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>allQualifications</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>array to check from</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isQualificationValid"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>isQualificationValid</b></span>
+                        <a href="#isQualificationValid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isQualificationValid(qualfication: <a href="../classes/Qualification.html" target="_self">Qualification</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="21"
+                            class="link-to-prism">src/app/qualification.service.ts:21</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Checks if a qualification is overall valid or if it has any
+failed validation results</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>qualfication</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>boolean if the qualification is valid</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveNotExistingQualifications"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>saveNotExistingQualifications</b></span>
+                        <a href="#saveNotExistingQualifications"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>saveNotExistingQualifications(qualifications: <a href="../classes/Qualification.html" target="_self">Qualification[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="151"
+                            class="link-to-prism">src/app/qualification.service.ts:151</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Saves not existing qualifications from a qualification array</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>qualifications</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>array to check from</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveQualification"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>saveQualification</b></span>
+                        <a href="#saveQualification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>saveQualification(qualification: <a href="../classes/Qualification.html" target="_self">Qualification</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="168"
+                            class="link-to-prism">src/app/qualification.service.ts:168</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Saves asynchronusly a qualification</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>qualification</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>to save</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Qualification.html" target="_self" >Promise&lt;Qualification&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>qualification as promise</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveQualificationIfNotExisting"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>saveQualificationIfNotExisting</b></span>
+                        <a href="#saveQualificationIfNotExisting"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>saveQualificationIfNotExisting(qualification: <a href="../classes/Qualification.html" target="_self">Qualification</a>, allQualifications: <a href="../classes/Qualification.html" target="_self">Qualification[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="259"
+                            class="link-to-prism">src/app/qualification.service.ts:259</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>saves asynchronusly a qualification if it doesn&#39;t exist</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>qualification</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>to check with</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>allQualifications</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient, HttpHeaders } from &#x27;@angular/common/http&#x27;;
+import { Injectable } from &#x27;@angular/core&#x27;;
+import { firstValueFrom, Observable } from &#x27;rxjs&#x27;;
+import { Qualification } from &#x27;./Qualification&#x27;;
+import { QualificationEmployees } from &#x27;./QualificationEmployees&#x27;;
+import { ValidationResult } from &#x27;./ValidationResult&#x27;;
+
+@Injectable({
+  providedIn: &#x27;root&#x27;,
+})
+export class QualificationService {
+  constructor(private http: HttpClient) {}
+
+  /**
+   * Checks if a qualification is overall valid or if it has any
+   * failed validation results
+   *
+   * @param qualification - to check if it is valid
+   * @returns boolean if the qualification is valid
+   */
+  public isQualificationValid(qualfication: Qualification): boolean {
+    return this.getAllFieldValidationResults(qualfication).filter((result) &#x3D;&gt; !result.valid).length &#x3D;&#x3D; 0;
+  }
+
+  /**
+   * Gets all fields validation results
+   *
+   * @param qualification - that owns the fields that are being checked
+   * @returns {@link ValidationResult} with an array of validation results
+   */
+  public getAllFieldValidationResults(qualfication: Qualification): ValidationResult[] {
+    const validationResults &#x3D; [];
+    for (const field of Qualification.ALL_FIELDS) {
+      validationResults.push(this.getFieldValidationResult(field, qualfication));
+    }
+    return validationResults;
+  }
+
+  /**
+   * Gets the field validation result of the qualification fields
+   * that are defined in the {@link Qualifcation} constants
+   *
+   * @param field - thats validation result is required
+   * @param qualification - that owns the field that is being checked
+   * @returns {@link ValidationResult} of the qualification
+   * @throws {@link Error} if the field doesnt exist
+   */
+  public getFieldValidationResult(field: string, qualification: Qualification): ValidationResult {
+    let validationResult: ValidationResult;
+    switch (field) {
+      case Qualification.SKILL_FIELD_NAME:
+        validationResult &#x3D; new ValidationResult().buildMandatoryStringValidator(
+          this.getGuiRep(field),
+          this.getFieldContent(field, qualification)
+        );
+        break;
+      default:
+        throw new Error(&#x27;Invalid field identifier&#x27;);
+    }
+    return validationResult;
+  }
+
+  /**
+   * Gets the gui representation of the qualifications fields
+   * that are defined in the {@link Qualification} constants
+   *
+   * @param field - thats gui representation is required
+   * @returns string of the gui rep
+   * @throws {@link Error} if the field doesnt exists
+   */
+  private getGuiRep(field: string): string {
+    let guiRep: string | undefined;
+    switch (field) {
+      case Qualification.SKILL_FIELD_NAME:
+        guiRep &#x3D; &#x27;Qualifikation&#x27;;
+        break;
+      default:
+        throw new Error(&#x27;Invalid field identifier&#x27;);
+    }
+    return guiRep;
+  }
+
+  /**
+   * Gets field content of the fields that are also defined as constants in the
+   * {@link Qualification} class
+   *
+   * @param field - thats content is getted
+   * @param qualification - that owns the field
+   * @returns string if the field exists, otherwise it will return undefined
+   * @throws {@link Error} if the field doesnt exists
+   */
+  private getFieldContent(field: string, qualification: Qualification): string | undefined {
+    let content: string | undefined;
+    switch (field) {
+      case Qualification.SKILL_FIELD_NAME:
+        content &#x3D; qualification.skill;
+        break;
+      default:
+        throw new Error(&#x27;Invalid field identifier&#x27;);
+    }
+    return content;
+  }
+
+  /**
+   * Gets all qualifications from service.
+   *
+   * @returns Qualifications array as observable
+   */
+  public getAllQualifications(): Observable&lt;Qualification[]&gt; {
+    return this.http.get&lt;Qualification[]&gt;(&#x27;/backend/qualifications&#x27;, {
+      headers: this.getHeaders(),
+    });
+  }
+
+  /**
+   * Gets asynchronously a qualification by its skill.
+   *
+   * @param skill - as string
+   * @returns Qualification as Promise
+   */
+  public async getQualificationBySkill(skill: string): Promise&lt;Qualification | undefined&gt; {
+    const qualification &#x3D; await firstValueFrom(
+      this.http.get&lt;Qualification[]&gt;(&#x60;/backend/qualifications&#x60;, {
+        headers: this.getHeaders(),
+      })
+    ).then((qualifications) &#x3D;&gt; {
+      return this.getQualificationFromListByDesignation(qualifications, skill);
+    });
+    return qualification;
+  }
+
+  /**
+   * Checks if qualification is existing
+   *
+   * @param qualification - to check with
+   * @returns boolean as promise if the qualification is existing
+   */
+  public async isQualificationExisting(qualification: Qualification): Promise&lt;boolean&gt; {
+    if (qualification.skill !&#x3D; undefined) {
+      return (await this.getQualificationBySkill(qualification.skill)) !&#x3D; undefined;
+    } else {
+      throw new Error(&#x27;The qualification skill is undefined&#x27;);
+    }
+  }
+
+  /**
+   * Saves not existing qualifications from a qualification array
+   *
+   * @param qualifications - array to check from
+   */
+  public async saveNotExistingQualifications(qualifications: Qualification[]) {
+    const allQualifications &#x3D; await firstValueFrom(
+      this.http.get&lt;Qualification[]&gt;(&#x27;/backend/qualifications&#x27;, {
+        headers: this.getHeaders(),
+      })
+    );
+    for (const qualification of qualifications) {
+      await this.saveQualificationIfNotExisting(qualification, allQualifications);
+    }
+  }
+
+  /**
+   * Saves asynchronusly a qualification
+   *
+   * @param qualification - to save
+   * @returns qualification as promise
+   */
+  public async saveQualification(qualification: Qualification): Promise&lt;Qualification&gt; {
+    return await firstValueFrom(
+      this.http.post&lt;Qualification&gt;(&#x60;/backend/qualifications&#x60;, qualification, {
+        headers: this.getHeaders(),
+      })
+    );
+  }
+
+  /**
+   * Bulk deletes asynchronusly multiple qualifications
+   *
+   * @param qualifications - to delete
+   */
+  public async bulkDeleteQualifications(qualifications: Qualification[]) {
+    for (const qualification of qualifications) {
+      await this.deleteQualification(qualification);
+    }
+  }
+
+  /**
+   * Deletes asynchronusly a qualification
+   *
+   * @param qualification - to delete
+   */
+  public async deleteQualification(qualification: Qualification) {
+    await firstValueFrom(
+      this.http.delete(&#x60;/backend/qualifications&#x60;, {
+        body: qualification,
+        headers: this.getHeaders(),
+      })
+    );
+  }
+
+  /**
+   * Checks if a qualification is assigned to any employee
+   *
+   * @param qualification - to check
+   */
+  public async isQualificationAssignedToAnyEmployee(qualification: Qualification): Promise&lt;boolean&gt; {
+    let assigned &#x3D; false;
+    await firstValueFrom(
+      this.http.get&lt;QualificationEmployees&gt;(&#x60;/backend/qualifications/${qualification.skill}/employees&#x60;, {
+        headers: this.getHeaders(),
+      })
+    ).then((qe) &#x3D;&gt; {
+      assigned &#x3D; qe.employees !&#x3D; undefined &amp;&amp; qe.employees.length !&#x3D; 0;
+    });
+    return assigned;
+  }
+
+  /**
+   * Gets qualification employees by skill
+   *
+   * @param skill - to get the qualifications employees object
+   */
+  public getQualificationEmployeesBySkill(skill: string): Observable&lt;QualificationEmployees&gt; {
+    return this.http.get&lt;QualificationEmployees&gt;(&#x60;/backend/qualifications/${skill}/employees&#x60;, {
+      headers: this.getHeaders(),
+    });
+  }
+
+  /**
+   * Converts a string array to a qualification array
+   *
+   * @param skillArray - string array to convert
+   * @returns converted qualification array
+   */
+  public convertStringArrayToQualificationArray(skillArray: string[]): Qualification[] {
+    const qualifications: Qualification[] &#x3D; [];
+    for (const skill of skillArray) {
+      qualifications.push(this.convertStringToQualification(skill));
+    }
+    return qualifications;
+  }
+
+  /**
+   * Converts a string to a qualification
+   *
+   * @param skill - string to convert
+   * @returns converted qualification
+   */
+  public convertStringToQualification(skill: string): Qualification {
+    return new Qualification(skill);
+  }
+
+  /**
+   * saves asynchronusly a qualification if it doesn&#x27;t exist
+   *
+   * @param allQualification - array to check from
+   * @param qualification -  to check with
+   */
+  private async saveQualificationIfNotExisting(qualification: Qualification, allQualifications: Qualification[]) {
+    if (this.isQualificationNotExisting(qualification, allQualifications)) {
+      await this.saveQualification(qualification);
+    }
+  }
+
+  /**
+   * Checks if qualification is existing in array
+   *
+   * @param qualificaiton - to check with
+   * @param allQualifications - array to check from
+   */
+  private isQualificationNotExisting(qualification: Qualification, allQualifications: Qualification[]) {
+    console.log(allQualifications);
+    return allQualifications.filter((entry) &#x3D;&gt; entry.skill &#x3D;&#x3D;&#x3D; qualification.skill).length &#x3D;&#x3D; 0;
+  }
+
+  /**
+   * Filters a qualification from a list by its skill.
+   *
+   * @returns Qualifcation which equals the skill, or null if qualification doesn&#x27;t exists
+   */
+  private getQualificationFromListByDesignation(qualifications: Qualification[], skill: string): Qualification {
+    return qualifications.filter((qualification) &#x3D;&gt; qualification.skill &#x3D;&#x3D;&#x3D; skill)[0];
+  }
+
+  /**
+   * Gets required Headers for Qualification related requests
+   *
+   * @returns headers for requests
+   */
+  private getHeaders(): HttpHeaders | { [header: string]: string | string[] } | undefined {
+    return new HttpHeaders().set(&#x27;Content-Type&#x27;, &#x27;application/json&#x27;);
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'QualificationService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

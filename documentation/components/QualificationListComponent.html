@@ -1,0 +1,1854 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>employee-frontend-starter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">employee-frontend-starter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  QualificationListComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/qualification-list/qualification-list.component.ts</code>
+</p>
+
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-qualification-list</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./qualification-list.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./qualification-list.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#failed" >failed</a>
+                            </li>
+                            <li>
+                                <a href="#failedMessage" >failedMessage</a>
+                            </li>
+                            <li>
+                                <a href="#qualifications$" >qualifications$</a>
+                            </li>
+                            <li>
+                                <a href="#qualificationSelection" >qualificationSelection</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#searchMode" >searchMode</a>
+                            </li>
+                            <li>
+                                <a href="#searchValue" >searchValue</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#clearSelection" >clearSelection</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteQualificationSelection" >deleteQualificationSelection</a>
+                            </li>
+                            <li>
+                                <a href="#fetchData" >fetchData</a>
+                            </li>
+                            <li>
+                                <a href="#getDeleteConfirmationMessage" >getDeleteConfirmationMessage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getQualificationNotDeletableMessage" >getQualificationNotDeletableMessage</a>
+                            </li>
+                            <li>
+                                <a href="#goToQualification" >goToQualification</a>
+                            </li>
+                            <li>
+                                <a href="#isAnythingSelected" >isAnythingSelected</a>
+                            </li>
+                            <li>
+                                <a href="#isQualificationContainedInSelection" >isQualificationContainedInSelection</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#isQualificationContentContainingString" >isQualificationContentContainingString</a>
+                            </li>
+                            <li>
+                                <a href="#isSearchModeEnabled" >isSearchModeEnabled</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#isSelectionDeletable" >isSelectionDeletable</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#isValueContainingTextIgnoreCase" >isValueContainingTextIgnoreCase</a>
+                            </li>
+                            <li>
+                                <a href="#resetDeletionError" >resetDeletionError</a>
+                            </li>
+                            <li>
+                                <a href="#resetSearch" >resetSearch</a>
+                            </li>
+                            <li>
+                                <a href="#searchForString" >searchForString</a>
+                            </li>
+                            <li>
+                                <a href="#selectQualification" >selectQualification</a>
+                            </li>
+                            <li>
+                                <a href="#setSearchMode" >setSearchMode</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(qualificationService: <a href="../injectables/QualificationService.html" target="_self">QualificationService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/qualification-list/qualification-list.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>qualificationService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/QualificationService.html" target="_self" >QualificationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clearSelection"></a>
+                    <span class="name">
+                        <span ><b>clearSelection</b></span>
+                        <a href="#clearSelection"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>clearSelection()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="74"
+                            class="link-to-prism">src/app/qualification-list/qualification-list.component.ts:74</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Clears qualification selection</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteQualificationSelection"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>deleteQualificationSelection</b></span>
+                        <a href="#deleteQualificationSelection"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteQualificationSelection()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="81"
+                            class="link-to-prism">src/app/qualification-list/qualification-list.component.ts:81</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Deletes asynchronusly the qualification selection</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchData"></a>
+                    <span class="name">
+                        <span ><b>fetchData</b></span>
+                        <a href="#fetchData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>fetchData()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/qualification-list/qualification-list.component.ts:28</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets all qualifications and resets the search</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDeleteConfirmationMessage"></a>
+                    <span class="name">
+                        <span ><b>getDeleteConfirmationMessage</b></span>
+                        <a href="#getDeleteConfirmationMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getDeleteConfirmationMessage()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="135"
+                            class="link-to-prism">src/app/qualification-list/qualification-list.component.ts:135</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets qualification deletion message and checks
+if it is singular or plural</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>qualification deletion message as string</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getQualificationNotDeletableMessage"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>getQualificationNotDeletableMessage</b></span>
+                        <a href="#getQualificationNotDeletableMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getQualificationNotDeletableMessage()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="113"
+                            class="link-to-prism">src/app/qualification-list/qualification-list.component.ts:113</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Checks for plural and gets by the result of the check the message</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>the message as string</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goToQualification"></a>
+                    <span class="name">
+                        <span ><b>goToQualification</b></span>
+                        <a href="#goToQualification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goToQualification(id: string | undefined)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">src/app/qualification-list/qualification-list.component.ts:38</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Goes to an employee with the router</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                            <code>string | undefined</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>of the employee</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isAnythingSelected"></a>
+                    <span class="name">
+                        <span ><b>isAnythingSelected</b></span>
+                        <a href="#isAnythingSelected"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isAnythingSelected()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="67"
+                            class="link-to-prism">src/app/qualification-list/qualification-list.component.ts:67</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>checks if anything is selected</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>boolean if anything is selected</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isQualificationContainedInSelection"></a>
+                    <span class="name">
+                        <span ><b>isQualificationContainedInSelection</b></span>
+                        <a href="#isQualificationContainedInSelection"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isQualificationContainedInSelection(qualification: <a href="../classes/Qualification.html" target="_self">Qualification</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/qualification-list/qualification-list.component.ts:58</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Checks if the qualification is contained in the selection</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>qualification</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>to check</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>boolean if qualification is met</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isQualificationContentContainingString"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>isQualificationContentContainingString</b></span>
+                        <a href="#isQualificationContentContainingString"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isQualificationContentContainingString(text: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, qualification: <a href="../classes/Qualification.html" target="_self">Qualification</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="199"
+                            class="link-to-prism">src/app/qualification-list/qualification-list.component.ts:199</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Checks if the qualification content is containing the text string</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>text</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>string to check if its content is included in the qualification skill</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>qualification</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>to check if the text is included in the skill</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>boolean if text is included in qualification skill</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isSearchModeEnabled"></a>
+                    <span class="name">
+                        <span ><b>isSearchModeEnabled</b></span>
+                        <a href="#isSearchModeEnabled"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isSearchModeEnabled()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="171"
+                            class="link-to-prism">src/app/qualification-list/qualification-list.component.ts:171</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Checks if search mode is enabled</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>if search mode is enabled</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isSelectionDeletable"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>isSelectionDeletable</b></span>
+                        <a href="#isSelectionDeletable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isSelectionDeletable()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">src/app/qualification-list/qualification-list.component.ts:97</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Checks asynchronusly if any qualification of the selection is assigned to any employee (deletable)</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>boolean if the qualification is deletable</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isValueContainingTextIgnoreCase"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>isValueContainingTextIgnoreCase</b></span>
+                        <a href="#isValueContainingTextIgnoreCase"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isValueContainingTextIgnoreCase(value: string | undefined, text: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="211"
+                            class="link-to-prism">src/app/qualification-list/qualification-list.component.ts:211</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Checks if value is containing text, while text is set to lower case</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                            <code>string | undefined</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>to check if text is included</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>text</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>to check if its content is included in the value string</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>boolean if value is containing text</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetDeletionError"></a>
+                    <span class="name">
+                        <span ><b>resetDeletionError</b></span>
+                        <a href="#resetDeletionError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>resetDeletionError()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="124"
+                            class="link-to-prism">src/app/qualification-list/qualification-list.component.ts:124</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Checks asynchronusly if a qualification is deletable</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetSearch"></a>
+                    <span class="name">
+                        <span ><b>resetSearch</b></span>
+                        <a href="#resetSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>resetSearch()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="187"
+                            class="link-to-prism">src/app/qualification-list/qualification-list.component.ts:187</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Resets the search by setting the <a href="searchValue">searchValue</a> to false and</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchForString"></a>
+                    <span class="name">
+                        <span ><b>searchForString</b></span>
+                        <a href="#searchForString"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>searchForString()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="150"
+                            class="link-to-prism">src/app/qualification-list/qualification-list.component.ts:150</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Filters qualifications that include the <a href="searchValue">searchValue</a>.
+In order to filter the observable, it will be piped and mapped.
+Also, the <a href="searchMode">searchMode</a> will be set to true.</p>
+<p>If the content is empty, <a href="fetchData">fetchData</a> will be executed.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectQualification"></a>
+                    <span class="name">
+                        <span ><b>selectQualification</b></span>
+                        <a href="#selectQualification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>selectQualification(qualification: <a href="../classes/Qualification.html" target="_self">Qualification</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/qualification-list/qualification-list.component.ts:44</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>qualification</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setSearchMode"></a>
+                    <span class="name">
+                        <span ><b>setSearchMode</b></span>
+                        <a href="#setSearchMode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setSearchMode(state: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="180"
+                            class="link-to-prism">src/app/qualification-list/qualification-list.component.ts:180</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Sets the search mode state</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>state</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>which the search mode should be set to</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="failed"></a>
+                    <span class="name">
+                        <span ><b>failed</b></span>
+                        <a href="#failed"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/qualification-list/qualification-list.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="failedMessage"></a>
+                    <span class="name">
+                        <span ><b>failedMessage</b></span>
+                        <a href="#failedMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/qualification-list/qualification-list.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="qualifications$"></a>
+                    <span class="name">
+                        <span ><b>qualifications$</b></span>
+                        <a href="#qualifications$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Qualification.html" target="_self" >Observable&lt;Qualification[]&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/qualification-list/qualification-list.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="qualificationSelection"></a>
+                    <span class="name">
+                        <span ><b>qualificationSelection</b></span>
+                        <a href="#qualificationSelection"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Qualification.html" target="_self" >Qualification[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/qualification-list/qualification-list.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchMode"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>searchMode</b></span>
+                        <a href="#searchMode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/qualification-list/qualification-list.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchValue"></a>
+                    <span class="name">
+                        <span ><b>searchValue</b></span>
+                        <a href="#searchValue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/qualification-list/qualification-list.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { map, Observable, of } from &#x27;rxjs&#x27;;
+import { Qualification } from &#x27;../Qualification&#x27;;
+import { QualificationService } from &#x27;../qualification.service&#x27;;
+
+@Component({
+  selector: &#x27;app-qualification-list&#x27;,
+  templateUrl: &#x27;./qualification-list.component.html&#x27;,
+  styleUrls: [&#x27;./qualification-list.component.css&#x27;],
+})
+export class QualificationListComponent {
+  qualifications$: Observable&lt;Qualification[]&gt;;
+  qualificationSelection: Qualification[] &#x3D; [];
+  searchValue &#x3D; &#x27;&#x27;;
+  failedMessage &#x3D; &#x27;&#x27;;
+  failed &#x3D; false;
+  private searchMode &#x3D; false;
+
+  constructor(private qualificationService: QualificationService, private router: Router) {
+    this.qualifications$ &#x3D; of([]);
+    this.fetchData();
+  }
+
+  /**
+   * Gets all qualifications and resets the search
+   */
+  fetchData() {
+    this.qualifications$ &#x3D; this.qualificationService.getAllQualifications();
+    this.setSearchMode(false);
+  }
+
+  /**
+   * Goes to an employee with the router
+   *
+   * @param id - of the employee
+   */
+  goToQualification(id: string | undefined) {
+    if (id !&#x3D; undefined) {
+      this.router.navigateByUrl(&#x27;/qualification/&#x27; + id);
+    }
+  }
+
+  selectQualification(qualification: Qualification) {
+    if (this.isQualificationContainedInSelection(qualification)) {
+      this.qualificationSelection &#x3D; this.qualificationSelection.filter((entry) &#x3D;&gt; entry !&#x3D; qualification);
+    } else {
+      this.qualificationSelection.push(qualification);
+    }
+  }
+
+  /**
+   * Checks if the qualification is contained in the selection
+   *
+   * @param qualification - to check
+   * @returns boolean if qualification is met
+   */
+  isQualificationContainedInSelection(qualification: Qualification): boolean {
+    return this.qualificationSelection.filter((entry) &#x3D;&gt; entry &#x3D;&#x3D; qualification).length !&#x3D; 0;
+  }
+
+  /**
+   * checks if anything is selected
+   *
+   * @returns boolean if anything is selected
+   */
+  isAnythingSelected(): boolean {
+    return this.qualificationSelection.length !&#x3D; 0;
+  }
+
+  /**
+   * Clears qualification selection
+   */
+  clearSelection() {
+    this.qualificationSelection &#x3D; [];
+  }
+
+  /**
+   * Deletes asynchronusly the qualification selection
+   */
+  async deleteQualificationSelection() {
+    if (await this.isSelectionDeletable()) {
+      this.qualificationService.bulkDeleteQualifications(this.qualificationSelection).then(() &#x3D;&gt; {
+        this.clearSelection();
+        this.fetchData();
+      });
+    }
+  }
+
+  /**
+   * Checks asynchronusly if any qualification of the selection is assigned to any employee (deletable)
+   *
+   * @param qualification - to check
+   * @returns boolean if the qualification is deletable
+   *
+   */
+  private async isSelectionDeletable() {
+    for (const selection of this.qualificationSelection) {
+      if (await this.qualificationService.isQualificationAssignedToAnyEmployee(selection)) {
+        this.failedMessage &#x3D; this.getQualificationNotDeletableMessage();
+        this.failed &#x3D; true;
+        return false;
+      }
+    }
+    return true;
+  }
+
+  /**
+   * Checks for plural and gets by the result of the check the message
+   *
+   * @returns the message as string
+   */
+  private getQualificationNotDeletableMessage(): string {
+    if (this.qualificationSelection.length &#x3D;&#x3D; 1) {
+      return &#x27;Die Qualifikation ist noch Mitarbeiter:innen zugewiesen.&#x27;;
+    } else {
+      return &#x27;Die Qualifikationen sind noch Mitarbeiter:innen zugewiesen&#x27;;
+    }
+  }
+
+  /**
+   * Checks asynchronusly if a qualification is deletable
+   */
+  resetDeletionError() {
+    this.failed &#x3D; false;
+    this.failedMessage &#x3D; &#x27;&#x27;;
+  }
+
+  /**
+   * Gets qualification deletion message and checks
+   * if it is singular or plural
+   *
+   * @returns qualification deletion message as string
+   */
+  getDeleteConfirmationMessage(): string {
+    if (this.qualificationSelection.length &#x3D;&#x3D; 1) {
+      return &#x27;Soll die Qualifikation wirklich gelöscht werden?&#x27;;
+    } else {
+      return &#x60;Sollen die ${this.qualificationSelection.length} ausgewählten Qualifikationen wirklich gelöscht werden&#x60;;
+    }
+  }
+
+  /**
+   * Filters qualifications that include the {@link searchValue}.
+   * In order to filter the observable, it will be piped and mapped.
+   * Also, the {@link searchMode} will be set to true.
+   *
+   * If the content is empty, {@link fetchData} will be executed.
+   */
+  searchForString() {
+    if (this.searchValue.length &#x3D;&#x3D;&#x3D; 0) {
+      this.fetchData();
+      return;
+    }
+
+    this.qualifications$ &#x3D; this.qualifications$.pipe(
+      map((qualifications) &#x3D;&gt;
+        qualifications.filter((qualification) &#x3D;&gt;
+          this.isQualificationContentContainingString(this.searchValue, qualification)
+        )
+      )
+    );
+    this.setSearchMode(true);
+  }
+
+  /**
+   * Checks if search mode is enabled
+   *
+   * @returns if search mode is enabled
+   */
+  isSearchModeEnabled(): boolean {
+    return this.searchMode;
+  }
+
+  /**
+   * Sets the search mode state
+   *
+   * @param state - which the search mode should be set to
+   */
+  setSearchMode(state: boolean) {
+    this.searchMode &#x3D; state;
+  }
+
+  /**
+   * Resets the search by setting the {@link searchValue} to false and
+   */
+  resetSearch() {
+    this.setSearchMode(false);
+    this.searchValue &#x3D; &#x27;&#x27;;
+  }
+
+  /**
+   * Checks if the qualification content is containing the text string
+   *
+   * @param text - string to check if its content is included in the qualification skill
+   * @param qualification - to check if the text is included in the skill
+   * @returns boolean if text is included in qualification skill
+   */
+  private isQualificationContentContainingString(text: string, qualification: Qualification): boolean {
+    const skill: string | undefined &#x3D; qualification.skill?.toLowerCase();
+    return this.isValueContainingTextIgnoreCase(skill, text);
+  }
+
+  /**
+   * Checks if value is containing text, while text is set to lower case
+   *
+   * @param value - to check if text is included
+   * @param text - to check if its content is included in the value string
+   * @returns boolean if value is containing text
+   */
+  private isValueContainingTextIgnoreCase(value: string | undefined, text: string): boolean {
+    if (value !&#x3D; undefined) {
+      return value.includes(text.toLowerCase());
+    }
+    return false;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;row ms-1&quot;&gt;
+      &lt;div class&#x3D;&quot;col d-flex align-items-center&quot;&gt;
+        &lt;h5 class&#x3D;&quot;m-0&quot;&gt;Qualifikationen-Liste&lt;/h5&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;col&quot;&gt;
+        &lt;p style&#x3D;&quot;text-align: right&quot; class&#x3D;&quot;align-self-center m-2 me-4&quot;&gt;
+          &lt;span class&#x3D;&quot;material-icons text-success cursor-pointer me-1&quot; [routerLink]&#x3D;&quot;[&#x27;/qualification/editor&#x27;]&quot;
+            &gt;add&lt;/span
+          &gt;
+          &lt;span class&#x3D;&quot;material-icons text-success cursor-pointer me-1&quot; (click)&#x3D;&quot;searchForString()&quot;&gt;search&lt;/span&gt;
+          &lt;span class&#x3D;&quot;material-icons text-success cursor-pointer&quot; (click)&#x3D;&quot;fetchData()&quot;&gt;
+            &lt;ng-container *ngIf&#x3D;&quot;isSearchModeEnabled(); else reload&quot;&gt;backspace&lt;/ng-container&gt;
+            &lt;ng-template #reload&gt;refresh&lt;/ng-template&gt;
+          &lt;/span&gt;
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;row m-auto&quot;&gt;
+      &lt;form (submit)&#x3D;&quot;searchForString()&quot;&gt;
+        &lt;input
+          class&#x3D;&quot;form-control form&quot;
+          placeholder&#x3D;&quot;Suche...&quot;
+          [(ngModel)]&#x3D;&quot;searchValue&quot;
+          [ngModelOptions]&#x3D;&quot;{ standalone: true }&quot;
+        /&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;row m-auto mt-3&quot;&gt;
+    &lt;table class&#x3D;&quot;table&quot;&gt;
+      &lt;thead&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;ng-container *ngFor&#x3D;&quot;let q of qualifications$ | async&quot;&gt;
+          &lt;tr
+            class&#x3D;&quot;tr-hover&quot;
+            [class.tr-active]&#x3D;&quot;isQualificationContainedInSelection(q)&quot;
+            (click)&#x3D;&quot;selectQualification(q)&quot;
+            (dblclick)&#x3D;&quot;goToQualification(q.skill)&quot;
+          &gt;
+            &lt;td&gt;{{ q.skill }}&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/ng-container&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+    &lt;div *ngIf&#x3D;&quot;isAnythingSelected()&quot; class&#x3D;&quot;cursor-pointer expand&quot;&gt;
+      &lt;app-confirmable-delete
+        [alignButtonRight]&#x3D;&quot;&#x27;true&#x27;&quot;
+        (deleteEmit)&#x3D;&quot;deleteQualificationSelection()&quot;
+        [message]&#x3D;&quot;getDeleteConfirmationMessage()&quot;
+        [failed]&#x3D;&quot;failed&quot;
+        [failedMessage]&#x3D;&quot;failedMessage&quot;
+        (resetErrorEmit)&#x3D;&quot;resetDeletionError()&quot;
+      &gt;&lt;/app-confirmable-delete&gt;
+    &lt;/div&gt;
+    &lt;div *ngIf&#x3D;&quot;(qualifications$ | async)?.length &#x3D;&#x3D;&#x3D; 0&quot;&gt;
+      &lt;p&gt;Es wurden keine Qualifikationen gefunden.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./qualification-list.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <div class="row">    <div class="row ms-1">      <div class="col d-flex align-items-center">        <h5 class="m-0">Qualifikationen-Liste</h5>      </div>      <div class="col">        <p style="text-align: right" class="align-self-center m-2 me-4">          <span class="material-icons text-success cursor-pointer me-1" [routerLink]="[\'/qualification/editor\']"            >add</span          >          <span class="material-icons text-success cursor-pointer me-1" (click)="searchForString()">search</span>          <span class="material-icons text-success cursor-pointer" (click)="fetchData()">            <ng-container *ngIf="isSearchModeEnabled(); else reload">backspace</ng-container>            <ng-template #reload>refresh</ng-template>          </span>        </p>      </div>    </div>    <div class="row m-auto">      <form (submit)="searchForString()">        <input          class="form-control form"          placeholder="Suche..."          [(ngModel)]="searchValue"          [ngModelOptions]="{ standalone: true }"        />      </form>    </div>  </div>  <div class="row m-auto mt-3">    <table class="table">      <thead>        <th>Name</th>      </thead>      <tbody>        <ng-container *ngFor="let q of qualifications$ | async">          <tr            class="tr-hover"            [class.tr-active]="isQualificationContainedInSelection(q)"            (click)="selectQualification(q)"            (dblclick)="goToQualification(q.skill)"          >            <td>{{ q.skill }}</td>          </tr>        </ng-container>      </tbody>    </table>    <div *ngIf="isAnythingSelected()" class="cursor-pointer expand">      <app-confirmable-delete        [alignButtonRight]="\'true\'"        (deleteEmit)="deleteQualificationSelection()"        [message]="getDeleteConfirmationMessage()"        [failed]="failed"        [failedMessage]="failedMessage"        (resetErrorEmit)="resetDeletionError()"      ></app-confirmable-delete>    </div>    <div *ngIf="(qualifications$ | async)?.length === 0">      <p>Es wurden keine Qualifikationen gefunden.</p>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ConfirmableDeleteComponent', 'selector': 'app-confirmable-delete'},{'name': 'EmployeeDetailsComponent', 'selector': 'app-employee-details'},{'name': 'EmployeeEditorComponent', 'selector': 'app-employee-editor'},{'name': 'EmployeeListComponent', 'selector': 'app-employee-list'},{'name': 'NavigationBarComponent', 'selector': 'app-navigation-bar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'QualificationDetailsComponent', 'selector': 'app-qualification-details'},{'name': 'QualificationEditorComponent', 'selector': 'app-qualification-editor'},{'name': 'QualificationListComponent', 'selector': 'app-qualification-list'},{'name': 'StatusBarComponent', 'selector': 'app-status-bar'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'QualificationListComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'QualificationListComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

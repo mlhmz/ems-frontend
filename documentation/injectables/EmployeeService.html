@@ -1,0 +1,2526 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>employee-frontend-starter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">employee-frontend-starter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li >EmployeeService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/employee.service.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#addEmployee" >addEmployee</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#addQualificationToEmployee" >addQualificationToEmployee</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#bulkAddQualificationsToEmployee" >bulkAddQualificationsToEmployee</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#bulkDeleteEmployees" >bulkDeleteEmployees</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#bulkDeleteQualificationsFromEmployee" >bulkDeleteQualificationsFromEmployee</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteEmployee" >deleteEmployee</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteQualificationFromEmployee" >deleteQualificationFromEmployee</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#editEmployee" >editEmployee</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getAllFieldValidationResults" >getAllFieldValidationResults</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getEmployeeById" >getEmployeeById</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getEmployees" >getEmployees</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getFieldContent" >getFieldContent</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getFieldValidationResult" >getFieldValidationResult</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getGuiRep" >getGuiRep</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getHeaders" >getHeaders</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getNotInEmployeeSkillSetContainedQualifications" >getNotInEmployeeSkillSetContainedQualifications</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getNotInQualificationsContainedEmployeeSkills" >getNotInQualificationsContainedEmployeeSkills</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#isEmployeeQualificationIncludedInQualificationSet" >isEmployeeQualificationIncludedInQualificationSet</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#isEmployeeValid" >isEmployeeValid</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#isSkillIncludedInEmployeeSkillSet" >isSkillIncludedInEmployeeSkillSet</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateQualificationsOfEmployee" >updateQualificationsOfEmployee</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, qualificationService: <a href="../injectables/QualificationService.html" target="_self">QualificationService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/employee.service.ts:12</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>qualificationService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/QualificationService.html" target="_self" >QualificationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addEmployee"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>addEmployee</b></span>
+                        <a href="#addEmployee"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addEmployee(employee: <a href="../classes/Employee.html" target="_self">Employee</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="178"
+                            class="link-to-prism">src/app/employee.service.ts:178</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Adds asynchronously an employee.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>employee</td>
+                                    <td>
+                                                <code><a href="../classes/Employee.html" target="_self" >Employee</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>object to add</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Employee.html" target="_self" >Promise&lt;Employee&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>employee callback as promise</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addQualificationToEmployee"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>addQualificationToEmployee</b></span>
+                        <a href="#addQualificationToEmployee"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addQualificationToEmployee(employeeId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, qualification: <a href="../classes/Qualification.html" target="_self">Qualification</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="245"
+                            class="link-to-prism">src/app/employee.service.ts:245</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Adds asynchronously a qualification to the employee</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>employeeId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>of the employee</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>qualification</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>to add to the employee</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Qualification.html" target="_self" >Promise&lt;Qualification&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Promise with the added qualification</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="bulkAddQualificationsToEmployee"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>bulkAddQualificationsToEmployee</b></span>
+                        <a href="#bulkAddQualificationsToEmployee"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>bulkAddQualificationsToEmployee(employeeId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, qualifications: <a href="../classes/Qualification.html" target="_self">Qualification[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="232"
+                            class="link-to-prism">src/app/employee.service.ts:232</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Adds all Qualifications to the Employee that are included in the array</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>employeeId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>of the employee</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>qualifications</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>to add to the employee</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="bulkDeleteEmployees"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>bulkDeleteEmployees</b></span>
+                        <a href="#bulkDeleteEmployees"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>bulkDeleteEmployees(employees: <a href="../classes/Employee.html" target="_self">Employee[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="347"
+                            class="link-to-prism">src/app/employee.service.ts:347</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Deletes Employees of an array that have an undefined id.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>employees</td>
+                                    <td>
+                                                <code><a href="../classes/Employee.html" target="_self" >Employee[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>in an array</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="bulkDeleteQualificationsFromEmployee"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>bulkDeleteQualificationsFromEmployee</b></span>
+                        <a href="#bulkDeleteQualificationsFromEmployee"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>bulkDeleteQualificationsFromEmployee(employeeId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, qualificationsToRemove: <a href="../classes/Qualification.html" target="_self">Qualification[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="257"
+                            class="link-to-prism">src/app/employee.service.ts:257</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Deletes all Qualifications to the Employee that are included in the array</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>employeeId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>of the employee</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>qualificationsToRemove</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteEmployee"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>deleteEmployee</b></span>
+                        <a href="#deleteEmployee"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteEmployee(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="360"
+                            class="link-to-prism">src/app/employee.service.ts:360</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Deletes an employee by its id</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteQualificationFromEmployee"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>deleteQualificationFromEmployee</b></span>
+                        <a href="#deleteQualificationFromEmployee"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteQualificationFromEmployee(employeeId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, qualification: <a href="../classes/Qualification.html" target="_self">Qualification</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="270"
+                            class="link-to-prism">src/app/employee.service.ts:270</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Deletes asynchronously a qualification from the employee</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>employeeId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>of the employee</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>qualification</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>to add to the employee</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Promise with the added qualification</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editEmployee"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>editEmployee</b></span>
+                        <a href="#editEmployee"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>editEmployee(employee: <a href="../classes/Employee.html" target="_self">Employee</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="192"
+                            class="link-to-prism">src/app/employee.service.ts:192</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Edits asynchronously an employee object.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>employee</td>
+                                    <td>
+                                                <code><a href="../classes/Employee.html" target="_self" >Employee</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>to edit with matching id</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Employee.html" target="_self" >Promise&lt;Employee&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>employee callback as promise</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAllFieldValidationResults"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getAllFieldValidationResults</b></span>
+                        <a href="#getAllFieldValidationResults"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAllFieldValidationResults(employee: <a href="../classes/Employee.html" target="_self">Employee</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/employee.service.ts:32</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets all fields validation results</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>employee</td>
+                                    <td>
+                                                <code><a href="../classes/Employee.html" target="_self" >Employee</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>that owns the fields that are being checked</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/ValidationResult.html" target="_self" >ValidationResult[]</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getEmployeeById"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>getEmployeeById</b></span>
+                        <a href="#getEmployeeById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getEmployeeById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="164"
+                            class="link-to-prism">src/app/employee.service.ts:164</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets asynchronously an employee by its id.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>of the employee</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Employee.html" target="_self" >Promise&lt;Employee&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>employee as promise</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getEmployees"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getEmployees</b></span>
+                        <a href="#getEmployees"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getEmployees()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="152"
+                            class="link-to-prism">src/app/employee.service.ts:152</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets all Employees from Service</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Employee.html" target="_self" >Observable&lt;Employee[]&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Employees array as Observable</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFieldContent"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>getFieldContent</b></span>
+                        <a href="#getFieldContent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getFieldContent(field: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, employee: <a href="../classes/Employee.html" target="_self">Employee</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="120"
+                            class="link-to-prism">src/app/employee.service.ts:120</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets field content of the fields that are also defined as constants in the
+<a href="../classes/Employee.html">Employee</a> class</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>field</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>thats content is getted</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>employee</td>
+                                    <td>
+                                                <code><a href="../classes/Employee.html" target="_self" >Employee</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>that owns the field</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>string | undefined</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>string if the field exists, otherwise it will return undefined</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFieldValidationResult"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getFieldValidationResult</b></span>
+                        <a href="#getFieldValidationResult"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getFieldValidationResult(field: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, employee: <a href="../classes/Employee.html" target="_self">Employee</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/employee.service.ts:49</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets the field validation result of the employee fields
+that are defined in the <a href="../classes/Employee.html">Employee</a> constants</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>field</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>thats validation result is required</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>employee</td>
+                                    <td>
+                                                <code><a href="../classes/Employee.html" target="_self" >Employee</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>that owns the field that is being checked</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/ValidationResult.html" target="_self" >ValidationResult</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getGuiRep"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>getGuiRep</b></span>
+                        <a href="#getGuiRep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getGuiRep(field: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="84"
+                            class="link-to-prism">src/app/employee.service.ts:84</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets the gui representation of the employee fields
+that are defined in the <a href="../classes/Employee.html">Employee</a> constants</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>field</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>thats gui representation is required</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>string of the gui rep</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getHeaders"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>getHeaders</b></span>
+                        <a href="#getHeaders"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getHeaders()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="369"
+                            class="link-to-prism">src/app/employee.service.ts:369</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets required Headers for Employee related requests</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>HttpHeaders | literal type | undefined</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>headers for requests</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getNotInEmployeeSkillSetContainedQualifications"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>getNotInEmployeeSkillSetContainedQualifications</b></span>
+                        <a href="#getNotInEmployeeSkillSetContainedQualifications"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getNotInEmployeeSkillSetContainedQualifications(employee: <a href="../classes/Employee.html" target="_self">Employee</a>, qualifications: <a href="../classes/Qualification.html" target="_self">Qualification[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="286"
+                            class="link-to-prism">src/app/employee.service.ts:286</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets all qualifications from an qualification array that are not contained in the employees skillset</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>employee</td>
+                                    <td>
+                                                <code><a href="../classes/Employee.html" target="_self" >Employee</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>with skillset that eventually misses some entries from the qualification array</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>qualifications</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>array that includes all qualifications</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Qualification.html" target="_self" >Qualification[]</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>array with all qualiications that are matching the criteria</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getNotInQualificationsContainedEmployeeSkills"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>getNotInQualificationsContainedEmployeeSkills</b></span>
+                        <a href="#getNotInQualificationsContainedEmployeeSkills"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getNotInQualificationsContainedEmployeeSkills(employee: <a href="../classes/Employee.html" target="_self">Employee</a>, qualifications: <a href="../classes/Qualification.html" target="_self">Qualification[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="318"
+                            class="link-to-prism">src/app/employee.service.ts:318</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets all Employee Qualifications that are not contained in the Qualification Array</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>employee</td>
+                                    <td>
+                                                <code><a href="../classes/Employee.html" target="_self" >Employee</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>with skillset that includes all qualifications of the employee</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>qualifications</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>that eventually misses some entries from the employee array</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Qualification.html" target="_self" >Qualification[]</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>array with entries that are included in the employee skillset but not in the qualifications array</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isEmployeeQualificationIncludedInQualificationSet"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>isEmployeeQualificationIncludedInQualificationSet</b></span>
+                        <a href="#isEmployeeQualificationIncludedInQualificationSet"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isEmployeeQualificationIncludedInQualificationSet(skill: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, qualifications: <a href="../classes/Qualification.html" target="_self">Qualification[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="338"
+                            class="link-to-prism">src/app/employee.service.ts:338</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Checks if employee qualification is included in the qualification array</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>skill</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>that should be contained in the qualifications array</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>qualifications</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>array that is being checked</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isEmployeeValid"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>isEmployeeValid</b></span>
+                        <a href="#isEmployeeValid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isEmployeeValid(employee: <a href="../classes/Employee.html" target="_self">Employee</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/employee.service.ts:22</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Checks if an employee is overall valid or if it has any
+failed validation results</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>employee</td>
+                                    <td>
+                                                <code><a href="../classes/Employee.html" target="_self" >Employee</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>to check if it is valid</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>boolean if the employee is valid</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isSkillIncludedInEmployeeSkillSet"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>isSkillIncludedInEmployeeSkillSet</b></span>
+                        <a href="#isSkillIncludedInEmployeeSkillSet"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isSkillIncludedInEmployeeSkillSet(employee: <a href="../classes/Employee.html" target="_self">Employee</a>, qualification: <a href="../classes/Qualification.html" target="_self">Qualification</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="303"
+                            class="link-to-prism">src/app/employee.service.ts:303</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Checks if the qualification is included in the skillset</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>employee</td>
+                                    <td>
+                                                <code><a href="../classes/Employee.html" target="_self" >Employee</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>thats skillset is checked</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>qualification</td>
+                                    <td>
+                                                <code><a href="../classes/Qualification.html" target="_self" >Qualification</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>boolean if the criteria is matching</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateQualificationsOfEmployee"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>updateQualificationsOfEmployee</b></span>
+                        <a href="#updateQualificationsOfEmployee"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateQualificationsOfEmployee(employee: <a href="../classes/Employee.html" target="_self">Employee</a>, skills: string[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="207"
+                            class="link-to-prism">src/app/employee.service.ts:207</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Updates asynchronously qualifications of the employee to match the skills array
+This method exists because the update route of the employee service somehow doesn&#39;t save modificated
+skillLists, it only validates them.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>employee</td>
+                                    <td>
+                                                <code><a href="../classes/Employee.html" target="_self" >Employee</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>to be updated</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>skills</td>
+                                    <td>
+                                            <code>string[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>array to be matched</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient, HttpHeaders } from &#x27;@angular/common/http&#x27;;
+import { Injectable } from &#x27;@angular/core&#x27;;
+import { firstValueFrom, Observable } from &#x27;rxjs&#x27;;
+import { Employee } from &#x27;./Employee&#x27;;
+import { Qualification } from &#x27;./Qualification&#x27;;
+import { QualificationService } from &#x27;./qualification.service&#x27;;
+import { ValidationResult } from &#x27;./ValidationResult&#x27;;
+
+@Injectable({
+  providedIn: &#x27;root&#x27;,
+})
+export class EmployeeService {
+  constructor(private http: HttpClient, private qualificationService: QualificationService) {}
+
+  /**
+   * Checks if an employee is overall valid or if it has any
+   * failed validation results
+   *
+   * @param employee - to check if it is valid
+   * @returns boolean if the employee is valid
+   */
+  public isEmployeeValid(employee: Employee): boolean {
+    return this.getAllFieldValidationResults(employee).filter((result) &#x3D;&gt; !result.valid).length &#x3D;&#x3D; 0;
+  }
+
+  /**
+   * Gets all fields validation results
+   *
+   * @param employee - that owns the fields that are being checked
+   * @returns {@link ValidationResult} with an array of validation results
+   */
+  public getAllFieldValidationResults(employee: Employee): ValidationResult[] {
+    const validationResults &#x3D; [];
+    for (const field of Employee.ALL_FIELDS) {
+      validationResults.push(this.getFieldValidationResult(field, employee));
+    }
+    return validationResults;
+  }
+
+  /**
+   * Gets the field validation result of the employee fields
+   * that are defined in the {@link Employee} constants
+   *
+   * @param field - thats validation result is required
+   * @param employee - that owns the field that is being checked
+   * @returns {@link ValidationResult} of the employee
+   * @throws {@link Error} if the field doesnt exist
+   */
+  public getFieldValidationResult(field: string, employee: Employee): ValidationResult {
+    let validationResult: ValidationResult;
+    switch (field) {
+      case Employee.LAST_NAME_FIELD_NAME:
+      case Employee.FIRST_NAME_FIELD_NAME:
+      case Employee.STREET_FIELD_NAME:
+      case Employee.CITY_FIELD_NAME:
+      case Employee.PHONE_FIELD_NAME:
+        validationResult &#x3D; new ValidationResult().buildMandatoryStringValidator(
+          this.getGuiRep(field),
+          this.getFieldContent(field, employee)
+        );
+        break;
+      case Employee.POSTCODE_FIELD_NAME:
+        validationResult &#x3D; new ValidationResult().buildMinMaxLengthValidator(
+          this.getGuiRep(field),
+          this.getFieldContent(field, employee),
+          5,
+          5
+        );
+        break;
+      default:
+        throw new Error(&#x27;Invalid field identifier&#x27;);
+    }
+    return validationResult;
+  }
+
+  /**
+   * Gets the gui representation of the employee fields
+   * that are defined in the {@link Employee} constants
+   *
+   * @param field - thats gui representation is required
+   * @returns string of the gui rep
+   * @throws {@link Error} if the field doesnt exists
+   */
+  private getGuiRep(field: string): string {
+    let guiRep: string | undefined;
+    switch (field) {
+      case Employee.LAST_NAME_FIELD_NAME:
+        guiRep &#x3D; &#x27;Nachname&#x27;;
+        break;
+      case Employee.FIRST_NAME_FIELD_NAME:
+        guiRep &#x3D; &#x27;Vorname&#x27;;
+        break;
+      case Employee.STREET_FIELD_NAME:
+        guiRep &#x3D; &#x27;Straße&#x27;;
+        break;
+      case Employee.POSTCODE_FIELD_NAME:
+        guiRep &#x3D; &#x27;Postleitzahl&#x27;;
+        break;
+      case Employee.CITY_FIELD_NAME:
+        guiRep &#x3D; &#x27;Stadt&#x27;;
+        break;
+      case Employee.PHONE_FIELD_NAME:
+        guiRep &#x3D; &#x27;Telefonnummer&#x27;;
+        break;
+      default:
+        throw new Error(&#x27;Invalid field identifier&#x27;);
+    }
+    return guiRep;
+  }
+
+  /**
+   * Gets field content of the fields that are also defined as constants in the
+   * {@link Employee} class
+   *
+   * @param field - thats content is getted
+   * @param employee - that owns the field
+   * @returns string if the field exists, otherwise it will return undefined
+   * @throws {@link Error} if the field doesnt exists
+   */
+  private getFieldContent(field: string, employee: Employee): string | undefined {
+    let content: string | undefined;
+    switch (field) {
+      case Employee.LAST_NAME_FIELD_NAME:
+        content &#x3D; employee.lastName;
+        break;
+      case Employee.FIRST_NAME_FIELD_NAME:
+        content &#x3D; employee.firstName;
+        break;
+      case Employee.STREET_FIELD_NAME:
+        content &#x3D; employee.street;
+        break;
+      case Employee.POSTCODE_FIELD_NAME:
+        content &#x3D; employee.postcode;
+        break;
+      case Employee.CITY_FIELD_NAME:
+        content &#x3D; employee.city;
+        break;
+      case Employee.PHONE_FIELD_NAME:
+        content &#x3D; employee.phone;
+        break;
+      default:
+        throw new Error(&#x27;Invalid field identifier&#x27;);
+    }
+    return content;
+  }
+
+  /**
+   * Gets all Employees from Service
+   *
+   * @returns Employees array as Observable
+   */
+  public getEmployees(): Observable&lt;Employee[]&gt; {
+    return this.http.get&lt;Employee[]&gt;(&#x27;/backend/employees&#x27;, {
+      headers: this.getHeaders(),
+    });
+  }
+
+  /**
+   * Gets asynchronously an employee by its id.
+   *
+   * @param id - of the employee
+   * @returns employee as promise
+   */
+  public async getEmployeeById(id: number): Promise&lt;Employee&gt; {
+    return await firstValueFrom(
+      this.http.get&lt;Employee&gt;(&#x60;/backend/employees/${id}&#x60;, {
+        headers: this.getHeaders(),
+      })
+    );
+  }
+
+  /**
+   * Adds asynchronously an employee.
+   *
+   * @param employee - object to add
+   * @returns employee callback as promise
+   */
+  public async addEmployee(employee: Employee): Promise&lt;Employee&gt; {
+    if (employee.skillSet !&#x3D; undefined) {
+      const qualifications &#x3D; this.qualificationService.convertStringArrayToQualificationArray(employee.skillSet);
+      await this.qualificationService.saveNotExistingQualifications(qualifications);
+    }
+    return firstValueFrom(this.http.post(&#x27;/backend/employees&#x27;, employee, { headers: this.getHeaders() }));
+  }
+
+  /**
+   * Edits asynchronously an employee object.
+   *
+   * @param employee - to edit with matching id
+   * @returns employee callback as promise
+   */
+  public async editEmployee(employee: Employee): Promise&lt;Employee&gt; {
+    if (employee.id !&#x3D; undefined &amp;&amp; employee.skillSet !&#x3D; undefined) {
+      await this.updateQualificationsOfEmployee(employee, employee.skillSet);
+    }
+    return firstValueFrom(this.http.put(&#x60;/backend/employees/${employee.id}&#x60;, employee, { headers: this.getHeaders() }));
+  }
+
+  /**
+   * Updates asynchronously qualifications of the employee to match the skills array
+   * This method exists because the update route of the employee service somehow doesn&#x27;t save modificated
+   * skillLists, it only validates them.
+   *
+   * @param employee - to be updated
+   * @param skills - array to be matched
+   */
+  private async updateQualificationsOfEmployee(employee: Employee, skills: string[]) {
+    if (employee.id &#x3D;&#x3D; undefined) {
+      return;
+    }
+    const oldEmployeeData: Employee &#x3D; await this.getEmployeeById(employee.id);
+    const qualifications &#x3D; this.qualificationService.convertStringArrayToQualificationArray(skills);
+    await this.qualificationService.saveNotExistingQualifications(qualifications);
+    const qualificationsToAdd: Qualification[] &#x3D; this.getNotInEmployeeSkillSetContainedQualifications(
+      oldEmployeeData,
+      qualifications
+    );
+    this.bulkAddQualificationsToEmployee(employee.id, qualificationsToAdd);
+    const qualificationsToRemove: Qualification[] &#x3D; this.getNotInQualificationsContainedEmployeeSkills(
+      oldEmployeeData,
+      qualifications
+    );
+    this.bulkDeleteQualificationsFromEmployee(employee.id, qualificationsToRemove);
+  }
+
+  /**
+   * Adds all Qualifications to the Employee that are included in the array
+   *
+   * @param employeeId - of the employee
+   * @param qualifications - to add to the employee
+   */
+  public bulkAddQualificationsToEmployee(employeeId: number, qualifications: Qualification[]) {
+    for (const qualification of qualifications) {
+      this.addQualificationToEmployee(employeeId, qualification);
+    }
+  }
+
+  /**
+   * Adds asynchronously a qualification to the employee
+   *
+   * @param employeeId - of the employee
+   * @param qualification - to add to the employee
+   * @returns Promise with the added qualification
+   */
+  public async addQualificationToEmployee(employeeId: number, qualification: Qualification): Promise&lt;Qualification&gt; {
+    return await firstValueFrom(
+      this.http.post(&#x60;/backend/employees/${employeeId}/qualifications&#x60;, qualification, { headers: this.getHeaders() })
+    );
+  }
+
+  /**
+   * Deletes all Qualifications to the Employee that are included in the array
+   *
+   * @param employeeId - of the employee
+   * @param qualifications - to remove from the employee
+   */
+  public bulkDeleteQualificationsFromEmployee(employeeId: number, qualificationsToRemove: Qualification[]) {
+    for (const qualification of qualificationsToRemove) {
+      this.deleteQualificationFromEmployee(employeeId, qualification);
+    }
+  }
+
+  /**
+   * Deletes asynchronously a qualification from the employee
+   *
+   * @param employeeId - of the employee
+   * @param qualification - to add to the employee
+   * @returns Promise with the added qualification
+   */
+  public async deleteQualificationFromEmployee(employeeId: number, qualification: Qualification) {
+    await firstValueFrom(
+      this.http.delete(&#x60;/backend/employees/${employeeId}/qualifications&#x60;, {
+        headers: this.getHeaders(),
+        body: qualification,
+      })
+    );
+  }
+
+  /**
+   * Gets all qualifications from an qualification array that are not contained in the employees skillset
+   *
+   * @param employee - with skillset that eventually misses some entries from the qualification array
+   * @param qualifications - array that includes all qualifications
+   * @returns array with all qualiications that are matching the criteria
+   */
+  private getNotInEmployeeSkillSetContainedQualifications(
+    employee: Employee,
+    qualifications: Qualification[]
+  ): Qualification[] {
+    if (employee.skillSet !&#x3D; undefined) {
+      return qualifications.filter((qualification) &#x3D;&gt; !this.isSkillIncludedInEmployeeSkillSet(employee, qualification));
+    }
+    return [];
+  }
+
+  /**
+   * Checks if the qualification is included in the skillset
+   *
+   * @param employee - thats skillset is checked
+   * @param qualfication - that should be contained in the employees skillset
+   * @returns boolean if the criteria is matching
+   */
+  private isSkillIncludedInEmployeeSkillSet(employee: Employee, qualification: Qualification): boolean {
+    if (employee.skillSet !&#x3D; undefined &amp;&amp; qualification.skill !&#x3D; undefined) {
+      return employee.skillSet?.includes(qualification.skill);
+    } else {
+      return false;
+    }
+  }
+
+  /**
+   * Gets all Employee Qualifications that are not contained in the Qualification Array
+   *
+   * @param qualifications - that eventually misses some entries from the employee array
+   * @param employee - with skillset that includes all qualifications of the employee
+   * @returns array with entries that are included in the employee skillset but not in the qualifications array
+   */
+  private getNotInQualificationsContainedEmployeeSkills(
+    employee: Employee,
+    qualifications: Qualification[]
+  ): Qualification[] {
+    let result: Qualification[] &#x3D; [];
+    if (employee.skillSet !&#x3D; undefined) {
+      const skillList &#x3D; employee.skillSet.filter(
+        (qualification) &#x3D;&gt; !this.isEmployeeQualificationIncludedInQualificationSet(qualification, qualifications)
+      );
+      result &#x3D; this.qualificationService.convertStringArrayToQualificationArray(skillList);
+    }
+    return result;
+  }
+
+  /**
+   * Checks if employee qualification is included in the qualification array
+   *
+   * @param skill - that should be contained in the qualifications array
+   * @param qualifications - array that is being checked
+   */
+  private isEmployeeQualificationIncludedInQualificationSet(skill: string, qualifications: Qualification[]): boolean {
+    return qualifications.filter((entry) &#x3D;&gt; entry.skill &#x3D;&#x3D; skill).length !&#x3D; 0;
+  }
+
+  /**
+   * Deletes Employees of an array that have an undefined id.
+   *
+   * @param employees - in an array
+   */
+  public async bulkDeleteEmployees(employees: Employee[]) {
+    for (const employee of employees) {
+      if (employee.id !&#x3D; undefined) {
+        await this.deleteEmployee(employee.id);
+      }
+    }
+  }
+
+  /**
+   * Deletes an employee by its id
+   *
+   * @param Employee - to delete
+   */
+  public async deleteEmployee(id: number) {
+    await firstValueFrom(this.http.delete(&#x60;/backend/employees/${id}&#x60;, { headers: this.getHeaders() }));
+  }
+
+  /**
+   * Gets required Headers for Employee related requests
+   *
+   * @returns headers for requests
+   */
+  private getHeaders(): HttpHeaders | { [header: string]: string | string[] } | undefined {
+    return new HttpHeaders().set(&#x27;Content-Type&#x27;, &#x27;application/json&#x27;);
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'EmployeeService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
