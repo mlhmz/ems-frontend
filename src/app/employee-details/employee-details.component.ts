@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Employee } from '../Employee';
 import { EmployeeService } from '../employee.service';
 import { HistoryService } from '../history.service';
-import { Qualification } from '../Qualification';
 
 @Component({
   selector: 'app-employee-details',

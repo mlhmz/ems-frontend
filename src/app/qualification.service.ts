@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { first, firstValueFrom, Observable } from 'rxjs';
+import { firstValueFrom, Observable } from 'rxjs';
 import { Qualification } from './Qualification';
 import { QualificationEmployees } from './QualificationEmployees';
 

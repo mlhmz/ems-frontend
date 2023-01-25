@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
-import { EmployeeService } from '../employee.service';
-import { Employee } from '../Employee';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { firstValueFrom } from 'rxjs';
+import { Employee } from '../Employee';
+import { EmployeeService } from '../employee.service';
 import { Qualification } from '../Qualification';
 import { QualificationService } from '../qualification.service';
-import { firstValueFrom, Observable, of } from 'rxjs';
 
 //ToDo: Validation der Eingaben?
 
@@ -13,7 +13,7 @@ import { firstValueFrom, Observable, of } from 'rxjs';
   templateUrl: './employee-editor.component.html',
   styleUrls: ['./employee-editor.component.css'],
 })
-export class EmployeeEditorComponent {
+export class EmployeeEditorComponent implements OnInit {
   employeeId = 0;
   employee: Employee = new Employee();
   editable = false;

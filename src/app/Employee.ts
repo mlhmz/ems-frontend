@@ -1,4 +1,3 @@
-import { Qualification } from './Qualification';
 
 export class Employee {
   constructor(

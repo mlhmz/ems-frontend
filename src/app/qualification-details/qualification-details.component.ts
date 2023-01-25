@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, of } from 'rxjs';
 import { HistoryService } from '../history.service';
 import { Qualification } from '../Qualification';
 import { QualificationService } from '../qualification.service';
@@ -11,7 +10,7 @@ import { QualificationEmployees } from '../QualificationEmployees';
   templateUrl: './qualification-details.component.html',
   styleUrls: ['./qualification-details.component.css'],
 })
-export class QualificationDetailsComponent {
+export class QualificationDetailsComponent implements OnInit {
   skill = '';
   qualification: Qualification | undefined;
   qualificationEmployees: QualificationEmployees | undefined;
