@@ -56,7 +56,7 @@ export class QualificationDetailsComponent implements OnInit {
   /**
    * Checks asynchronusly if a qualification is assigned to any employee (deletable)
    *
-   * @param qualification to check
+   * @param qualification - to check
    * @returns boolean if the qualification is deletable
    *
    */
@@ -93,7 +93,7 @@ export class QualificationDetailsComponent implements OnInit {
    * Fetches a certain qualification by its skill,
    * also, it will set the found switch, depending if the qualification was found.
    *
-   * @param skill the skill to get
+   * @param skill - the skill to get
    */
   private fetchQualification(skill: string) {
     this.qualificationService.getQualificationBySkill(skill).then((qualification) => {
@@ -105,7 +105,7 @@ export class QualificationDetailsComponent implements OnInit {
   /**
    * Fetches QualificationEmployees with a certain skill
    *
-   * @param skill to get the qualification employees
+   * @param skill - to get the qualification employees
    */
   private fetchQualificationEmployees(skill: string) {
     this.qualificationService.getQualificationEmployeesBySkill(skill).subscribe((qe) => {

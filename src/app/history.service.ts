@@ -46,8 +46,8 @@ export class HistoryService {
   /**
    * Cuts routes if list has over x entries
    *
-   * @param routes of the application
-   * @param maxEntries param to rule how many entries should be maximally allowed
+   * @param routes - of the application
+   * @param maxEntries - param to rule how many entries should be maximally allowed
    * @returns cutted string array
    */
   private cutRoutesWhenRoutesListIsTooBig(routes: string[], maxEntries: number): string[] {
@@ -60,7 +60,7 @@ export class HistoryService {
   /**
    * Saves routes array as json array to local storage
    *
-   * @param routes array
+   * @param routes - array
    */
   private saveRoutes(routes: string[]) {
     window.localStorage.setItem(this.previousUrlKey, JSON.stringify(routes));
@@ -107,7 +107,7 @@ export class HistoryService {
   /**
    * Sets if routes should be stored
    *
-   * @param routesStored boolean to enable and disable
+   * @param routesStored - boolean to enable and disable
    */
   private setRoutesStored(routesStored: boolean) {
     window.localStorage.setItem(this.routeStoringKey, String(routesStored));
@@ -116,7 +116,7 @@ export class HistoryService {
   /**
    * Gets last route from array
    *
-   * @param routes as string array
+   * @param routes - as string array
    * @returns last route
    *
    */

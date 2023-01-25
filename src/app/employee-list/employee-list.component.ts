@@ -32,7 +32,7 @@ export class EmployeeListComponent {
   /**
    * Goes to an employee with the router
    *
-   * @param id of the employee
+   * @param id - of the employee
    */
   goToEmployee(id: number | undefined) {
     if (id != undefined) {
@@ -43,7 +43,7 @@ export class EmployeeListComponent {
   /**
    * Selects / unselects an employee in the {@link employeeSelection}
    *
-   * @param employee to select or unselect
+   * @param employee - to select or unselect
    */
   selectEmployee(employee: Employee) {
     if (this.isEmployeeContainedInSelection(employee)) {
@@ -56,7 +56,7 @@ export class EmployeeListComponent {
   /**
    * Checks if the employee is contained in the selection
    *
-   * @param employee to check with
+   * @param employee - to check with
    * @returns boolean if employee is contained in selection
    */
   isEmployeeContainedInSelection(employee: Employee): boolean {
@@ -139,7 +139,7 @@ export class EmployeeListComponent {
   /**
    * Sets the search mode state
    *
-   * @param state which the search mode should be set to
+   * @param state - which the search mode should be set to
    */
   setSearchMode(state: boolean) {
     this.searchMode = state;
@@ -158,8 +158,8 @@ export class EmployeeListComponent {
    * The check successes by checking if text is including the first name and last name and
    * if it equals the id
    *
-   * @param text string to check if its content is included in the qualification skill
-   * @qualification to check if the text is included in the skill
+   * @param text - string to check if its content is included in the qualification skill
+   * @param employee - to check if the text is included in the skill
    * @returns boolean if text is included in qualification skill
    */
   isEmployeeContentContainingString(text: string, employee: Employee): boolean {
@@ -176,8 +176,8 @@ export class EmployeeListComponent {
   /**
    * Checks if value is containing text, while text is set to lower case
    *
-   * @param value to check if text is included
-   * @param text to check if its content is included in the value string
+   * @param value - to check if text is included
+   * @param text - to check if its content is included in the value string
    * @returns boolean if the value is containing the text
    */
   private isValueContainingTextIgnoreCase(value: string | undefined, text: string): boolean {

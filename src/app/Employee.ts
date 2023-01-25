@@ -1,4 +1,3 @@
-import { ValidationResult } from './ValidationResult';
 
 export class Employee {
   public static readonly LAST_NAME_FIELD_NAME = 'lastName';

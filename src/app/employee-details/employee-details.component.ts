@@ -63,7 +63,7 @@ export class EmployeeDetailsComponent implements OnInit {
    * fetches an employee by its id and sets {@link found}
    * to false if the employee couldn't be found
    *
-   * @param id of the employee
+   * @param id - of the employee
    */
   private fetchEmployee(id: number) {
     this.employeeService

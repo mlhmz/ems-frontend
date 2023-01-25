@@ -15,7 +15,7 @@ export class QualificationService {
    * Checks if a qualification is overall valid or if it has any
    * failed validation results
    * 
-   * @param qualification to check if it is valid
+   * @param qualification - to check if it is valid
    * @returns boolean if the qualification is valid
    */
   public isQualificationValid(qualfication: Qualification): boolean {
@@ -25,7 +25,7 @@ export class QualificationService {
   /**
    * Gets all fields validation results
    * 
-   * @link qualification that owns the fields that are being checked
+   * @param qualification - that owns the fields that are being checked
    * @returns {@link ValidationResult} with an array of validation results
    */
   public getAllFieldValidationResults(qualfication: Qualification): ValidationResult[] {
@@ -40,8 +40,8 @@ export class QualificationService {
    * Gets the field validation result of the qualification fields
    * that are defined in the {@link Qualifcation} constants
    * 
-   * @param field thats validation result is required
-   * @param qualification that owns the field that is being checked 
+   * @param field - thats validation result is required
+   * @param qualification - that owns the field that is being checked 
    * @returns {@link ValidationResult} of the qualification
    * @throws {@link Error} if the field doesnt exist
    */
@@ -64,7 +64,7 @@ export class QualificationService {
    * Gets the gui representation of the qualifications fields
    * that are defined in the {@link Qualification} constants
    * 
-   * @param field thats gui representation is required
+   * @param field - thats gui representation is required
    * @returns string of the gui rep
    * @throws {@link Error} if the field doesnt exists
    */
@@ -84,8 +84,8 @@ export class QualificationService {
    * Gets field content of the fields that are also defined as constants in the
    * {@link Qualification} class
    * 
-   * @param field thats content is getted
-   * @param qualification that owns the field
+   * @param field - thats content is getted
+   * @param qualification - that owns the field
    * @returns string if the field exists, otherwise it will return undefined
    * @throws {@link Error} if the field doesnt exists
    */
@@ -115,7 +115,7 @@ export class QualificationService {
   /**
    * Gets asynchronously a qualification by its skill.
    *
-   * @param skill as string
+   * @param skill - as string
    * @returns Qualification as Promise
    */
   public async getQualificationBySkill(skill: string): Promise<Qualification | undefined> {
@@ -132,7 +132,7 @@ export class QualificationService {
   /**
    * Checks if qualification is existing
    * 
-   * @param qualification to check with
+   * @param qualification - to check with
    * @returns boolean as promise if the qualification is existing
    */
   public async isQualificationExisting(qualification: Qualification): Promise<boolean> {
@@ -146,7 +146,7 @@ export class QualificationService {
   /**
    * Saves not existing qualifications from a qualification array
    *
-   * @param qualifications array to check from
+   * @param qualifications - array to check from
    */
   public async saveNotExistingQualifications(qualifications: Qualification[]) {
     const allQualifications = await firstValueFrom(
@@ -162,7 +162,7 @@ export class QualificationService {
   /**
    * Saves asynchronusly a qualification
    *
-   * @param qualification to save
+   * @param qualification - to save
    * @returns qualification as promise
    */
   public async saveQualification(qualification: Qualification): Promise<Qualification> {
@@ -176,7 +176,7 @@ export class QualificationService {
   /**
    * Bulk deletes asynchronusly multiple qualifications
    *
-   * @param qualifications to delete
+   * @param qualifications - to delete
    */
   public async bulkDeleteQualifications(qualifications: Qualification[]) {
     for (const qualification of qualifications) {
@@ -187,7 +187,7 @@ export class QualificationService {
   /**
    * Deletes asynchronusly a qualification
    *
-   * @param qualification to delete
+   * @param qualification - to delete
    */
   public async deleteQualification(qualification: Qualification) {
     await firstValueFrom(
@@ -201,7 +201,7 @@ export class QualificationService {
   /**
    * Checks if a qualification is assigned to any employee
    *
-   * @param qualification to check
+   * @param qualification - to check
    */
   public async isQualificationAssignedToAnyEmployee(qualification: Qualification): Promise<boolean> {
     let assigned = false;
@@ -218,7 +218,7 @@ export class QualificationService {
   /**
    * Gets qualification employees by skill
    *
-   * @param skill to get the qualifications employees object
+   * @param skill - to get the qualifications employees object
    */
   public getQualificationEmployeesBySkill(skill: string): Observable<QualificationEmployees> {
     return this.http.get<QualificationEmployees>(`/backend/qualifications/${skill}/employees`, {
@@ -229,7 +229,7 @@ export class QualificationService {
   /**
    * Converts a string array to a qualification array
    *
-   * @param skillArray string array to convert
+   * @param skillArray - string array to convert
    * @returns converted qualification array
    */
   public convertStringArrayToQualificationArray(skillArray: string[]): Qualification[] {
@@ -243,7 +243,7 @@ export class QualificationService {
   /**
    * Converts a string to a qualification
    *
-   * @param skill string to convert
+   * @param skill - string to convert
    * @returns converted qualification
    */
   public convertStringToQualification(skill: string): Qualification {
@@ -253,8 +253,8 @@ export class QualificationService {
   /**
    * saves asynchronusly a qualification if it doesn't exist
    *
-   * @param allQualification array to check from
-   * @param qualification to check with
+   * @param allQualification - array to check from
+   * @param qualification -  to check with
    */
   private async saveQualificationIfNotExisting(qualification: Qualification, allQualifications: Qualification[]) {
     if (this.isQualificationNotExisting(qualification, allQualifications)) {
@@ -265,8 +265,8 @@ export class QualificationService {
   /**
    * Checks if qualification is existing in array
    *
-   * @param qualificaiton to check with
-   * @param allQualifications array to check from
+   * @param qualificaiton - to check with
+   * @param allQualifications - array to check from
    */
   private isQualificationNotExisting(qualification: Qualification, allQualifications: Qualification[]) {
     console.log(allQualifications);

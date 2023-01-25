@@ -47,7 +47,7 @@ export class QualificationEditorComponent {
   /**
    * Gets the validation result of a field
    * 
-   * @param field to get the validation result from
+   * @param field - to get the validation result from
    */
   getFieldValidationResult(field: string) {
     if (this.validatorShown && !this.qualificationService.isQualificationValid(this.qualification)) {
@@ -60,8 +60,8 @@ export class QualificationEditorComponent {
   /**
    * Fills and show callback alert
    * 
-   * @param saveMessage for the callback
-   * @param saveSuccess for the callback to set it to green or red
+   * @param saveMessage - for the callback
+   * @param saveSuccess - for the callback to set it to green or red
    */
   private showCallbackAlert(saveMessage: string, saveSuccess: boolean) {
     this.saveMessage = saveMessage;

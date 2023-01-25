@@ -15,8 +15,8 @@ export class ValidationResult {
   /**
    * Builds a validator which checks if a field is valid
    * 
-   * @param fieldGuiRep gui representation of the field to build a user-friendly validation error message
-   * @param fieldContent content of the string to check
+   * @param fieldGuiRep - gui representation of the field to build a user-friendly validation error message
+   * @param fieldContent - content of the string to check
    * @returns {@link ValidationResult} object
    */
   public buildMandatoryStringValidator(fieldGuiRep: string, fieldContent: string | undefined): ValidationResult {
@@ -31,10 +31,10 @@ export class ValidationResult {
   /**
    * Builds a validator which checks if a field has the required size
    * 
-   * @param fieldGuiRep gui representation of the field to build a user-friendly validation error message
-   * @param fieldContent content of the string to check
-   * @param minLength minimal length of the field
-   * @param maxLength maximum length of the field
+   * @param fieldGuiRep - gui representation of the field to build a user-friendly validation error message
+   * @param fieldContent - content of the string to check
+   * @param minLength - minimal length of the field
+   * @param maxLength - maximum length of the field
    * @returns {@link ValidationResult} object
    */
   public buildMinMaxLengthValidator(fieldGuiRep: string, fieldContent: string | undefined, minLength: number, maxLength: number): ValidationResult {

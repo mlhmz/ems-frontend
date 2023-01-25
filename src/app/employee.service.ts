@@ -16,7 +16,7 @@ export class EmployeeService {
    * Checks if an employee is overall valid or if it has any
    * failed validation results
    * 
-   * @param employee to check if it is valid
+   * @param employee - to check if it is valid
    * @returns boolean if the employee is valid
    */
   public isEmployeeValid(employee: Employee): boolean {
@@ -26,7 +26,7 @@ export class EmployeeService {
   /**
    * Gets all fields validation results
    * 
-   * @link employee that owns the fields that are being checked
+   * @param employee - that owns the fields that are being checked
    * @returns {@link ValidationResult} with an array of validation results
    */
   public getAllFieldValidationResults(employee: Employee): ValidationResult[] {
@@ -41,8 +41,8 @@ export class EmployeeService {
    * Gets the field validation result of the employee fields
    * that are defined in the {@link Employee} constants
    * 
-   * @param field thats validation result is required
-   * @param employee that owns the field that is being checked 
+   * @param field - thats validation result is required
+   * @param employee - that owns the field that is being checked 
    * @returns {@link ValidationResult} of the employee
    * @throws {@link Error} if the field doesnt exist
    */
@@ -77,7 +77,7 @@ export class EmployeeService {
    * Gets the gui representation of the employee fields
    * that are defined in the {@link Employee} constants
    * 
-   * @param field thats gui representation is required
+   * @param field - thats gui representation is required
    * @returns string of the gui rep
    * @throws {@link Error} if the field doesnt exists
    */
@@ -112,8 +112,8 @@ export class EmployeeService {
    * Gets field content of the fields that are also defined as constants in the
    * {@link Employee} class
    * 
-   * @param field thats content is getted
-   * @param employee that owns the field
+   * @param field - thats content is getted
+   * @param employee - that owns the field
    * @returns string if the field exists, otherwise it will return undefined
    * @throws {@link Error} if the field doesnt exists
    */
@@ -158,7 +158,7 @@ export class EmployeeService {
   /**
    * Gets asynchronously an employee by its id.
    *
-   * @param id of the employee
+   * @param id - of the employee
    * @returns employee as promise
    */
   public async getEmployeeById(id: number): Promise<Employee> {
@@ -172,7 +172,7 @@ export class EmployeeService {
   /**
    * Adds asynchronously an employee.
    *
-   * @param employee object to add
+   * @param employee - object to add
    * @returns employee callback as promise
    */
   public async addEmployee(employee: Employee): Promise<Employee> {
@@ -186,7 +186,7 @@ export class EmployeeService {
   /**
    * Edits asynchronously an employee object.
    *
-   * @param employee to edit with matching id
+   * @param employee - to edit with matching id
    * @returns employee callback as promise
    */
   public async editEmployee(employee: Employee): Promise<Employee> {
@@ -201,8 +201,8 @@ export class EmployeeService {
    * This method exists because the update route of the employee service somehow doesn't save modificated
    * skillLists, it only validates them.
    *
-   * @param employee to be updated
-   * @param skills array to be matched
+   * @param employee - to be updated
+   * @param skills - array to be matched
    */
   private async updateQualificationsOfEmployee(employee: Employee, skills: string[]) {
     if (employee.id == undefined) {
@@ -226,8 +226,8 @@ export class EmployeeService {
   /**
    * Adds all Qualifications to the Employee that are included in the array
    *
-   * @param employeeId of the employee
-   * @param qualifications to add to the employee
+   * @param employeeId - of the employee
+   * @param qualifications - to add to the employee
    */
   public bulkAddQualificationsToEmployee(employeeId: number, qualifications: Qualification[]) {
     for (const qualification of qualifications) {
@@ -238,8 +238,8 @@ export class EmployeeService {
   /**
    * Adds asynchronously a qualification to the employee
    *
-   * @param employeeId of the employee
-   * @param qualification to add to the employee
+   * @param employeeId - of the employee
+   * @param qualification - to add to the employee
    * @returns Promise with the added qualification
    */
   public async addQualificationToEmployee(employeeId: number, qualification: Qualification): Promise<Qualification> {
@@ -251,8 +251,8 @@ export class EmployeeService {
   /**
    * Deletes all Qualifications to the Employee that are included in the array
    *
-   * @param employeeId of the employee
-   * @param qualifications to remove from the employee
+   * @param employeeId - of the employee
+   * @param qualifications - to remove from the employee
    */
   public bulkDeleteQualificationsFromEmployee(employeeId: number, qualificationsToRemove: Qualification[]) {
     for (const qualification of qualificationsToRemove) {
@@ -263,8 +263,8 @@ export class EmployeeService {
   /**
    * Deletes asynchronously a qualification from the employee
    *
-   * @param employeeId of the employee
-   * @param qualification to add to the employee
+   * @param employeeId - of the employee
+   * @param qualification - to add to the employee
    * @returns Promise with the added qualification
    */
   public async deleteQualificationFromEmployee(employeeId: number, qualification: Qualification) {
@@ -279,8 +279,8 @@ export class EmployeeService {
   /**
    * Gets all qualifications from an qualification array that are not contained in the employees skillset
    *
-   * @param employee with skillset that eventually misses some entries from the qualification array
-   * @param qualifications array that includes all qualifications
+   * @param employee - with skillset that eventually misses some entries from the qualification array
+   * @param qualifications - array that includes all qualifications
    * @returns array with all qualiications that are matching the criteria
    */
   private getNotInEmployeeSkillSetContainedQualifications(
@@ -296,8 +296,8 @@ export class EmployeeService {
   /**
    * Checks if the qualification is included in the skillset
    *
-   * @param employee thats skillset is checked
-   * @param qualfication that should be contained in the employees skillset
+   * @param employee - thats skillset is checked
+   * @param qualfication - that should be contained in the employees skillset
    * @returns boolean if the criteria is matching
    */
   private isSkillIncludedInEmployeeSkillSet(employee: Employee, qualification: Qualification): boolean {
@@ -311,8 +311,8 @@ export class EmployeeService {
   /**
    * Gets all Employee Qualifications that are not contained in the Qualification Array
    *
-   * @param qualifications that eventually misses some entries from the employee array
-   * @param employee with skillset that includes all qualifications of the employee
+   * @param qualifications - that eventually misses some entries from the employee array
+   * @param employee - with skillset that includes all qualifications of the employee
    * @returns array with entries that are included in the employee skillset but not in the qualifications array
    */
   private getNotInQualificationsContainedEmployeeSkills(
@@ -332,8 +332,8 @@ export class EmployeeService {
   /**
    * Checks if employee qualification is included in the qualification array
    *
-   * @param skill that should be contained in the qualifications array
-   * @param qualifications array that is being checked
+   * @param skill - that should be contained in the qualifications array
+   * @param qualifications - array that is being checked
    */
   private isEmployeeQualificationIncludedInQualificationSet(skill: string, qualifications: Qualification[]): boolean {
     return qualifications.filter((entry) => entry.skill == skill).length != 0;
@@ -342,7 +342,7 @@ export class EmployeeService {
   /**
    * Deletes Employees of an array that have an undefined id.
    *
-   * @param employees in an array
+   * @param employees - in an array
    */
   public async bulkDeleteEmployees(employees: Employee[]) {
     for (const employee of employees) {
@@ -355,7 +355,7 @@ export class EmployeeService {
   /**
    * Deletes an employee by its id
    *
-   * @param Employee to delete
+   * @param Employee - to delete
    */
   public async deleteEmployee(id: number) {
     await firstValueFrom(this.http.delete(`/backend/employees/${id}`, { headers: this.getHeaders() }));

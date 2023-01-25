@@ -102,7 +102,7 @@ export class EmployeeEditorComponent implements OnInit {
   /**
    * Gets the field validation result from the {@link employeeService}
    * 
-   * @param field to get the validation result from
+   * @param field - to get the validation result from
    */
   getFieldValidationResult(field: string) {
     if (this.validatorShown && !this.employeeService.isEmployeeValid(this.employee)) {
@@ -115,8 +115,8 @@ export class EmployeeEditorComponent implements OnInit {
   /**
    * Shows callback alert of the editor
    *
-   * @param saveMessage of the callback alet
-   * @param saveSuccess boolean, if set to false, an alert-danger message will be shown, else it is an
+   * @param saveMessage - of the callback alet
+   * @param saveSuccess - boolean, if set to false, an alert-danger message will be shown, else it is an
    *  alert-success message
    */
   private showCallbackAlert(saveMessage: string, saveSuccess: boolean) {
@@ -128,7 +128,7 @@ export class EmployeeEditorComponent implements OnInit {
   /**
    * Adds skill to the {@link employee}
    *
-   * @param skill to add
+   * @param skill - to add
    */
   addSkillToEmployee(skill: string | undefined) {
     if (skill != undefined && this.isEmployeeSkillSetNotIncludingSkill(skill)) {
@@ -142,7 +142,7 @@ export class EmployeeEditorComponent implements OnInit {
    * Removes a skill by filtering every skill that is not equal
    * to the skill that should be removed
    *
-   * @param skill string to check with
+   * @param skill - string to check with
    */
   removeSkill(skill: string) {
     this.employee.skillSet = this.employee.skillSet?.filter((entry) => entry != skill);
@@ -161,8 +161,9 @@ export class EmployeeEditorComponent implements OnInit {
   /**
    * Refreshes suggestions
    * 
-   * @param event to trigger the refresh with
+   * @param event - to trigger the refresh with
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   refreshSuggestions(event: any) {
     const input = event.target.value;
     const results = this.qualifications.filter((qualification) =>
@@ -182,8 +183,8 @@ export class EmployeeEditorComponent implements OnInit {
   /**
    * Checks if the qualification is containing the input
    * 
-   * @param qualification to check
-   * @param input to check
+   * @param qualification - to check
+   * @param input - to check
    * @returns boolean if criteria is met 
    */
   private isQualificationContainingSkillValue(qualification: Qualification, input: string): boolean {
@@ -199,7 +200,7 @@ export class EmployeeEditorComponent implements OnInit {
   /**
    * Checks if an employee skill set is not including a certain skill
    *
-   * @param skill string to check with
+   * @param skill - string to check with
    * @returns boolean if skill is not included in skill set
    */
   private isEmployeeSkillSetNotIncludingSkill(skill: string): boolean {
@@ -209,7 +210,7 @@ export class EmployeeEditorComponent implements OnInit {
   /**
    * Gets id from params and stores it into {@link employeeId}
    *
-   * @param routeParams {@link ParamMap} to get the employee id from
+   * @param routeParams - {@link ParamMap} to get the employee id from
    */
   private getIdFromParams(routeParams: ParamMap) {
     this.employeeId = Number(routeParams.get('id'));
@@ -218,7 +219,7 @@ export class EmployeeEditorComponent implements OnInit {
   /**
    * Fetches employee by id
    *
-   * @param employeeId of the employee to fetch
+   * @param employeeId - of the employee to fetch
    */
   private fetchEmployee(employeeId: number) {
     this.employeeService

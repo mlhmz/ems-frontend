@@ -13,8 +13,8 @@ export class AuthGuard extends KeycloakAuthGuard {
   /**
    * Checks if access is allowed with keycloak
    * 
-   * @param route current route
-   * @param state state snapshot of the router
+   * @param route - current route
+   * @param state - state snapshot of the router
    */
   public async isAccessAllowed(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     // Force the user to log in if currently unauthenticated.
