@@ -8,6 +8,8 @@ import { HistoryService } from './history.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  title = "employeeFrontendStarter";
+
   constructor(private historyService: HistoryService, private router: Router) {
     router.events.subscribe((val) => {
       if (val instanceof NavigationStart) {
