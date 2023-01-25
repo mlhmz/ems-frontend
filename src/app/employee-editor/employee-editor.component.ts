@@ -91,9 +91,7 @@ export class EmployeeEditorComponent implements OnInit {
         this.showCallbackAlert('Speichern erfolgreich!', true);
         this.router.navigateByUrl('/employee/' + response.id + '?saveSuccess=true');
       })
-      .catch((err) => {
-        this.showCallbackAlert('Speichern fehlgeschlagen, Grund: ' + err.message, false);
-      });
+      .catch(err => this.showCallbackAlert(`Speichern fehlgeschlagen. Grund: ${err.error.message}. Bitte kontaktieren Sie die Entwicklung.`, false));
   }
 
   getFieldValidationResult(field: string) {
