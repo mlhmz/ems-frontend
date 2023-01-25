@@ -20,7 +20,7 @@ export class QualificationEditorComponent {
   }
 
   save() {
-    if (!this.qualificationService.isEmployeeValid(this.qualification)) {
+    if (!this.qualificationService.isQualificationValid(this.qualification)) {
       this.validatorShown = true;
       this.showCallbackAlert("Speichern fehlgeschlagen, Grund: Die Daten sind nicht valide.", false);
       return;
@@ -38,7 +38,7 @@ export class QualificationEditorComponent {
   }
 
   getFieldValidationResult(field: string) {
-    if (this.validatorShown && !this.qualificationService.isEmployeeValid(this.qualification)) {
+    if (this.validatorShown && !this.qualificationService.isQualificationValid(this.qualification)) {
       return this.qualificationService.getFieldValidationResult(field, this.qualification).message;
     } else {
       return "";
