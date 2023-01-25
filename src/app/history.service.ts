@@ -40,7 +40,6 @@ export class HistoryService {
     for (const content of this.contentBlacklist) {
       url = url.replace(content, '');
     }
-    console.log(url);
     return url;
   }
 
