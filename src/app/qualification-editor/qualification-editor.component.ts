@@ -19,10 +19,14 @@ export class QualificationEditorComponent {
     this.qualification = new Qualification();
   }
 
-  save() {
+  async save() {
     if (!this.qualificationService.isQualificationValid(this.qualification)) {
       this.validatorShown = true;
       this.showCallbackAlert("Speichern fehlgeschlagen, Grund: Die Daten sind nicht valide.", false);
+      return;
+    }
+    if (await this.qualificationService.isQualificationExisting(this.qualification)) {
+      this.showCallbackAlert("Speichern fehlgeschlagen, Grund: Die angegebene Qualifikation existiert bereits.", false);
       return;
     }
     this.qualificationService

@@ -90,6 +90,14 @@ export class QualificationService {
     return qualification;
   }
 
+  public async isQualificationExisting(qualification: Qualification): Promise<boolean> {
+    if (qualification.skill != undefined) {
+      return await this.getQualificationBySkill(qualification.skill) != undefined; 
+    } else {
+      throw new Error('The qualification skill is undefined');
+    }
+  }
+
   /**
    * Saves not existing qualifications from a qualification array
    *
