@@ -5,8 +5,7 @@ import { Employee } from '../Employee';
 import { EmployeeService } from '../employee.service';
 import { Qualification } from '../Qualification';
 import { QualificationService } from '../qualification.service';
-
-//ToDo: Validation der Eingaben?
+import { ValidationResult } from '../ValidationResult';
 
 @Component({
   selector: 'app-employee-editor',
@@ -24,6 +23,7 @@ export class EmployeeEditorComponent implements OnInit {
   found = true;
   qualifications: Qualification[] = [];
   suggestions: Qualification[] = [];
+  validatorShown = true;
 
   constructor(
     private employeeService: EmployeeService,
@@ -44,6 +44,8 @@ export class EmployeeEditorComponent implements OnInit {
       this.editable = true;
       this.getIdFromParams(routeParams);
       this.fetchEmployee(this.employeeId);
+    } else {
+      this.validatorShown = false;
     }
   }
 
@@ -76,6 +78,10 @@ export class EmployeeEditorComponent implements OnInit {
    * Saves employee, if {@link editable} is true, the employee will be just edited
    */
   save() {
+    if (!this.employeeService.isEmployeeValid(this.employee)) {
+      this.validatorShown = true;
+      return;
+    }
     let req;
     if (this.editable) {
       req = this.editEmployee();
@@ -90,7 +96,14 @@ export class EmployeeEditorComponent implements OnInit {
       .catch((err) => {
         this.showCallbackAlert('Speichern fehlgeschlagen, Grund: ' + err.message, false);
       });
-    //ToDo: return to editor details after save?
+  }
+
+  getFieldValidationResult(field: string) {
+    if (this.validatorShown && !this.employeeService.isEmployeeValid(this.employee)) {
+      return this.employeeService.getFieldValidationResult(field, this.employee).message;
+    } else {
+      return "";
+    }
   }
 
   /**
