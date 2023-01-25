@@ -7,6 +7,8 @@ Wir haben uns die _Mühe_ gemacht tsdocs aufzusetzen und diese mit Compodocs zu 
 
 Außerdem haben wir coole Build Pipelines die das Projekt bauen und eslint drauf laufen lassen.
 
+_wir sind eslint error & warning free ;))_
+
 ## Features
 Grundsätzlich haben wir natürlich die gewöhnlichen CRUD-Funktionen implementiert.
 
