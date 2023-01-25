@@ -77,6 +77,7 @@ export class EmployeeEditorComponent implements OnInit {
   save() {
     if (!this.employeeService.isEmployeeValid(this.employee)) {
       this.validatorShown = true;
+      this.showCallbackAlert("Speichern fehlgeschlagen, Grund: Die Daten sind nicht valide.", false);
       return;
     }
     let req;
