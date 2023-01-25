@@ -17,8 +17,7 @@ export class StatusBarComponent {
   @Input()
   saveable = false;
   @Output()
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  saveEmit: EventEmitter<any> = new EventEmitter<any>();
+  saveEmit = new EventEmitter<MethodDecorator>();
 
   constructor(private historyService: HistoryService) {}
 

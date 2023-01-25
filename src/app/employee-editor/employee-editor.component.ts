@@ -163,9 +163,9 @@ export class EmployeeEditorComponent implements OnInit {
    *
    * @param event - to trigger the refresh with
    */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  refreshSuggestions(event: any) {
-    const input = event.target.value;
+  refreshSuggestions(event: Event) {
+    const element = event.currentTarget as HTMLInputElement;
+    const input = element.value;
     const results = this.qualifications.filter((qualification) =>
       this.isQualificationContainingSkillValue(qualification, input)
     );

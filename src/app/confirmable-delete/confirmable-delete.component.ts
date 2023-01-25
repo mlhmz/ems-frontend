@@ -15,9 +15,9 @@ export class ConfirmableDeleteComponent {
   @Input()
   failed = false;
   @Output()
-  deleteEmit: EventEmitter<any> = new EventEmitter<any>();
+  deleteEmit = new EventEmitter<MethodDecorator>();
   @Output()
-  resetErrorEmit: EventEmitter<any> = new EventEmitter<any>();
+  resetErrorEmit = new EventEmitter<MethodDecorator>();
   dialogShown = false;
 
   /**
