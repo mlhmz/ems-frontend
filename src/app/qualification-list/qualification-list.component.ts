@@ -49,14 +49,28 @@ export class QualificationListComponent {
     }
   }
 
+  /**
+   * Checks if the qualification is contained in the selection
+   * 
+   * @param qualification to check
+   * @returns boolean if qualification is met
+   */
   isQualificationContainedInSelection(qualification: Qualification): boolean {
     return this.qualificationSelection.filter((entry) => entry == qualification).length != 0;
   }
 
+  /**
+   * checks if anything is selected
+   * 
+   * @returns boolean if anything is selected
+   */
   isAnythingSelected(): boolean {
     return this.qualificationSelection.length != 0;
   }
 
+  /**
+   * Clears qualification selection
+   */
   clearSelection() {
     this.qualificationSelection = [];
   }
@@ -112,6 +126,12 @@ export class QualificationListComponent {
     this.failedMessage = '';
   }
 
+  /**
+   * Gets qualification deletion message and checks
+   * if it is singular or plural
+   * 
+   * @returns qualification deletion message as string
+   */
   getDeleteConfirmationMessage(): string {
     if (this.qualificationSelection.length == 1) {
       return 'Soll die Qualifikation wirklich gelöscht werden?';
@@ -173,7 +193,7 @@ export class QualificationListComponent {
    * Checks if the qualification content is containing the text string
    *
    * @param text string to check if its content is included in the qualification skill
-   * @qualification to check if the text is included in the skill
+   * @param qualification to check if the text is included in the skill
    * @returns boolean if text is included in qualification skill
    */
   private isQualificationContentContainingString(text: string, qualification: Qualification): boolean {

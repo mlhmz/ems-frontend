@@ -12,10 +12,23 @@ import { ValidationResult } from './ValidationResult';
 export class EmployeeService {
   constructor(private http: HttpClient, private qualificationService: QualificationService) {}
 
+  /**
+   * Checks if an employee is overall valid or if it has any
+   * failed validation results
+   * 
+   * @param employee to check if it is valid
+   * @returns boolean if the employee is valid
+   */
   public isEmployeeValid(employee: Employee): boolean {
     return this.getAllFieldValidationResults(employee).filter((result) => !result.valid).length == 0;
   }
 
+  /**
+   * Gets all fields validation results
+   * 
+   * @link employee that owns the fields that are being checked
+   * @returns {@link ValidationResult} with an array of validation results
+   */
   public getAllFieldValidationResults(employee: Employee): ValidationResult[] {
     const validationResults = [];
     for (const field of Employee.ALL_FIELDS) {
@@ -24,6 +37,15 @@ export class EmployeeService {
     return validationResults;
   }
 
+  /**
+   * Gets the field validation result of the employee fields
+   * that are defined in the {@link Employee} constants
+   * 
+   * @param field thats validation result is required
+   * @param employee that owns the field that is being checked 
+   * @returns {@link ValidationResult} of the employee
+   * @throws {@link Error} if the field doesnt exist
+   */
   public getFieldValidationResult(field: string, employee: Employee): ValidationResult {
     let validationResult: ValidationResult;
     switch (field) {
@@ -51,6 +73,14 @@ export class EmployeeService {
     return validationResult;
   }
 
+  /**
+   * Gets the gui representation of the employee fields
+   * that are defined in the {@link Employee} constants
+   * 
+   * @param field thats gui representation is required
+   * @returns string of the gui rep
+   * @throws {@link Error} if the field doesnt exists
+   */
   private getGuiRep(field: string): string {
     let guiRep: string | undefined;
     switch (field) {
@@ -78,6 +108,15 @@ export class EmployeeService {
     return guiRep;
   }
 
+  /**
+   * Gets field content of the fields that are also defined as constants in the
+   * {@link Employee} class
+   * 
+   * @param field thats content is getted
+   * @param employee that owns the field
+   * @returns string if the field exists, otherwise it will return undefined
+   * @throws {@link Error} if the field doesnt exists
+   */
   private getFieldContent(field: string, employee: Employee): string | undefined {
     let content: string | undefined;
     switch (field) {

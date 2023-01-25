@@ -99,6 +99,11 @@ export class EmployeeEditorComponent implements OnInit {
       );
   }
 
+  /**
+   * Gets the field validation result from the {@link employeeService}
+   * 
+   * @param field to get the validation result from
+   */
   getFieldValidationResult(field: string) {
     if (this.validatorShown && !this.employeeService.isEmployeeValid(this.employee)) {
       return this.employeeService.getFieldValidationResult(field, this.employee).message;
@@ -153,20 +158,35 @@ export class EmployeeEditorComponent implements OnInit {
     }
   }
 
+  /**
+   * Refreshes suggestions
+   * 
+   * @param event to trigger the refresh with
+   */
   refreshSuggestions(event: any) {
     const input = event.target.value;
     const results = this.qualifications.filter((qualification) =>
-      this.isSuggestionContainingSkillValue(qualification, input)
+      this.isQualificationContainingSkillValue(qualification, input)
     );
     this.suggestions = results.slice(-4);
     scrollTo(0, document.body.scrollHeight);
   }
 
+  /**
+   * Clears suggestions
+   */
   clearSuggestions() {
     this.suggestions = [];
   }
 
-  private isSuggestionContainingSkillValue(qualification: Qualification, input: string): boolean {
+  /**
+   * Checks if the qualification is containing the input
+   * 
+   * @param qualification to check
+   * @param input to check
+   * @returns boolean if criteria is met 
+   */
+  private isQualificationContainingSkillValue(qualification: Qualification, input: string): boolean {
     if (this.employee.skillSet?.filter((entry) => entry === qualification.skill).length != 0) {
       return false;
     }

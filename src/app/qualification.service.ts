@@ -11,10 +11,23 @@ import { ValidationResult } from './ValidationResult';
 export class QualificationService {
   constructor(private http: HttpClient) {}
 
+  /**
+   * Checks if a qualification is overall valid or if it has any
+   * failed validation results
+   * 
+   * @param qualification to check if it is valid
+   * @returns boolean if the qualification is valid
+   */
   public isQualificationValid(qualfication: Qualification): boolean {
     return this.getAllFieldValidationResults(qualfication).filter((result) => !result.valid).length == 0;
   }
 
+  /**
+   * Gets all fields validation results
+   * 
+   * @link qualification that owns the fields that are being checked
+   * @returns {@link ValidationResult} with an array of validation results
+   */
   public getAllFieldValidationResults(qualfication: Qualification): ValidationResult[] {
     const validationResults = [];
     for (const field of Qualification.ALL_FIELDS) {
@@ -23,6 +36,15 @@ export class QualificationService {
     return validationResults;
   }
 
+  /**
+   * Gets the field validation result of the qualification fields
+   * that are defined in the {@link Qualifcation} constants
+   * 
+   * @param field thats validation result is required
+   * @param qualification that owns the field that is being checked 
+   * @returns {@link ValidationResult} of the qualification
+   * @throws {@link Error} if the field doesnt exist
+   */
   public getFieldValidationResult(field: string, qualification: Qualification): ValidationResult {
     let validationResult: ValidationResult;
     switch (field) {
@@ -38,6 +60,14 @@ export class QualificationService {
     return validationResult;
   }
 
+  /**
+   * Gets the gui representation of the qualifications fields
+   * that are defined in the {@link Qualification} constants
+   * 
+   * @param field thats gui representation is required
+   * @returns string of the gui rep
+   * @throws {@link Error} if the field doesnt exists
+   */
   private getGuiRep(field: string): string {
     let guiRep: string | undefined;
     switch (field) {
@@ -50,6 +80,15 @@ export class QualificationService {
     return guiRep;
   }
 
+  /**
+   * Gets field content of the fields that are also defined as constants in the
+   * {@link Qualification} class
+   * 
+   * @param field thats content is getted
+   * @param qualification that owns the field
+   * @returns string if the field exists, otherwise it will return undefined
+   * @throws {@link Error} if the field doesnt exists
+   */
   private getFieldContent(field: string, qualification: Qualification): string | undefined {
     let content: string | undefined;
     switch (field) {
@@ -90,6 +129,12 @@ export class QualificationService {
     return qualification;
   }
 
+  /**
+   * Checks if qualification is existing
+   * 
+   * @param qualification to check with
+   * @returns boolean as promise if the qualification is existing
+   */
   public async isQualificationExisting(qualification: Qualification): Promise<boolean> {
     if (qualification.skill != undefined) {
       return await this.getQualificationBySkill(qualification.skill) != undefined; 

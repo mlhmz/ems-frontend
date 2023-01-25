@@ -19,6 +19,9 @@ export class QualificationEditorComponent {
     this.qualification = new Qualification();
   }
 
+  /**
+   * Saves asynchronusly a qualification and checks if it is valid and if it is already existing.
+   */
   async save() {
     if (!this.qualificationService.isQualificationValid(this.qualification)) {
       this.validatorShown = true;
@@ -41,6 +44,11 @@ export class QualificationEditorComponent {
       ));
   }
 
+  /**
+   * Gets the validation result of a field
+   * 
+   * @param field to get the validation result from
+   */
   getFieldValidationResult(field: string) {
     if (this.validatorShown && !this.qualificationService.isQualificationValid(this.qualification)) {
       return this.qualificationService.getFieldValidationResult(field, this.qualification).message;
@@ -49,6 +57,12 @@ export class QualificationEditorComponent {
     }
   }
 
+  /**
+   * Fills and show callback alert
+   * 
+   * @param saveMessage for the callback
+   * @param saveSuccess for the callback to set it to green or red
+   */
   private showCallbackAlert(saveMessage: string, saveSuccess: boolean) {
     this.saveMessage = saveMessage;
     this.saveSuccess = saveSuccess;

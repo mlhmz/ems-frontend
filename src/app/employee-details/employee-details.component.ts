@@ -50,6 +50,9 @@ export class EmployeeDetailsComponent implements OnInit {
     }
   }
 
+  /**
+   * Deletes an employee by its id
+   */
   deleteEmployee(id: number | undefined) {
     if (id != undefined) {
       this.employeeService.deleteEmployee(id).then(() => this.goBack());
