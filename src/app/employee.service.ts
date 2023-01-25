@@ -12,7 +12,7 @@ import { ValidationResult } from './ValidationResult';
 export class EmployeeService {
   constructor(private http: HttpClient, private qualificationService: QualificationService) {}
 
-  public isValid(employee: Employee): boolean {
+  public isEmployeeValid(employee: Employee): boolean {
     return this.getAllFieldValidationResults(employee).filter(
       result => !result.valid
     ).length == 0;
