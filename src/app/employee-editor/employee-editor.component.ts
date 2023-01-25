@@ -5,7 +5,6 @@ import { Employee } from '../Employee';
 import { EmployeeService } from '../employee.service';
 import { Qualification } from '../Qualification';
 import { QualificationService } from '../qualification.service';
-import { ValidationResult } from '../ValidationResult';
 
 @Component({
   selector: 'app-employee-editor',
@@ -23,7 +22,7 @@ export class EmployeeEditorComponent implements OnInit {
   found = true;
   qualifications: Qualification[] = [];
   suggestions: Qualification[] = [];
-  validatorShown = true;
+  validatorShown = false;
 
   constructor(
     private employeeService: EmployeeService,
@@ -44,8 +43,6 @@ export class EmployeeEditorComponent implements OnInit {
       this.editable = true;
       this.getIdFromParams(routeParams);
       this.fetchEmployee(this.employeeId);
-    } else {
-      this.validatorShown = false;
     }
   }
 
@@ -202,7 +199,10 @@ export class EmployeeEditorComponent implements OnInit {
   private fetchEmployee(employeeId: number) {
     this.employeeService
       .getEmployeeById(employeeId)
-      .then((employee) => (this.employee = employee))
+      .then((employee) => {
+        this.employee = employee
+        this.validatorShown = true;
+      })
       .catch(() => (this.found = false));
   }
 
