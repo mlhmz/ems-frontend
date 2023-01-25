@@ -2,7 +2,20 @@
 
 Dies ist das Repository von Fabian, Malek und Moritz für das Projekt im Lernfach 10.
 
+## Besonderheiten
 Wir haben uns die _Mühe_ gemacht tsdocs aufzusetzen und diese mit Compodocs zu bauen. Diese sind unter https://mlhmz.github.io/ems-frontend/ zu finden
+
+Außerdem haben wir coole Build Pipelines die das Projekt bauen und eslint drauf laufen lassen.
+
+## Features
+Grundsätzlich haben wir natürlich die gewöhnlichen CRUD-Funktionen implementiert.
+
+Bennenbare Features sind:
+* Viel doppelten Code durch parametrisierbare Components mit Emits reduziert
+* Eine Suche implementiert
+* Einen Editor der Qualifikationen mit Tag-Inputs und Suggestions hinzufügen lässt
+* Validatoren implementiert
+* Web-App responsive gemacht
 
 ## Requirements
 
