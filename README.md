@@ -19,6 +19,10 @@ Bennenbare Features sind:
 * Validatoren implementiert
 * Web-App responsive gemacht
 
+## Bugs
+* Third-Party-Cookies: Bei Browsern die Third-Party-Cookies deaktiviert haben (u.a. Firefox), funktioniert Keycloak nicht.
+  Um dies zu beheben können Third-Party-Cookies aktiviert werden. 
+
 ## Requirements
 
 * Docker https://docs.docker.com/get-docker/
